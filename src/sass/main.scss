@@ -6,9 +6,21 @@ $base-line-height: 1.2;
 	margin: 0;
 	padding: 0;
 }
+
 body {
 	font-size: $base-font-size;
 	font-family: $base-font-family;
 	line-height: $base-line-height;
 	background-color: #FFFFF9;
+}
+
+.flex {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.flex-align {
+	display: flex;
+	align-items: center;
 }

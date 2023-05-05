@@ -7,14 +7,21 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Gulp-starter - чистый проект</title>
 	<link rel="stylesheet" href="css/main.css">
-
-
 </head>
 
 <body>
 	<div class="container">
-		@@include("chunk/header.html")
+		@@include("home/header/header.html")
+		@@include("home/product-overview/product-overview.html")
+		@@include("home/feedback/feedback.html")
+		@@include("home/ransom/ransom.html")
 	</div>
 </body>
-
+<style>
+	.container {
+		width: 100%;
+		max-width: 1600px;
+		margin: 0 auto;
+	}
+</style>
 </html>

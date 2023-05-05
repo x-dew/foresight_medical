@@ -1,0 +1,126 @@
+<div class="ransom">
+    <div class="ransom-title">
+        <h1>Выкупим Ваш МРТ/КТ</h1>
+    </div>
+    <div class="ransom-form">
+        <form class="ransom-form_inputs">
+            <input type="name" placeholder="Имя" value="Владимир" name="name"><br>
+            <input type="tel" placeholder="Телефон" name="phone">
+        </form>
+        <div class="ransom_presence-messenger">
+            <h4>Наличие месседжера:</h4>
+            <div class="ransom_choice-messenger">
+                <button class="messenger">WhatsApp</button>
+                <button class="messenger">Viber</button>
+            </div>
+        </div>
+        <textarea placeholder="Название МРТ/КТ, год выпуска, в каком городе находитесь?" class="ransom-form_textarea"
+                  name="text"></textarea>
+        <div class="messenger-button">
+            <button type="submit">Отправить</button>
+        </div>
+    </div>
+</div>
+
+<style>
+    .ransom {
+        background-image: url("/img/img-ransom.png");
+        background-repeat: no-repeat;
+        margin: 0 auto 120px auto;
+        width: 100%;
+        max-width: 1456px;
+        height: 100%;
+        min-height: 696px;
+        padding: 45px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .ransom-title h1 {
+        width: 100%;
+        max-width: 442px;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 56px;
+        line-height: 68px;
+        text-transform: uppercase;
+        color: #FFFFFF;
+    }
+
+    /*---------form----------*/
+
+    .ransom-form {
+        background: #FFFFFF;
+        backdrop-filter: blur(6px);
+        border-radius: 20px;
+        padding: 40px;
+        width: 100%;
+        max-width: 667px;
+        height: 100%;
+        min-height: 606px;
+    }
+
+    .ransom-form input {
+        cursor: pointer;
+        border: 1px solid #E6E6E6;
+        border-radius: 20px;
+        padding: 24px;
+        width: 100%;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        letter-spacing: -0.01em;
+        font-feature-settings: 'pnum' on, 'lnum' on;
+        color: #2D57A9;
+        margin-bottom: 24px;
+    }
+
+    .ransom_presence-messenger {
+        margin-bottom: 24px;
+    }
+
+    .ransom_presence-messenger h4 {
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 10px;
+    }
+
+    .ransom_choice-messenger :first-child {
+        margin-right: 10px;
+    }
+
+    .ransom_choice-messenger .messenger {
+        cursor: pointer;
+        background: transparent;
+        padding: 12px 20px;
+        border: 1px solid #E6E6E6;
+        border-radius: 20px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .ransom-form_textarea{
+        cursor: pointer;
+        background: #FFFFFF;
+        border: 1px solid #E6E6E6;
+        border-radius: 20px;
+        padding: 24px;
+        gap: 10px;
+        width: 100%;
+        resize: none;
+        height: 100%;
+        min-height: 114px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 22px;
+        letter-spacing: -0.01em;
+        font-feature-settings: 'pnum' on, 'lnum' on;
+        color: #A3A4A7;
+        margin-bottom: 36px;
+    }
+
+</style>

@@ -1,0 +1,82 @@
+<header class="header">
+    <div class="header_date">
+        <div class="header__logo">
+            <img src="/img/logo.png">
+        </div>
+        <div class="header_menu">
+            <nav class="main-menu flex-align">
+                <ul class="menu-list">
+                    <li>МРТ</li>
+                    <li>КТ</li>
+                    <li class="menu-line"></li>
+                    <li>Лизинг</li>
+                    <li>Спецпредложения</li>
+                    <li>Контакты</li>
+                </ul>
+                <ul class="menu-list menu_phone">
+                    <li class="flex">
+                        <img src="/img/phone.png">
+                        <tel>8 800 550 68 12</tel>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<style>
+    .header {
+        width: 100%;
+        max-width: 1600px;
+        padding: 0 60px 0 60px;
+        height: 84px;
+        background: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .header_date {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    .menu_phone {
+        font-family: 'Helvetica Neue';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 150%;
+        margin-left: 10px;
+    }
+
+    .menu_phone img {
+        margin-right: 20px;
+    }
+
+    .menu-list {
+        display: flex;
+        color: white;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        align-items: center;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-radius: 48px;
+        padding: 10px 0 10px 20px;
+    }
+
+    .menu-list li {
+        margin-right: 20px;
+        list-style-type: none;
+    }
+
+    .menu-line {
+        width: 1px;
+        height: 12px;
+        background: #EA3C3D;
+    }
+</style>
