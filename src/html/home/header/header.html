@@ -6,17 +6,17 @@
         <div class="header_menu">
             <nav class="main-menu flex-align">
                 <ul class="menu-list">
-                    <li>МРТ</li>
-                    <li>КТ</li>
+                    <li><a href="">МРТ</a></li>
+                    <li><a href="">КТ</a></li>
                     <li class="menu-line"></li>
-                    <li>Лизинг</li>
-                    <li>Спецпредложения</li>
-                    <li>Контакты</li>
+                    <li><a href="">Лизинг</a></li>
+                    <li><a href="">Спецпредложения</a></li>
+                    <li><a href="">Контакты</a></li>
                 </ul>
                 <ul class="menu-list menu_phone">
                     <li class="flex">
                         <img src="/img/phone.png">
-                        <tel>8 800 550 68 12</tel>
+                        <a href="tel:+8 800 550 68 12">8 800 550 68 12</a>
                     </li>
                 </ul>
             </nav>
@@ -67,15 +67,19 @@
 
     .menu-list {
         display: flex;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-radius: 48px;
+        padding: 10px 0 10px 20px;
+    }
+
+    .menu-list a {
+        text-decoration: none;
         color: white;
         font-style: normal;
         font-weight: 500;
         font-size: 16px;
         line-height: 24px;
         align-items: center;
-        border: 1px solid rgba(255, 255, 255, 0.5);
-        border-radius: 48px;
-        padding: 10px 0 10px 20px;
     }
 
     .menu-list li {
@@ -92,7 +96,7 @@
     /*--------media-------*/
 
     @media (max-width: 1067px) {
-        .menu-list {
+        .menu-list a{
             font-size: 12px !important;
         }
 

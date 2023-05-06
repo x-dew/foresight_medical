@@ -89,10 +89,14 @@
         color: #FFFFFF;
     }
 
+    /*-----------cards----------*/
+
     .cards {
-        justify-content: space-around;
+        justify-content: space-between;
         width: 100%;
-        max-width: 1468px;
+        max-width: 1600px;
+        padding: 0 72px;
+
     }
 
     .card-apparatus {
@@ -150,4 +154,121 @@
         background-image: url("/img/card-2.png");
         background-repeat: no-repeat;
     }
+
+    /*----------media-----------*/
+    @media (max-width: 1580px) {
+        .product-overview {
+            min-height: 1240px;
+        }
+
+        .card-apparatus {
+            max-width: 635px;
+            background-position: center;
+            border-radius: 25px;
+            min-height: 500px;
+        }
+    }
+
+    @media (max-width: 1430px) {
+        .product-overview {
+            min-height: 1180px;
+        }
+
+        .card-apparatus {
+            min-height: 450px;
+            max-width: 565px;
+        }
+
+        .card-apparatus_text h2 {
+            font-size: 26px;
+        }
+
+        .card-apparatus_text p {
+            font-size: 20px;
+        }
+
+        @media (max-width: 1330px) {
+            .product-overview {
+                min-height: 1100px;
+            }
+        }
+
+        @media (max-width: 1280px) {
+            .product-overview {
+                min-height: 980px;
+            }
+
+            .card-apparatus {
+                min-height: 380px;
+                max-width: 500px;
+            }
+
+            .card-apparatus_text p {
+                font-size: 17px;
+            }
+        }
+    }
+
+    @media (max-width: 1150px) {
+
+        .product-overview {
+            min-height: 1370px;
+        }
+
+        .product-overview_text h1 {
+            font-size: 40px;
+            line-height: 45px;
+        }
+
+        .cards {
+            display: block;
+        }
+
+        .card-apparatus {
+            width: 100%;
+            min-height: 380px;
+            max-width: none;
+            margin-bottom: 30px;
+        }
+
+        .card-apparatus {
+            background-size: cover;
+        }
+
+        .card-apparatus_text h2 {
+            font-size: 30px;
+        }
+
+        .card-apparatus_text p {
+            font-size: 22px;
+        }
+    }
+
+    @media (max-width: 900px) {
+        .product-overview_text h1 {
+            font-size: 35px;
+            line-height: 40px;
+            max-width: 640px;
+        }
+
+        .product-overview {
+            min-height: 1310px;
+            padding-top: 60px;
+        }
+    }
+
+    @media (max-width: 780px){
+        .product-overview {
+            min-height: 1200px;
+        }
+        .card-apparatus_text h2 {
+            font-size: 24px;
+        }
+
+        .card-apparatus_text p {
+            font-size: 17px;
+            margin-top: 10px;
+        }
+    }
+
 </style>

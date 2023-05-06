@@ -5,7 +5,7 @@
     </div>
     <div class="feedback-form">
         <form class="feedback-form_inputs">
-            <input type="name" placeholder="Имя" value="Владимир" name="name"><br>
+            <input type="name" placeholder="Имя" value="Владимир" name="name">
             <input type="tel" placeholder="Телефон" name="phone">
             <input type="email" placeholder="Электронная почта" name="email">
         </form>
@@ -63,6 +63,10 @@
     .feedback-form_inputs {
         display: flex;
         justify-content: space-between;
+    }
+
+    .feedback-form_inputs input:nth-child(2n) {
+        margin: 0 10px 24px 10px;
     }
 
     .feedback-form input {
@@ -165,6 +169,38 @@
         border: none;
         width: 100%;
         text-transform: uppercase;
+    }
+
+    @media (max-width: 1200px) {
+        .feedback h2 {
+            font-size: 40px;
+        }
+
+        .feedback p {
+            font-size: 28px;
+        }
+    }
+
+    @media (max-width: 1150px) {
+        .messenger-button {
+            width: 60%;
+        }
+    }
+
+    @media (max-width: 850px) {
+        .feedback h2 {
+            font-size: 30px;
+            line-height: 40px;
+
+        }
+
+        .feedback p {
+            font-size: 22px;
+        }
+
+        .messenger-button {
+            width: 40%;
+        }
     }
 
 </style>
