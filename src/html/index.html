@@ -13,16 +13,23 @@
 
 <body>
 	<div class="container">
-		@@include("home/header/header.html")
-		@@include("home/product-overview/product-overview.html")
-		<div class="container-block">
-			@@include("home/feedback/feedback.html")
-			@@include("home/ransom/ransom.html")
+		<div class="container-media">
+			@@include("home/mediaPage/header-modal/header-modal.html")
+			@@include("home/mediaPage/product-overview_media/product-overview_media.html")
+            <div class="container-block_media">
+				@@include("home/mediaPage/feedback-media/feedback-media.html")
+				@@include("home/mediaPage/ransom-media/ransom-media.html")
+			</div>
+			@@include("home/mediaPage/footer-media/footerMobil.html")
 		</div>
-		<div class="container">
-			@@include("home/footer/footer.html")
-			@@include("home/footer/footerMobil.html")
-		</div>
+<!--		@@include("home/header/header.html")-->
+<!--		@@include("home/product-overview/product-overview.html")-->
+<!--		<div class="container-block">-->
+<!--			@@include("home/feedback/feedback.html")-->
+<!--			@@include("home/ransom/ransom.html")-->
+<!--		</div>-->
+<!--			@@include("home/footer/footer.html")-->
+<!--&lt;!&ndash;			@@include("home/footer/footerMobil.html")&ndash;&gt;-->
 	</div>
 </body>
 </html>

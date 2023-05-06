@@ -25,14 +25,32 @@ body {
 	display: flex;
 	align-items: center;
 }
+
+.flex-direction{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
 .container {
 	width: 100%;
 	max-width: 1600px;
 	margin: 0 auto;
 }
 
-.container-block{
-	width:100%;
+.container-block {
+	width: 100%;
 	max-width: 1600px;
-	padding: 0 72px ;
+	padding: 0 72px;
+}
+
+.container-block_media {
+	width: 100%;
+	max-width: 375px;
+	padding: 0 16px;
+}
+
+.container-media {
+	width: 100%;
+	max-width: 375px;
+	margin: 0 auto;
 }

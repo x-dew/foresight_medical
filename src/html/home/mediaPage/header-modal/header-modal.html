@@ -1,0 +1,162 @@
+<header class="header-media">
+    <div class="header-date_media flex">
+        <div class="header-logo_media">
+            <img class="header-img" src="/img/logotype.svg" alt="MPC">
+        </div>
+        <div class="header-media_menu">
+            <nav>
+                <div class="media-menu">
+                    <div class="menu-button_open" id="menu">
+                        <div class="line-button_open"></div>
+                        <div class="line-button_open"></div>
+                        <div class="line-button_open"></div>
+                    </div>
+                    <div class="menu-button_close" id="menu-close">
+                        <img src="/img/menuClose.png" alt="X">
+                    </div>
+                    <div class="media-menu_block" id="menu-block">
+                        <ul class="menu-list_media">
+                            <li><a class="menu-list_text" href="">МРТ</a></li>
+                            <li><a class="menu-list_text" href="">КТ</a></li>
+                            <li class="menu-line"></li>
+                            <li><a class="menu-list_text" href="">Лизинг</a></li>
+                            <li><a class="menu-list_text" href="">Спецпредложения</a></li>
+                            <li><a class="menu-list_text" href="">Контакты</a></li>
+                        </ul>
+                        <ul class="menu-list menu_phone">
+                            <li class="flex">
+                                <img src="/img/phone.png" alt="phone">
+                                <a href="tel:+8 800 550 68 12">8 800 550 68 12</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<script>
+    const menu = document.getElementById('menu');
+    const menu__link = document.getElementById('menu-block')
+    const menu__close = document.getElementById('menu-close')
+    const header = document.getElementById('header')
+
+
+    if (menu)
+        menu.addEventListener('click', function () {
+            if (!menu__close.classList.contains('menu_active-close'))
+                menu__close.classList.add('menu_active-close')
+            header.classList.add('menu-fixed')
+
+            if (!menu__link.classList.contains('menu_active'))
+                menu__link.classList.add('menu_active')
+            menu.classList.add('menu-button_close')
+
+        })
+
+    if (menu__close)
+        menu__close.addEventListener('click', function () {
+            if (menu__link.classList.contains('menu_active'))
+                menu__link.classList.remove('menu_active')
+            header.classList.remove('menu-fixed')
+            menu__close.classList.remove('menu_active-close')
+            menu.classList.remove('menu-button_close')
+        })
+</script>
+<style>
+    .header-media{
+        width: 100%;
+        max-width: 375px;
+        padding: 0 16px;
+        height: 84px;
+        background: #07131B;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .header-logo_media {
+
+    }
+
+    .menu-fixed {
+        position: fixed;
+    }
+
+    .menu-button_open {
+        width: 56px;
+        height: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-radius: 48px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menu-button_open div:nth-child(2n) {
+        margin: 3px 0;
+    }
+
+    .menu-button_close {
+        transform: translateX(100px);
+        position: fixed;
+        z-index: 3;
+        top: 30px;
+        right: -35px;
+    }
+
+    .media-menu_block {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-top: 1px solid #989899;
+        padding: 16px;
+        position: fixed;
+        right: 0;
+        top: 84px;
+        width: 100%;
+        max-width: 375px;
+        background: #07131B;
+        height: 100%;
+        min-height: 611px;
+        transition: all 0.3s ease-in-out;
+        transform: translateX(375px);
+        border-radius: 0 0 0 10px;
+    }
+
+    .menu_active {
+        transition: all 0.3s ease-in-out;
+        transform: translateX(0px)
+    }
+
+    .menu_active-close {
+        transition: all 0.3s ease-in-out;
+        transform: translateX(-60px)
+    }
+
+    .line-button_open {
+        width: 14px;
+        height: 2px;
+        background: #FFFFFF;
+    }
+
+    .media-menu_block li {
+        margin-bottom: 16px;
+    }
+
+    .media-menu_block .menu-line {
+        width: 100%;
+        height: 1px;
+        background: #EA3C3D;
+    }
+    .media-menu_block .menu_phone{
+        justify-content: center;
+        padding: 0;
+        margin-left: 0;
+    }
+    .media-menu_block .menu_phone li{
+        padding: 8px 16px 8px 12px;
+        margin: 0;
+    }
+</style>
