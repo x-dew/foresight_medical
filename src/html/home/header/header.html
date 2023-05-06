@@ -1,6 +1,6 @@
 <header class="header">
     <div class="header_date">
-        <div class="header_logo">
+        <div class="header-logo">
             <img class="header-img" src="/img/logo.png" alt="MPC">
         </div>
         <div class="header_menu">
@@ -21,13 +21,45 @@
                 </ul>
             </nav>
             <div class="media-menu">
-                <div class="menu-button">
+                <div class="menu-button_open" id="menu">
                     <img src="/img/menuButton.png" alt="X">
+                </div>
+                <div class="menu-button_close" id="menu-close">
+                    <img src="/img/menuClose.png" alt="X">
+                </div>
+                <div class="media-menu_block" id="menu-block">
+
                 </div>
             </div>
         </div>
     </div>
+
 </header>
+
+<script>
+    var menu = document.getElementById('menu');
+    var menu__link = document.getElementById('menu-block')
+    var menu__close = document.getElementById('menu-close')
+
+    if (menu__close)
+        menu__close.addEventListener('click', function () {
+            if (menu__link.classList.contains('menu_active'))
+                menu__link.classList.remove('menu_active')
+            menu__close.classList.remove('menu_active')
+            menu.classList.remove('menu-button_close')
+        })
+
+    if (menu)
+        menu.addEventListener('click', function () {
+            if (!menu__close.classList.contains('menu_active'))
+                menu__close.classList.add('menu_active')
+
+            if (!menu__link.classList.contains('menu_active'))
+                menu__link.classList.add('menu_active')
+            menu.classList.add('menu-button_close')
+
+        })
+</script>
 
 <style>
     .header {
@@ -93,10 +125,36 @@
         background: #EA3C3D;
     }
 
+    /*---------media__menu--------*/
+
+    .menu-button_close {
+        transform: translateX(100px);
+    }
+
+    .menu-button_open {
+    }
+
+    .media-menu_block {
+        position: absolute;
+        right: 0;
+        width: 100%;
+        max-width: 375px;
+        background: black;
+        height: 100%;
+        min-height: 667px;
+        transition: all 0.3s ease-in-out;
+        transform: translateX(375px)
+    }
+
+
+    .menu_active {
+        transform: translateX(0px);
+    }
+
     /*--------media-------*/
 
     @media (max-width: 1067px) {
-        .menu-list a{
+        .menu-list a {
             font-size: 12px !important;
         }
 
@@ -114,9 +172,19 @@
         .header {
             padding: 0 25px;
         }
+
+        .header-img {
+            width: 80%;
+
+        }
+
+        .header-logo {
+            width: 100%;
+            max-width: 200px;
+        }
     }
 
-    @media (max-width: 873px) {
+    @media (max-width: 820px) {
         .media-menu {
             display: block;
         }
@@ -126,3 +194,4 @@
         }
     }
 </style>
+
