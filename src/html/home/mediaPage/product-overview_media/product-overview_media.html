@@ -39,8 +39,9 @@
     .product-overview_media {
         background-image: url("/img/productMedia.jpg");
         background-repeat: no-repeat;
+        background-size: contain;
         height: 100%;
-        min-height: 1162px;
+        min-height: 1145px;
         padding-top: 47px;
         margin-bottom:69px;
     }
@@ -52,7 +53,9 @@
         font-size: 32px;
         line-height: 32px;
         color: white;
-        margin-bottom: 16px;
+        margin: 0 auto 16px auto;
+        width: 100%;
+        max-width: 343px;
     }
 
     .product-media_text p {
@@ -78,17 +81,20 @@
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
+        padding: 0 16px;
     }
 
     .product-media_card {
+        background-position: bottom;
         padding: 25px;
-        background-image: url("/img/card-photo.svg");
+        background-image: url(/img/card-photo.svg);
         width: 100%;
-        max-width: 342px;
+        background-repeat: no-repeat;
         height: 100%;
+        background-size: cover;
         min-height: 320px;
         border-radius: 15px;
-        margin-bottom: 11px;
+        margin-bottom: 17px;
     }
 
     .product-media_card-text h2 {
