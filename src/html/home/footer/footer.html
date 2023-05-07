@@ -10,39 +10,41 @@
 			<div class="footer__content_menu">
 				<div class="footer__content__list">
 					<p class="footer__content_subtitle">Сканеры для КТ <br> (CT) Aguilion</p>
-					<p class="footer__content__item">Aquilion Prime</p>
-					<p class="footer__content__item">Aquilion CX 128</p>
-					<p class="footer__content__item">Aquilion CXL</p>
-					<p class="footer__content__item">Aquilion 64</p>
-					<p class="footer__content__item">Aquilion RXL</p>
+					<a href="#" class="footer__content__item">Aquilion Prime</a>
+					<a href="#" class="footer__content__item">Aquilion CX 128</a>
+					<a href="#" class="footer__content__item">Aquilion CXL</a>
+					<a href="#" class="footer__content__item">Aquilion 64</a>
+					<a href="#" class="footer__content__item">Aquilion RXL</a>
 				</div>
 				<div class="footer__content__contact">
 					<p class="footer__content_subtitle">Контакты</p>
-					<p class="footer__content__item">Москва, БЦ West Plaza <br> ул.Рябиновая, д.26, стр. 1, пом. 38</p>
+					<a href="#" class="footer__content__item">
+						Москва, БЦ West Plaza <br> ул.Рябиновая, д.26, стр. 1, пом. 38
+					</a>
 					<div>
 						<img class="footer__content__img" src="../../img/phones-01.svg" alt="phone">
-						<p class="footer__content__item">+7 (495) 917-24-74</p>
+						<a href="#" class="footer__content__item">+7 (495) 917-24-74</a>
 					</div>
 					<div>
 						<img class="footer__content__img" src="../../img/phones-02.svg" alt="gmail">
-						<p class="footer__content__item">info@mpc.ru</p>
+						<a href="#" class="footer__content__item">info@mpc.ru</a>
 					</div>
 				</div>
 				<div class="footer__content__schedule">
 					<p class="footer__content_subtitle">Часы работы</p>
-					<p class="footer__content__item">ПН–ПТ: с 9:00 до 18:00</p>
+					<a href="#" class="footer__content__item">ПН–ПТ: с 9:00 до 18:00</a>
 				</div>
 			</div>
 		</div>
 	</div>
 	<div class="footer__row">
 		<div>
-			<p class="footer__row_text">ООО Форсайт Медикал 2022</p>
+			<a href="#" class="footer__row_text">ООО Форсайт Медикал 2022</a>
 		</div>
 		<div>
-			<p class="footer__row_text">Обработка персональных данных</p>
+			<a href="#" class="footer__row_text">Обработка персональных данных</a>
 			<p class="footer__row_line"></p>
-			<p class="footer__row_text">Юридическая информация</p>
+			<a href="#" class="footer__row_text">Юридическая информация</a>
 		</div>
 	</div>
 	<script src="js/main.js"></script>
@@ -53,7 +55,7 @@
 		width: 100%;
 		max-width: 1600px;
 		min-height: 448px;
-		padding: 60px 100px 0 60px;
+		padding: 60px 88px 0 60px;
 		background: #000000;
 		border-radius: 25px 25px 0 0;
 	}
@@ -69,15 +71,19 @@
 	.footer__content {
 		display: flex;
 		justify-content: space-between;
-		flex-wrap: wrap;
 		margin-top: 47px;
+	}
+
+	.footer__content__list {
+		display: flex;
+		flex-direction: column;
 	}
 
 	.footer__content_menu {
 		width: 100%;
 		max-width: 779px;
 		display: flex;
-		flex-wrap: wrap;
+		justify-content: space-between;
 	}
 
 	.footer__content__item {
@@ -85,7 +91,6 @@
 		font-size: 16px;
 		line-height: 23px;
 		letter-spacing: 0.016em;
-		font-feature-settings: 'pnum' on, 'lnum' on;
 		color: #A3A4A7;
 		margin-top: 13px;
 	}
@@ -93,7 +98,7 @@
 	.footer__content__contact {
 		display: flex;
 		flex-direction: column;
-		margin-left: 123px;
+		/*margin-left: 123px;*/
 	}
 
 	.footer__content__contact div {
@@ -105,7 +110,7 @@
 	}
 
 	.footer__content__schedule {
-		margin-left: 88px;
+		/*margin-left: 88px;*/
 	}
 
 	.footer__row {
@@ -114,7 +119,7 @@
 		background: #181818;
 		display: flex;
 		justify-content: space-between;
-		padding: 20px 60px;
+		padding: 20px 80px;
 	}
 
 	.footer__row div:last-child {
@@ -138,20 +143,35 @@
 		background: rgba(255, 255, 255, 0.5);
 	}
 
+	a {
+		text-decoration: none;
+	}
+
 	/* @media */
 
-	@media (max-width: 1300px) {
+	@media (max-width: 1000px) {
+		.footer__content__contact {
+			margin-left: 20px;
+		}
+
+		.footer__content__schedule {
+			margin-left: 20px;
+		}
+	}
+
+	@media (max-width: 950px) {
+		.footer__content__item {
+			font-size: 14px;
+		}
+	}
+
+	@media (max-width: 800px) {
 		.footer__content {
 			flex-direction: column;
 		}
 
 		.footer__content_menu {
 			margin-top: 47px;
-		}
-	}
-
-	@media (max-width: 940px) {
-		.footer__content_menu {
 			flex-direction: column;
 		}
 
@@ -162,22 +182,40 @@
 		.footer__content__schedule {
 			margin: 47px 0 20px 0;
 		}
-	}
 
-	@media (max-width: 900px) {
 		.footer__row {
 			flex-direction: column;
+			gap: 10px;
+			padding: 20px 60px;
 		}
 
 		.footer__row div:last-child {
 			flex-direction: column;
 			align-items: flex-start;
+		}
+
+		.footer__row_text {
+			font-size: 15px;
+		}
+
+		.footer__content__item {
+			font-size: 16px;
+		}
+
+	}
+
+	@media (max-width: 900px) {
+
+		.footer__row div:last-child {
 			gap: 10px;
-			margin-top: 10px;
 		}
 
 		.footer__row_line {
 			display: none;
+		}
+
+		.footer__row_text {
+			font-size: 13px;
 		}
 	}
 </style>
