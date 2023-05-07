@@ -1,12 +1,131 @@
 <div class="groceryList">
     <h2 class="groceryList__title">Компьютерные тамографы</h2>
+    <div class="groceryList__content">
+        <div class="groceryList__contentBlock">
+            <butt class="groceryList__button">в наличии</butt>
+            <img src="../../../img/frame3348971.svg" alt="frame3348971">
+            <p class="groceryList__contentBlock_title">Toshiba Aquilion Prime</p>
+            <div class="groceryList__contentBlock_desc">
+                <p>Год выпуска:</p>
+                <p>2010</p>
+            </div>
+            <div class="groceryList__contentBlock_desc">
+                <p>Состояние:</p>
+                <p>Восстановленный</p>
+            </div>
+            <div class="groceryList__contentBlock_desc">
+                <p>Гарантия:</p>
+                <p>1 год</p>
+            </div>
+        </div>
+        <a  href="#">
+            <div class="groceryList__content_button">
+                <div class="groceryList__content_button_desc">
+                    <p>Цена «Под ключ»</p>
+                    <p>11 000 000 ₽</p>
+                </div>
+                <img src="../../../img/frame12847.svg" alt="frame12847">
+            </div>
+        </a>
+    </div>
 
     <style>
+        .groceryList {
+            padding: 80px 60px 100px 60px;
+        }
+
         .groceryList__title {
             font-weight: 600;
             font-size: 56px;
             line-height: 120%;
             color: #1F1F1F;
+        }
+
+        .groceryList__content {
+            margin-top: 80px;
+        }
+
+        .groceryList__contentBlock {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .groceryList__button {
+            max-width: 128px;
+            width: 100%;
+            min-height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 25px;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            background: #EA3C3D;
+            border-radius: 20px;
+        }
+
+        .groceryList__contentBlock_title {
+            font-weight: 600;
+            font-size: 32px;
+            line-height: 39px;
+            color: #020406;
+            margin: 27px 0 14px 0;
+        }
+
+        .groceryList__contentBlock_desc {
+            display: flex;
+            margin-top: 5px;
+        }
+
+        .groceryList__contentBlock_desc p {
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 30px;
+            align-items: center;
+        }
+
+        .groceryList__contentBlock_desc p:first-child {
+            color: #999999;
+        }
+
+        .groceryList__contentBlock_desc p:last-child {
+            color: #020406;
+            margin-left: 16px;
+        }
+
+        .groceryList__content_button {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 25px;
+            gap: 10px;
+            max-width: 473.33px;
+            width: 100%;
+            min-height: 92px;
+            background: #F2F2F2;
+            border-radius: 25px;
+            margin-top: 20px;
+        }
+
+        .groceryList__content_button_desc p:first-child {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 130%;
+            display: flex;
+            align-items: center;
+            color: #666666;
+        }
+
+        .groceryList__content_button_desc p:last-child {
+            font-weight: 600;
+            font-size: 27px;
+            line-height: 26px;
+            color: #EA3C3D;
+            margin-top: 7px;
         }
 
     </style>
