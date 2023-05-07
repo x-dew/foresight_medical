@@ -33,14 +33,13 @@ body {
 }
 .container {
 	width: 100%;
-	max-width: 1600px;
 	margin: 0 auto;
 }
 
 .container-block {
 	width: 100%;
 	max-width: 1600px;
-	padding: 0 72px;
+	margin: 0 auto;
 }
 
 .container-block_media {
@@ -53,4 +52,14 @@ body {
 	width: 100%;
 	max-width: 640px;
 	margin: 0 auto;
+}
+
+.inputs input:focus{
+	border-color: #B3B3B3;
+	outline: 1px solid #B3B3B3
+}
+
+.inputs textarea:focus{
+	border-color: #B3B3B3;
+	outline: 1px solid #B3B3B3
 }

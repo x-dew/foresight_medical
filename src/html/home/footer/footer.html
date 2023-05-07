@@ -1,61 +1,75 @@
 <footer class="footer">
-	<div class="footer__data">
-		<div class="footer__logo">
-			<img src="../../img/logo.svg" alt="logo">
-		</div>
-		<div class="footer__content">
-			<div class="footer__content_subtitle">
-				<p class="footer__content_subtitle">Единый портал медицинского <br> радиологического оборудования</p>
+	<div class="container-block">
+		<div class="footer__data">
+			<div class="footer__logo">
+				<img src="../../img/logo.svg" alt="logo">
 			</div>
-			<div class="footer__content_menu">
-				<div class="footer__content__list">
-					<p class="footer__content_subtitle">Сканеры для КТ <br> (CT) Aguilion</p>
-					<p class="footer__content__item">Aquilion Prime</p>
-					<p class="footer__content__item">Aquilion CX 128</p>
-					<p class="footer__content__item">Aquilion CXL</p>
-					<p class="footer__content__item">Aquilion 64</p>
-					<p class="footer__content__item">Aquilion RXL</p>
+			<div class="footer__content">
+				<div class="footer__content_subtitle">
+					<p class="footer__content_subtitle">Единый портал медицинского <br> радиологического оборудования
+					</p>
 				</div>
-				<div class="footer__content__contact">
-					<p class="footer__content_subtitle">Контакты</p>
-					<p class="footer__content__item">Москва, БЦ West Plaza <br> ул.Рябиновая, д.26, стр. 1, пом. 38</p>
-					<div>
-						<img class="footer__content__img" src="../../img/phones-01.svg" alt="phone">
-						<p class="footer__content__item">+7 (495) 917-24-74</p>
+				<div class="footer__content_menu">
+					<div class="footer__content__list">
+						<p class="footer__content_subtitle">Сканеры для КТ <br> (CT) Aguilion</p>
+						<p class="footer__content__item">Aquilion Prime</p>
+						<p class="footer__content__item">Aquilion CX 128</p>
+						<p class="footer__content__item">Aquilion CXL</p>
+						<p class="footer__content__item">Aquilion 64</p>
+						<p class="footer__content__item">Aquilion RXL</p>
 					</div>
-					<div>
-						<img class="footer__content__img" src="../../img/phones-02.svg" alt="gmail">
-						<p class="footer__content__item">info@mpc.ru</p>
+					<div class="footer__content__contact">
+						<p class="footer__content_subtitle">Контакты</p>
+						<p class="footer__content__item">Москва, БЦ West Plaza <br> ул.Рябиновая, д.26, стр. 1, пом. 38
+						</p>
+						<div>
+							<img class="footer__content__img" src="../../img/phones-01.svg" alt="phone">
+							<p class="footer__content__item">+7 (495) 917-24-74</p>
+						</div>
+						<div>
+							<img class="footer__content__img" src="../../img/phones-02.svg" alt="gmail">
+							<p class="footer__content__item">info@mpc.ru</p>
+						</div>
 					</div>
-				</div>
-				<div class="footer__content__schedule">
-					<p class="footer__content_subtitle">Часы работы</p>
-					<p class="footer__content__item">ПН–ПТ: с 9:00 до 18:00</p>
+					<div class="footer__content__schedule">
+						<p class="footer__content_subtitle">Часы работы</p>
+						<p class="footer__content__item">ПН–ПТ: с 9:00 до 18:00</p>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 	<div class="footer__row">
-		<div>
-			<p class="footer__row_text">ООО Форсайт Медикал 2022</p>
-		</div>
-		<div>
-			<p class="footer__row_text">Обработка персональных данных</p>
-			<p class="footer__row_line"></p>
-			<p class="footer__row_text">Юридическая информация</p>
+		<div class="container-block">
+			<div class="footer__rom-text">
+				<div>
+					<p class="footer__row_text">ООО Форсайт Медикал 2022</p>
+				</div>
+				<div>
+					<p class="footer__row_text">Обработка персональных данных</p>
+					<p class="footer__row_line"></p>
+					<p class="footer__row_text">Юридическая информация</p>
+				</div>
+			</div>
 		</div>
 	</div>
-	<script src="js/main.js"></script>
 </footer>
 
 <style>
+
+	.footer {
+		width: 100%;
+		background: #000000;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
 	.footer__data {
 		width: 100%;
-		max-width: 1600px;
 		min-height: 448px;
 		padding: 60px 100px 0 60px;
-		background: #000000;
-		border-radius: 25px 25px 0 0;
+
 	}
 
 	.footer__content_subtitle {
@@ -109,12 +123,16 @@
 	}
 
 	.footer__row {
-		max-width: 1600px;
 		width: 100%;
 		background: #181818;
 		display: flex;
 		justify-content: space-between;
 		padding: 20px 60px;
+	}
+
+	.footer__rom-text {
+		width: 100%;
+		padding: 0 60px;
 	}
 
 	.footer__row div:last-child {

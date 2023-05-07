@@ -1,36 +1,12 @@
 <header class="header" id="header">
-    <div class="header_date">
-        <div class="header-logo">
-            <img class="header-img" src="/img/logo.png" alt="MPC">
-        </div>
-        <div class="header_menu">
-            <nav class="main-menu flex-align">
-                <ul class="menu-list">
-                    <li><a class="menu-list_text" href="">МРТ</a></li>
-                    <li><a class="menu-list_text" href="">КТ</a></li>
-                    <li class="menu-line"></li>
-                    <li><a class="menu-list_text" href="">Лизинг</a></li>
-                    <li><a class="menu-list_text" href="">Спецпредложения</a></li>
-                    <li><a class="menu-list_text" href="">Контакты</a></li>
-                </ul>
-                <ul class="menu-list menu_phone">
-                    <li class="flex">
-                        <img src="/img/phone.png" alt="phone">
-                        <a href="tel:+8 800 550 68 12">8 800 550 68 12</a>
-                    </li>
-                </ul>
-            </nav>
-            <div class="media-menu">
-                <div class="menu-button_open" id="menu">
-                    <div class="line-button_open"></div>
-                    <div class="line-button_open"></div>
-                    <div class="line-button_open"></div>
-                </div>
-                <div class="menu-button_close" id="menu-close">
-                    <img src="/img/menuClose.png" alt="X">
-                </div>
-                <div class="media-menu_block" id="menu-block">
-                    <ul class="menu-list_media">
+    <div class="container-block">
+        <div class="header_date">
+            <div class="header-logo">
+                <img class="header-img" src="/img/logo.svg" alt="MPC">
+            </div>
+            <div class="header_menu">
+                <nav class="main-menu flex-align">
+                    <ul class="menu-list">
                         <li><a class="menu-list_text" href="">МРТ</a></li>
                         <li><a class="menu-list_text" href="">КТ</a></li>
                         <li class="menu-line"></li>
@@ -44,11 +20,36 @@
                             <a href="tel:+8 800 550 68 12">8 800 550 68 12</a>
                         </li>
                     </ul>
+                </nav>
+                <div class="media-menu">
+                    <div class="menu-button_open" id="menu">
+                        <div class="line-button_open"></div>
+                        <div class="line-button_open"></div>
+                        <div class="line-button_open"></div>
+                    </div>
+                    <div class="menu-button_close" id="menu-close">
+                        <img src="/img/menuClose.png" alt="X">
+                    </div>
+                    <div class="media-menu_block" id="menu-block">
+                        <ul class="menu-list_media">
+                            <li><a class="menu-list_text" href="">МРТ</a></li>
+                            <li><a class="menu-list_text" href="">КТ</a></li>
+                            <li class="menu-line"></li>
+                            <li><a class="menu-list_text" href="">Лизинг</a></li>
+                            <li><a class="menu-list_text" href="">Спецпредложения</a></li>
+                            <li><a class="menu-list_text" href="">Контакты</a></li>
+                        </ul>
+                        <ul class="menu-list menu_phone">
+                            <li class="flex">
+                                <img src="/img/phone.png" alt="phone">
+                                <a href="tel:+8 800 550 68 12">8 800 550 68 12</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
 </header>
 
 <script>
@@ -82,11 +83,11 @@
 <style>
     .header {
         width: 100%;
-        max-width: 1600px;
         padding: 0 60px 0 60px;
         height: 84px;
         background: #07131B;
         display: flex;
+        align-items: center;
         flex-direction: column;
         justify-content: center;
     }
@@ -103,7 +104,7 @@
     }
 
     .menu_phone {
-        font-family: 'Helvetica Neue',sans-serif;
+        font-family: 'Helvetica Neue', sans-serif;
         font-style: normal;
         font-weight: 500;
         font-size: 15px;
@@ -185,20 +186,19 @@
     .media-menu_block {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
         border-top: 1px solid #989899;
         padding: 16px;
         position: fixed;
         right: 0;
         top: 84px;
         width: 100%;
-        max-width: 375px;
         background: #07131B;
         height: 100%;
-        min-height: 611px;
+        min-height: 400px;
+        max-height: 400px;
         transition: all 0.3s ease-in-out;
-        transform: translateX(375px);
-        border-radius: 0 0 0 10px;
+        transform: translateX(100%);
+        border-radius: 0 0 10px 10px;
     }
 
     .menu_active {
@@ -226,12 +226,14 @@
         height: 1px;
         background: #EA3C3D;
     }
-    .media-menu_block .menu_phone{
+
+    .media-menu_block .menu_phone {
         justify-content: center;
         padding: 0;
         margin-left: 0;
     }
-    .media-menu_block .menu_phone li{
+
+    .media-menu_block .menu_phone li {
         padding: 8px 16px 8px 12px;
         margin: 0;
     }
@@ -272,6 +274,10 @@
     @media (max-width: 820px) {
         .media-menu {
             display: block;
+        }
+
+        .menu_phone {
+            margin-top: 88px;
         }
 
         .main-menu {
