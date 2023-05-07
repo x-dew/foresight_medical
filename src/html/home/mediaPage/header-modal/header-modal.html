@@ -44,6 +44,13 @@
     const menu__close = document.getElementById('menu-close_media')
     const header = document.getElementById('header')
 
+    const close = () => {
+        menu__close.classList.remove('menu_active-close')
+        menu.classList.remove('menu-button_close')
+        menu__link.classList.remove('menu_active')
+        header.classList.remove('menu-fixed')
+        document.body.style.overflow = 'scroll'
+    }
 
     menu.addEventListener('click', function () {
         if (!menu__link.classList.contains('menu_active')) {
@@ -51,16 +58,16 @@
             menu__close.classList.add('menu_active-close')
             menu__link.classList.add('menu_active')
             header.classList.add('menu-fixed')
+            document.body.style.overflow = 'hidden'
         }
     })
-
     menu__close.addEventListener('click', function () {
-        if (menu__close.classList.contains('menu_active-close')) {
-            menu__close.classList.remove('menu_active-close')
-            menu.classList.remove('menu-button_close')
-            menu__link.classList.remove('menu_active')
-            header.classList.remove('menu-fixed')
-        }
+        if (menu__close.classList.contains('menu_active-close')) close()
+    })
+
+    window.addEventListener('click', e => {
+        const target = e.target
+        if (!target.closest('.media-menu_block') && !target.closest('.menu-button_close')) close()
     })
 
 </script>
@@ -157,6 +164,7 @@
 
     .menu-fixed {
         position: fixed;
+        z-index: 111;
     }
 
     .line-button_open {
