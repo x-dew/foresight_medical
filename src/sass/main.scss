@@ -12,6 +12,8 @@ body {
 	font-family: $base-font-family;
 	line-height: $base-line-height;
 	background-color: #FFFFF9;
+	overflow-x: hidden;
+
 }
 body li{
 	list-style-type: none;

@@ -21,24 +21,34 @@
                 томограф Aquilion 64
             </h4>
             <div class="description-characteristics">
-                <div class="description-characteristics__text">
-                    <p>Год пр-ва: 2010, прошел восстановительный ремонт с полным окрашиванием в августе 2022</p>
-                </div>
-                <div class="description-characteristics__text">
-                    <p>64 физических срезов (апгрейдом до СХ 128, лицензия "duаl slice")</p>
-                </div>
-                <div class="description-characteristics__text">
-                    <p>Рентгеновская трубка, пробег 78.000 скан/сек. Год пр-ва: 2019</p>
-                </div>
-                <div class="description-characteristics__text">
-                    <p>В наличии на складе в Москве</p>
-                </div>
-                <div class="description-characteristics__text">
-                    <p>Реализация проекта под ключ</p>
-                </div>
-                <div class="description-characteristics__text">
-                    <p>Быстрое оформление лизинга</p>
-                </div>
+                <ul>
+                    <li class="description-characteristics__text">
+                        <div class="description-characteristics__text-circle"></div>
+                        <p>Год пр-ва: 2010, прошел восстановительный ремонт с полным окрашиванием в августе 2022</p>
+                    </li>
+                    <li class="description-characteristics__text">
+                        <div class="description-characteristics__text-circle"></div>
+                        <p>64 физических срезов (апгрейдом до СХ 128, лицензия
+                            "duаl slice")
+                        </p>
+                    </li>
+                    <li class="description-characteristics__text">
+                        <div class="description-characteristics__text-circle"></div>
+                        <p>Рентгеновская трубка, пробег 78.000 скан/сек. Год пр-ва: 2019</p>
+                    </li>
+                    <li class="description-characteristics__text">
+                        <div class="description-characteristics__text-circle"></div>
+                        <p>В наличии на складе в Москве</p>
+                    </li>
+                    <li class="description-characteristics__text">
+                        <div class="description-characteristics__text-circle"></div>
+                        <p>Реализация проекта под ключ</p>
+                    </li>
+                    <li class="description-characteristics__text">
+                        <div class="description-characteristics__text-circle"></div>
+                        <p>Быстрое оформление лизинга</p>
+                    </li>
+                </ul>
             </div>
             <div class="description-card__price flex">
                 <div class="description-card__price-text flex-direction">
@@ -129,15 +139,15 @@
         color: #EA3C3D;
     }
 
-    .description-characteristics {
+    .description-characteristics ul {
         display: flex;
         flex-wrap: wrap;
         width: 100%;
         max-width: 675px;
-        margin: 35px 0 60px 0;
+        margin: 35px 0 68px 0;
     }
 
-    .description-characteristics p {
+    .description-characteristics__text p {
         font-style: normal;
         font-weight: 400;
         font-size: 14px;
@@ -152,6 +162,16 @@
         border-radius: 40px;
         padding: 4px 13px;
         margin: 0 10px 6px 0;
+    }
+
+    .description-characteristics__text-circle {
+        display: none;
+        width: 6px;
+        height: 6px;
+        margin-top: 6px;
+        margin-right: 5px;
+        background: #2D57A9;
+        border-radius: 5px;
     }
 
     .description-img__big {
@@ -237,6 +257,8 @@
         color: white;
     }
 
+    /*-----------media------------*/
+
     @media (max-width: 1470px) {
         .description-card__text {
             margin-left: 20px;
@@ -263,6 +285,20 @@
         .description-characteristics {
             margin: 20px 0 40px 0;
         }
+
+        .description-card__text {
+            max-width: 600px;
+        }
+
+        .description-characteristics p {
+            font-size: 12px;
+        }
+    }
+
+    @media (max-width: 1100px) {
+        .description-card__text {
+            max-width: 550px;
+        }
     }
 
     @media (max-width: 1000px) {
@@ -287,15 +323,46 @@
             margin-bottom: 30px;
         }
 
-        @media (max-width: 800px) {
-            .description-card__text h4{
-                max-width: 400px;
-                font-size: 35px;
-            }
+        .description-characteristics ul {
+            max-width: none;
+        }
+    }
 
-            .description-card__price-text span{
-                font-size: 30px;
-            }
+    @media (max-width: 800px) {
+        .description-card__text h4 {
+            max-width: 400px;
+            font-size: 35px;
+        }
+
+        .description-card__price-text span {
+            font-size: 30px;
+        }
+
+
+    }
+
+    @media (max-width: 700px) {
+
+        .description-characteristics__text {
+            border: none;
+        }
+
+        .description-characteristics p {
+            font-size: 14px;
+        }
+
+        .description-characteristics ul {
+            display: block;
+        }
+
+        .description-characteristics__text-circle {
+            display: block;
+        }
+
+        .description-characteristics__text {
+            border: none;
+            display: flex;
+            align-items: flex-start;
         }
     }
 </style>
