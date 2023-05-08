@@ -12,8 +12,11 @@ body {
 	font-family: $base-font-family;
 	line-height: $base-line-height;
 	background-color: #FFFFF9;
-
 }
+body li{
+	list-style-type: none;
+}
+
 
 .flex {
 	display: flex;
@@ -38,8 +41,9 @@ body {
 
 .container-block {
 	width: 100%;
-	max-width: 1600px;
+	max-width: 1486px;
 	margin: 0 auto;
+	padding: 0 15px;
 }
 
 .container-block_media {

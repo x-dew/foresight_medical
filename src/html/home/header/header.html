@@ -83,7 +83,6 @@
 <style>
     .header {
         width: 100%;
-        padding: 0 60px 0 60px;
         height: 84px;
         background: #07131B;
         display: flex;
@@ -96,6 +95,8 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        margin: 0 auto;
+        max-width: 1455px;
     }
 
     .media-menu {
@@ -173,18 +174,20 @@
     /*---------media__menu--------*/
     .menu-fixed {
         position: fixed;
+        z-index: 111;
+        top: 0;
     }
 
     .menu-button_close {
-        transform: translateX(100px);
         position: fixed;
         z-index: 3;
         top: 30px;
-        right: -35px;
+        right: -19px;
+        display: none;
     }
 
     .media-menu_block {
-        display: flex;
+        display: none;
         flex-direction: column;
         border-top: 1px solid #989899;
         padding: 16px;
@@ -203,10 +206,12 @@
 
     .menu_active {
         transition: all 0.3s ease-in-out;
-        transform: translateX(0px)
+        transform: translateX(0px);
+        display: flex;
     }
 
     .menu_active-close {
+        display: block;
         transition: all 0.3s ease-in-out;
         transform: translateX(-60px)
     }
