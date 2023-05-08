@@ -45,7 +45,6 @@ body li{
 	width: 100%;
 	max-width: 1486px;
 	margin: 0 auto;
-	padding: 0 15px;
 }
 
 .container-block_media {
@@ -61,12 +60,18 @@ body li{
 	overflow-x: hidden;
 }
 
-.inputs input:focus{
+.inputs input:focus {
 	border-color: #B3B3B3;
 	outline: 1px solid #B3B3B3
 }
 
-.inputs textarea:focus{
+.inputs textarea:focus {
 	border-color: #B3B3B3;
 	outline: 1px solid #B3B3B3
+}
+
+@media (max-width: 1510px) {
+	.container-block {
+		padding: 0 15px;
+	}
 }
