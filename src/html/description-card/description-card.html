@@ -1,19 +1,32 @@
 
 <div class="description-card">
-
     <div class="description-product flex">
         <div class="description-card__img">
-            <div class="description-img__big">
-                <img src="/img/product-photo-big.jpg" alt="photo">
-                <div class="description-img__big-text">
-                    <p>В НАЛИЧИИ</p>
+            <div class="description-card__img-slider ">
+                <div class="description-img__big nums" data-nums="1">
+                    <img src="/img/product-photo-big.jpg" alt="photo">
+                    <div class="description-img__big-text">
+                        <p>В НАЛИЧИИ</p>
+                    </div>
+                </div>
+                <div class="description-img__big nums" data-nums="2">
+                    <img src="/img/card-tomograph.jpg" alt="photo">
+                    <div class="description-img__big-text">
+                        <p>НЕТ В НАЛИЧИИ</p>
+                    </div>
+                </div>
+                <div class="description-img__big nums" data-nums="3">
+                    <img src="/img/product-photo-big.jpg" alt="photo">
+                    <div class="description-img__big-text">
+                        <p>НЕТ НА СКЛАДЕ</p>
+                    </div>
                 </div>
             </div>
             <div class="description-img__small">
-                <ul class="description-card__list">
-                    <li class="description-card__active"><img src="/img/product-photo-small.svg" alt="photo"></li>
-                    <li><img src="/img/product-photo-small-2.svg" alt="photo"></li>
-                    <li><img src="/img/product-photo-small-3.svg" alt="photo"></li>
+                <ul class="description-card__list scroll" onclick="imgSlider(event)">
+                    <li><img data-pages="0" id="pages1" src="/img/product-photo-small.png" alt="photo"></li>
+                    <li><img data-pages="1" id="pages2" src="/img/product-photo-small-2.png" alt="photo"></li>
+                    <li><img data-pages="2" id="pages3" src="/img/product-photo-small-3.png" alt="photo"></li>
                 </ul>
             </div>
         </div>
@@ -69,14 +82,14 @@
     </div>
     <div class="description-card__information">
         <div class="description-card__information-chapter">
-            <ul class="description-card__information-list paginator flex" onclick="pagination(event)">
+            <ul class="description-card__information-list scroll flex" onclick="pagination(event)">
                 <li data-page="0" id="page1">Описание</li>
                 <li data-page="1" id="page2">Особенности</li>
                 <li data-page="2" id="page3">Характеристики</li>
                 <li data-page="3" id="page4">Клинические применения</li>
             </ul>
         </div>
-        <div class="description-card__information-text page">
+        <div class="description-card__information-text">
             <p data-num="1" class="num">
                 По итогам первого полугодия 2020 года ООО «Форсайт Медикал» стал безусловным лидером на рынке
                 восстановленного тяжелого радиологического оборудования Российской Федерации, введя в эксплуатацию
@@ -101,8 +114,43 @@
 </div>
 <script>
 
+    // --------text_Img------
     let cnt = 1;
 
+    let div_nums = document.querySelectorAll(".nums");
+    for (let i = 0; i < div_nums.length; i++) {
+        if (i < cnt) {
+            div_nums[i].style.display = "block";
+        }
+    }
+
+    let main_pages = document.getElementById("pages1");
+    main_pages.classList.add("description-card__active");
+
+    function imgSlider(event) {
+
+        let e = event || window.event;
+        let target = e.target;
+        let id = target.id;
+        if (target.tagName.toLowerCase() != "img") return;
+        let num_ = id.slice(5);
+        let data_page = +target.dataset.pages;
+        main_pages.classList.remove("description-card__active");
+        main_pages = document.getElementById(id);
+        main_pages.classList.add("description-card__active");
+        let j = 0;
+        for (let i = 0; i < div_nums.length; i++) {
+            let data_num = div_nums[i].dataset.nums;
+            if (data_num <= data_page || data_num >= data_page)
+                div_nums[i].style.display = "none";
+        }
+        for (let i = data_page; i < div_nums.length; i++) {
+            if (j >= cnt) break;
+            div_nums[i].style.display = "block";
+            j++;
+        }
+    }
+    // ---------text-slider---------
     let div_num = document.querySelectorAll(".num");
     for (let i = 0; i < div_num.length; i++) {
         if (i < cnt) {
@@ -114,23 +162,21 @@
     main_page.classList.add("chapter-description__active");
 
     function pagination(event) {
+
         let e = event || window.event;
         let target = e.target;
         let id = target.id;
         if (target.tagName.toLowerCase() != "li") return;
-
-        let num_ = id.substr(4);
+        let num_ = id.slice(4);
         let data_page = +target.dataset.page;
         main_page.classList.remove("chapter-description__active");
         main_page = document.getElementById(id);
         main_page.classList.add("chapter-description__active");
-
         let j = 0;
         for (let i = 0; i < div_num.length; i++) {
             let data_num = div_num[i].dataset.num;
             if (data_num <= data_page || data_num >= data_page)
                 div_num[i].style.display = "none";
-
         }
         for (let i = data_page; i < div_num.length; i++) {
             if (j >= cnt) break;
@@ -145,15 +191,14 @@
         display: none;
     }
 
-    .paginator {
+    .nums {
+        display: none;
+    }
+
+    .scroll {
         line-height: 150%;
     }
 
-    .paginator > span {
-        display: inline-block;
-        margin-right: 10px;
-        cursor: pointer;
-    }
 
     .description-card {
         margin: 60px auto 120px auto;
@@ -245,9 +290,22 @@
     }
 
     .description-img__big {
+        width: 100%;
         position: relative;
         margin-bottom: 5px;
         border-radius: 25px;
+    }
+
+    .description-img__big img {
+        width: 100%;
+        max-width: 600px;
+        height: 100%;
+        min-height: 500px;
+    }
+
+    .description-card__img {
+        width: 100%;
+        max-width: 600px;
     }
 
     .description-img__big-text {
@@ -282,6 +340,7 @@
     }
 
     .description-card__list li {
+        z-index: 111;
         cursor: pointer;
         margin-right: 20px;
         width: 100px;
@@ -381,10 +440,21 @@
     @media (max-width: 1000px) {
         .description-img__big img {
             width: 100%;
+            max-width: none;
+            min-height: auto;
+        }
+
+        .description-img__big {
+            margin-bottom: 15px;
         }
 
         .description-characteristics {
             margin: 20px 0 40px 0;
+        }
+
+        .description-card__img {
+            max-width: none;
+
         }
 
         .description-product {
@@ -397,7 +467,7 @@
         }
 
         .description-card__img {
-            margin-bottom: 30px;
+            margin-bottom: 70px;
         }
 
         .description-characteristics ul {
