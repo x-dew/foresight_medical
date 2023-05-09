@@ -94,11 +94,11 @@
                 </div>
             </div>
             <div class="description-card__text">
-                <div class="description-card__text-button">
-                    <a href="#">Купить томограф</a>
+                <div>
+                    <a class="description-card__text-button" href="">Купить томограф</a>
                 </div>
                 <div class="description-card__text-list">
-                    <h4>
+                    <h4 id="link">
                         Преимущества
                     </h4>
                     <div class="description-characteristics">
@@ -128,6 +128,19 @@
                             </li>
                         </ul>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Приобрести</h3>
+                    <p id="closes">wswsw×</p>
+                </div>
+                <div class="modal-body">
+                    <p>Содержимое модального окна...</p>
                 </div>
             </div>
         </div>
@@ -172,6 +185,8 @@
     }
 </script>
 <style>
+
+ 
 
     .num {
         display: none;
@@ -276,9 +291,6 @@
         justify-content: center;
         text-align: center;
         margin-bottom: 30px;
-    }
-
-    .description-card__text-button a {
         font-style: normal;
         font-weight: 600;
         font-size: 16px;
@@ -538,7 +550,6 @@
         padding: 10px 22px;
     }
 
-
     .chapter-description__active {
         background: #1F1F1F;
         color: white;
@@ -546,100 +557,111 @@
 
     /*-----------media------------*/
 
-    @media (max-width: 1470px) {
-        .description-card__text {
-            margin-left: 20px;
+    @media (max-width: 1450px) {
+        .description-card__img-block {
+            display: block;
         }
 
-        .description-characteristics p {
-            line-height: 22px;
+        .description-img__small {
+            width: 100%;
+            flex-direction: column-reverse;
+            align-items: normal;
         }
 
-        .description-characteristics__text {
-            padding: 10px 13px;
+        .description-card__list li:nth-child(2) {
+            margin-bottom: 0;
         }
-    }
 
-    @media (max-width: 1200px) {
-        .description-img__big img {
+        .description-card__list li:first-child {
+            margin-bottom: 0;
+        }
+
+        .description-card__list li {
+            margin-right: 10px;
+        }
+
+        .description-card::after {
+            max-height: 1260px;
+        }
+
+        .description-card__img {
+            margin-bottom: 20px;
             width: 100%;
         }
 
-        .description-characteristics {
-            margin: 20px 0 40px 0;
+        .description-card__price {
+            margin-top: 20px;
+        }
+
+        .description-card__list {
+            flex-wrap: initial;
+        }
+
+        .description-card__list img {
+            width: 100%;
         }
 
         .description-card__text {
-            max-width: 600px;
+            width: 100%;
         }
 
-        .description-characteristics p {
-            font-size: 12px;
+        .description-card__text-list {
+            max-width: none;
+        }
+
+        .description-card__information {
+            margin-right: 20px;
         }
     }
 
     @media (max-width: 1100px) {
-        .description-card__text {
-            max-width: 550px;
+        .description-card__text-block {
+            display: block;
+        }
+
+        .description-card__information {
+            max-width: none;
+            margin-bottom: 50px;
+        }
+
+        .description-characteristics ul {
+            max-width: none;
+        }
+
+        .description-characteristics__text {
+            width: 100%;
         }
     }
 
     @media (max-width: 1000px) {
-        .description-img__big img {
-            width: 100%;
-            max-width: none;
-            min-height: auto;
+        .description-card::after {
+            max-height: 1200px;
         }
 
-        .description-img__big {
-            margin-bottom: 15px;
+        .description-card__price {
+            margin-top: 40px;
+            padding: 15px 120px;
         }
 
-        .description-characteristics {
-            margin: 20px 0 40px 0;
-        }
-
-        .description-card__text {
-            margin-left: 0;
-            max-width: none;
-        }
-
-        .description-characteristics ul {
-            max-width: none;
-        }
     }
 
     @media (max-width: 800px) {
-        .description-card__text h4 {
-            max-width: 400px;
-            font-size: 35px;
+        .description-card__price {
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-top: 60px;
         }
 
-        .description-card__price-text span {
-            font-size: 30px;
+        .description-card::after {
+            max-height: 1140px;
         }
-
-
     }
 
-    @media (max-width: 700px) {
-
-        .description-characteristics__text {
-            border: none;
-        }
-
-        .description-characteristics p {
-            font-size: 14px;
-        }
-
-        .description-characteristics ul {
-            display: block;
-        }
-
-        .description-characteristics__text {
-            border: none;
-            display: flex;
-            align-items: flex-start;
+    @media (max-width: 740px) {
+        .description-img__big img {
+            width: 100%;
         }
     }
 </style>
