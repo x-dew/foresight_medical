@@ -95,10 +95,10 @@
             </div>
             <div class="description-card__text">
                 <div>
-                    <a class="description-card__text-button" href="">Купить томограф</a>
+                    <button id="link-modal" class="description-card__text-button">Купить томограф</button>
                 </div>
                 <div class="description-card__text-list">
-                    <h4 id="link">
+                    <h4>
                         Преимущества
                     </h4>
                     <div class="description-characteristics">
@@ -137,16 +137,68 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h3 class="modal-title">Приобрести</h3>
-                    <p id="closes">wswsw×</p>
+                    <svg class="close-button" id="closes" xmlns="http://www.w3.org/2000/svg" width="48" height="48"
+                         viewBox="0 0 48 48" fill="none">
+                        <circle cx="24" cy="24" r="23" stroke="#999999" stroke-width="2"/>
+                        <path d="M19 19L29 29" stroke="#999999" stroke-width="2" stroke-linecap="round"
+                              stroke-linejoin="round"/>
+                        <path d="M29 19L19 29" stroke="#999999" stroke-width="2" stroke-linecap="round"
+                              stroke-linejoin="round"/>
+                    </svg>
                 </div>
                 <div class="modal-body">
-                    <p>Содержимое модального окна...</p>
+                    <form>
+                        <input class="modal-body__input" type="text" placeholder="Имя">
+                        <input class="modal-body__input" type="telephone" placeholder="Телефон">
+                        <textarea class="modal-body__textarea" placeholder="Текст сообщения"></textarea>
+                        <div class="choice-networks">
+                            <div class="choice-networks__text">
+                                <p>Наличие месседжера:</p>
+                            </div>
+                            <label for="checkbox-1">WhatsApp</label>
+                            <input class="modal-button_checkbox" id="checkbox-1" type="checkbox" value="WhatsApp">
+                            <label for="checkbox-2">Viber</label>
+                            <input class="modal-button_checkbox" id="checkbox-2" type="checkbox" value="WhatsApp">
+                        </div>
+                        <button class="modal-button_submit" type="submit">Отправить</button>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
 <script>
+
+    let modal = document.getElementById('modal')
+    let closes = document.getElementById('closes')
+    let linkModal = document.getElementById('link-modal')
+    let modalDialog = document.getElementById('modal-dialog')
+
+
+    if (linkModal) {
+        linkModal.addEventListener('click', function () {
+            document.body.style.overflowY = 'hidden'
+            if (!modal.classList.contains('modal-action')) {
+                modal.classList.add('modal-action')
+            }
+            modal.classList.remove('modal-close')
+        })
+    }
+    if (closes)
+        closes.addEventListener('click', function () {
+            if (modal.classList.contains('modal-action'))
+                modal.classList.remove('modal-action')
+            document.body.style.overflowY = 'scroll'
+        })
+
+
+    document.addEventListener('mouseup', e => {
+        const target = e.target.classList[0]
+        if (target === 'modal' ) {
+            modal.classList.remove('modal-action')
+        }
+
+    })
 
     let cnt = 1;
 
@@ -186,7 +238,186 @@
 </script>
 <style>
 
- 
+    /*--------modal--------*/
+
+    .choice-networks label {
+        cursor: pointer;
+        background: transparent;
+        padding: 17px 20px;
+        border: 1px solid #E6E6E6;
+        border-radius: 20px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        margin-right: 8px;
+    }
+
+    .modal-body__input {
+        cursor: pointer;
+        border: 1px solid #E6E6E6;
+        border-radius: 20px;
+        padding: 24px;
+        width: 100%;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        letter-spacing: -0.01em;
+        color: #2D57A9;
+        margin-bottom: 18px;
+    }
+
+    .modal-body__input:focus {
+        outline: none !important;
+    }
+
+    .modal-body__textarea {
+        cursor: pointer;
+        background: #FFFFFF;
+        border: 1px solid #E6E6E6;
+        border-radius: 20px;
+        padding: 24px;
+        gap: 10px;
+        width: 100%;
+        resize: none;
+        height: 100%;
+        min-height: 134px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 22px;
+        letter-spacing: -0.01em;
+        font-feature-settings: 'pnum' on, 'lnum' on;
+        color: #A3A4A7;
+        margin-bottom: 17px;
+    }
+
+    .modal-body__textarea:focus {
+        outline: none !important;
+    }
+
+    .modal-button_checkbox[type="checkbox"] {
+        display: none;
+    }
+
+    .choice-networks__text p {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -0.01em;
+        color: #1F1F1F;
+        margin-bottom: 23px;
+    }
+
+    .choice-networks {
+        margin-bottom: 53px;
+    }
+
+    .modal-button_submit {
+        width: 100%;
+        cursor: pointer;
+        background: #2D57A9;
+        border-radius: 20px;
+        padding: 25px 40px;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+        color: white;
+        text-align: center;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+    }
+
+    .modal-action {
+        display: flex !important;
+        pointer-events: auto !important;
+    }
+
+    .modal-close {
+        display: none !important;
+    }
+
+    .modal {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1050;
+        pointer-events: none;
+        transition: opacity 200ms ease-in;
+        margin: 0;
+        padding: 0;
+        display: none;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .close-button {
+        position: absolute;
+        cursor: pointer;
+        top: -27px;
+        right: -32px;
+    }
+
+    .modal:target {
+        opacity: 1;
+        pointer-events: auto;
+        overflow-y: auto;
+    }
+
+    .modal-dialog {
+        position: relative;
+        width: 100%;
+        max-width: 600px;
+        margin: 10px;
+    }
+
+    .modal-content {
+        padding: 40px 45px 45px 45px;
+        position: relative;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        max-width: 600px;
+        flex-direction: column;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid rgba(0, 0, 0, .2);
+        border-radius: 25px;
+        outline: 0;
+    }
+
+    .modal-header {
+        position: relative;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+
+    .modal-title {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 40px;
+        display: flex;
+        align-items: center;
+        color: #1F1F1F;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .modal-body {
+        position: relative;
+        flex: 1 1 auto;
+        overflow: auto;
+        margin-top: 40px;
+    }
 
     .num {
         display: none;
@@ -283,6 +514,8 @@
     }
 
     .description-card__text-button {
+        cursor: pointer;
+        border: none;
         width: 100%;
         background: #EA3C3D;
         border-radius: 25px;
@@ -297,7 +530,6 @@
         line-height: 24px;
         letter-spacing: 0.02em;
         text-transform: uppercase;
-        text-decoration: none;
         color: #FFFFFF;
     }
 
