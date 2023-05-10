@@ -40,7 +40,7 @@
                             <li><a class="menu-list_text" href="">Спецпредложения</a></li>
                             <li><a class="menu-list_text" href="">Контакты</a></li>
                         </ul>
-                        <ul class="menu-list menu_phone">
+                        <ul class=" menu_phone menu-list">
                             <li class="flex">
                                 <img src="/img/phone.png" alt="phone">
                                 <a href="tel:+8 800 550 68 12">8 800 550 68 12</a>
@@ -108,7 +108,11 @@
         max-width: 1480px;
     }
 
-    .header-logo img{
+    .header-logo {
+        width: 100%;
+    }
+
+    .header-logo img {
         width: 100%;
         max-width: 250px;
     }
@@ -118,21 +122,41 @@
         width: 100%;
     }
 
+    .menu-list_media {
+        width: 100%;
+        max-width: 465px;
+    }
+
     .menu_phone {
+        width: 100%;
+        max-width: 190px;
+        margin-left: 16px;
+        padding-left: 24px !important;
+    }
+
+    .header_menu {
+        width: 100%;
+    }
+
+    .main-menu {
+        justify-content: flex-end;
+    }
+
+    .menu_phone a {
         font-family: 'Helvetica Neue';
         font-style: normal;
         font-weight: 500;
-        font-size: 15px;
+        font-size: 11px !important;
         line-height: 150%;
         margin-left: 10px;
     }
 
-    .menu_phone a{
-        margin-left: 0!important;
+    .menu_phone a {
+        margin-left: 0 !important;
     }
 
     .menu_phone img {
-        margin-right: 20px;
+        margin-right: 15px;
     }
 
     .menu-list {
@@ -271,9 +295,20 @@
 
     /*--------media-------*/
 
+    @media (max-width: 1360px) {
+        .menu_phone {
+            width: 190px;
+        }
+
+    }
+
     @media (max-width: 1167px) {
         .menu-list a {
             font-size: 12px !important;
+        }
+
+        .menu_phone a {
+            font-size: 11px !important;
         }
 
         .header-img {
@@ -301,13 +336,18 @@
 
     @media (max-width: 850px) {
         .media-menu {
-            display: block;
+            justify-content: end;
+            display: flex;
         }
 
         .menu_phone {
+            width: 100%;
             margin-top: 88px;
+            max-width: none;
         }
-
+        .menu-list_media{
+            max-width: none;
+        }
         .main-menu {
             display: none;
         }

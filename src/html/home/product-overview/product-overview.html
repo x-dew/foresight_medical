@@ -98,10 +98,10 @@
     }
 
     .product-overview {
-        padding-top: 50px;
+        padding-top: 54px;
         height: 100%;
         min-height: 1332px;
-        margin-bottom: 120px;
+        margin-bottom: 125px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -246,6 +246,10 @@
 
     /*----------media-----------*/
     @media (max-width: 1580px) {
+        .cards {
+            justify-content: space-around;
+        }
+
         .product-overview {
             min-height: 1240px;
         }
@@ -255,6 +259,9 @@
             background-position: center;
             border-radius: 25px;
             min-height: 500px;
+        }
+        .card-apparatus_price p{
+            font-size: 23px;
         }
     }
 
@@ -293,7 +300,7 @@
             }
 
             .card-apparatus_text p {
-                font-size: 17px;
+                font-size: 16px;
             }
         }
     }
@@ -356,6 +363,10 @@
     @media (max-width: 900px) {
         .cards {
             display: block;
+        }
+
+        .product:after {
+            height: 45%;
         }
 
         .card-apparatus_price {
