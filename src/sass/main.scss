@@ -12,8 +12,13 @@ body {
 	font-family: $base-font-family;
 	line-height: $base-line-height;
 	background-color: #FFFFF9;
+	overflow-x: hidden;
 
 }
+body li{
+	list-style-type: none;
+}
+
 
 .flex {
 	display: flex;
@@ -25,14 +30,49 @@ body {
 	display: flex;
 	align-items: center;
 }
+
+.flex-direction{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
 .container {
 	width: 100%;
-	max-width: 1600px;
 	margin: 0 auto;
 }
 
-.container-block{
-	width:100%;
-	max-width: 1600px;
-	padding: 0 72px ;
+.container-block {
+	width: 100%;
+	padding:  0 15px;
+	max-width: 1486px;
+	margin: 0 auto;
+}
+
+.container-block_media {
+	width: 100%;
+	max-width: 640px;
+	padding: 0 16px;
+}
+
+.container-media {
+	width: 100%;
+	max-width: 640px;
+	margin: 0 auto;
+	overflow-x: hidden;
+}
+
+.inputs input:focus {
+	border-color: #B3B3B3;
+	outline: 1px solid #B3B3B3
+}
+
+.inputs textarea:focus {
+	border-color: #B3B3B3;
+	outline: 1px solid #B3B3B3
+}
+
+@media (max-width: 1510px) {
+	.container-block {
+		padding: 0 15px;
+	}
 }
