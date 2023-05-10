@@ -1,6 +1,27 @@
-$base-font-size: 14px;
-$base-font-family: 'Mont-Regular', sans-serif;
-$base-line-height: 1.2;
+@font-face {
+	font-family: 'Inter-Reqular';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url(../font/Inter-Regular.ttf) format('woff2');
+}
+
+@font-face {
+	font-family: 'Inter-Bold';
+	font-style: normal;
+	font-weight: 600;
+	font-display: swap;
+	src: url(../font/Inter-SemiBold.ttf) format('woff2');
+}
+
+@font-face {
+	font-family: 'Helvetica-Neue';
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: url(../font/Helvetica-Neue.otf) format('woff2');
+}
+
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -8,12 +29,9 @@ $base-line-height: 1.2;
 }
 
 body {
-	font-size: $base-font-size;
-	font-family: $base-font-family;
-	line-height: $base-line-height;
+	font-family: 'Inter-Reqular';
 	background-color: #FFFFF9;
 	overflow-x: hidden;
-
 }
 body li{
 	list-style-type: none;
