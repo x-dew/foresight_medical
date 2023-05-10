@@ -39,6 +39,16 @@ jobs:
         run: npm install
       - name: Build
         run: npm run build
+      - name: Find and Replace Images
+        uses: jacobtomlinson/gha-find-replace@v3
+        with:
+          find: "/img/"
+          replace: "./img/"
+      - name: Find and Replace CSS
+        uses: jacobtomlinson/gha-find-replace@v3
+        with:
+          find: "/css/"
+          replace: "./css/"
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
