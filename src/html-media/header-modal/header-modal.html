@@ -1,0 +1,213 @@
+<header class="header-media" id="header">
+    <div class="header-date_media flex">
+        <div class="header-logo_media">
+            <img class="header-img" src="/img/logotype.svg" alt="MPC">
+        </div>
+        <div class="header-media_menu">
+            <nav>
+                <div class="media-menu">
+                    <div class="menu-button_open" id="menu">
+                        <div class="line-button_open"></div>
+                        <div class="line-button_open"></div>
+                        <div class="line-button_open"></div>
+                    </div>
+                    <div class="menu-button_close" id="menu-close_media">
+                        <img src="/img/menuClose.png" alt="X">
+                    </div>
+                    <div class="media-menu_block " id="menu-block">
+                        <ul class="menu-list_media">
+                            <li><a class="menu-list_text" href="">МРТ</a></li>
+                            <li><a class="menu-list_text" href="">КТ</a></li>
+                            <li class="menu-line"></li>
+                            <li><a class="menu-list_text" href="">Лизинг</a></li>
+                            <li><a class="menu-list_text" href="">О компании</a></li>
+                            <li><a class="menu-list_text" href="">Наши проекты</a></li>
+                            <li><a class="menu-list_text" href="">Отзывы</a></li>
+                            <li><a class="menu-list_text" href="">Контакты</a></li>
+                        </ul>
+                        <ul class="menu-list_media menu_phone">
+                            <li>
+                                <img src="/img/phone.svg" alt="phone">
+                                <a href="tel:+8 800 550 68 12">8 800 550 68 12</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<script>
+    const menu = document.getElementById('menu');
+    const menu__link = document.getElementById('menu-block')
+    const menu__close = document.getElementById('menu-close_media')
+    const header = document.getElementById('header')
+
+    const close = () => {
+        menu__close.classList.remove('menu_active-close')
+        menu.classList.remove('menu-button_close')
+        menu__link.classList.remove('menu_active')
+        header.classList.remove('menu-fixed')
+        document.body.style.overflow = 'scroll'
+    }
+
+    menu.addEventListener('click', function () {
+        if (!menu__link.classList.contains('menu_active')) {
+            menu.classList.add('menu-button_close')
+            menu__close.classList.add('menu_active-close')
+            menu__link.classList.add('menu_active')
+            header.classList.add('menu-fixed')
+            document.body.style.overflow = 'hidden'
+        }
+    })
+
+    menu__close.addEventListener('click', function () {
+        if (menu__close.classList.contains('menu_active-close')) close()
+    })
+
+    window.addEventListener('click', e => {
+        const target = e.target
+        if (!target.closest('.media-menu_block') && !target.closest('.menu-button_close')) close()
+    })
+
+</script>
+<style>
+    @media (max-width: 641px){
+        .header-media {
+            width: 100%;
+            padding: 0 16px;
+            height: 60px;
+            background: #07131B;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .media-menu_block {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            border-top: 1px solid #989899;
+            padding: 16px;
+            position: absolute;
+            right: 0;
+            top: 59px;
+            width: 100%;
+            max-width: 640px;
+            background: #07131B;
+            height: 100vh;
+            min-height: 611px;
+            max-height: 611px;
+            transition: all 0.3s ease-in-out;
+            transform: translateX(375px);
+            border-radius: 0 0 10px 10px;
+        }
+
+        .menu-list_text {
+            text-decoration: none;
+            color: white;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 24px;
+            align-items: center;
+        }
+
+        .header-media_menu li {
+            margin-right: 20px;
+            list-style-type: none;
+        }
+
+        .menu-list_media li:last-child {
+            margin-bottom: 0;
+        }
+
+        .menu-button_open {
+            width: 56px;
+            height: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 48px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .menu-button_open div:nth-child(2n) {
+            margin: 3px 0;
+        }
+
+        .menu-button_close {
+            display: none;
+            transform: translateX(100px);
+            position: absolute;
+            z-index: 3;
+            top: 18px;
+            right: -45px;
+        }
+
+        .media-menu_block li {
+            margin-bottom: 21px;
+        }
+
+        .menu_active {
+            transition: all 0.3s ease-in-out;
+            transform: translateX(0px);
+            display: flex;
+        }
+
+        .menu_active-close {
+            display: block;
+            transition: all 0.3s ease-in-out;
+            transform: translateX(-60px)
+        }
+
+        .menu-fixed {
+            position: fixed;
+            z-index: 111;
+        }
+
+        .line-button_open {
+            width: 14px;
+            height: 2px;
+            background: #FFFFFF;
+        }
+
+        .menu_phone {
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 48px;
+        }
+
+        .menu_phone li {
+            display: flex;
+            justify-content: center;
+        }
+
+        .media-menu_block .menu-line {
+            width: 100%;
+            height: 1px;
+            background: #EA3C3D;
+        }
+
+        .menu_phone a {
+            font-family: 'Helvetica Neue', sans-serif;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 15px;
+            line-height: 150%;
+            justify-content: center;
+            padding: 0;
+            margin-left: 16px;
+            color: white;
+            text-decoration: none;
+
+        }
+
+        .media-menu_block .menu_phone li {
+            padding: 8px 16px 8px 12px;
+            margin: 0;
+        }
+    }
+
+</style>
