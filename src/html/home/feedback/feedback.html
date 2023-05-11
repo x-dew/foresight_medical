@@ -12,13 +12,18 @@
         <textarea placeholder="Текст обращения" class="feedback-form_textarea" name="text"></textarea>
     </div>
     <div class="feedback-messenger flex">
-        <div class="presence-messenger">
-            <h4>Наличие месседжера:</h4>
-            <div class="choice-messenger">
-                <button class="selected-messenger messenger">WhatsApp</button>
-                <button class="messenger">Viber</button>
+        <form>
+            <div class="presence-messenger__checkbox">
+                <div class="choice-networks__text">
+                    <p>Наличие месседжера:</p>
+                </div>
+                <label class="selected-messenger_action" for="checkbox-1">WhatsApp</label>
+                <input class="modal-button_checkbox " id="checkbox-1" type="checkbox"
+                       value="WhatsApp">
+                <label for="checkbox-2">Viber</label>
+                <input class="modal-button_checkbox" id="checkbox-2" type="checkbox" value="WhatsApp">
             </div>
-        </div>
+        </form>
         <div class="messenger-button">
             <button type="submit">Отправить</button>
         </div>
@@ -34,10 +39,10 @@
         width: 100%;
         max-width: 1456px;
         height: 100%;
-        min-height: 623px;
     }
 
     .feedback h2 {
+        font-family: 'Inter-Bold';
         font-style: normal;
         font-weight: 600;
         font-size: 56px;
@@ -59,7 +64,26 @@
     }
 
     /*---------form----------*/
+    .presence-messenger__checkbox .modal-button_checkbox[type="checkbox"] {
+        display: none;
+    }
 
+    .presence-messenger__checkbox label {
+        cursor: pointer;
+        background: transparent;
+        padding: 17px;
+        border: 1px solid #E6E6E6;
+        border-radius: 20px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        margin-right: 8px;
+    }
+
+    .presence-messenger__checkbox{
+        margin-bottom: 13px;
+    }
     .feedback-form_inputs {
         display: flex;
         justify-content: space-between;
@@ -124,31 +148,31 @@
 
     .feedback-messenger {
         align-items: end;
+        height: 100%;
+        min-height: 88px;
     }
 
-    .presence-messenger h4 {
+    .presence-messenger__checkbox h4 {
         font-size: 16px;
         line-height: 24px;
         margin-bottom: 10px;
+        font-style: normal;
+        font-weight: 400;
+        color: #1F1F1F;
+
     }
 
-    .choice-messenger :first-child {
-        margin-right: 10px;
-    }
-
-    .choice-messenger .messenger {
-        cursor:pointer;
-        background: #F2F2F2;
-        padding: 15px 20px;
-        border: 1px solid #E6E6E6;
-        border-radius: 20px;
+    .choice-networks__text p {
         font-style: normal;
         font-weight: 400;
         font-size: 16px;
         line-height: 24px;
+        letter-spacing: -0.01em;
+        color: #1F1F1F;
+        margin-bottom: 26px;
     }
 
-    .selected-messenger {
+    .selected-messenger_action {
         background: rgba(45, 87, 169, 0.1) !important;
         border: 1px solid #2D57A9 !important;
     }
@@ -175,10 +199,6 @@
         .feedback h2 {
             font-size: 40px;
         }
-
-        .feedback p {
-            font-size: 28px;
-        }
     }
 
     @media (max-width: 1150px) {
@@ -186,6 +206,7 @@
             width: 60%;
         }
     }
+
 
     @media (max-width: 850px) {
         .feedback h2 {

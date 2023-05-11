@@ -12,11 +12,14 @@
             </label>
         </form>
         <div class="ransom_presence-messenger">
-            <h4>Наличие месседжера:</h4>
-            <div class="ransom_choice-messenger">
-                <button class="messenger">WhatsApp</button>
-                <button class="messenger">Viber</button>
+            <div class="ransom-networks__text">
+                <p>Наличие месседжера:</p>
             </div>
+            <label  for="checkbox-1">WhatsApp</label>
+            <input class="modal-button_checkbox " id="checkbox-1" type="checkbox"
+                   value="WhatsApp">
+            <label for="checkbox-2">Viber</label>
+            <input class="modal-button_checkbox" id="checkbox-2" type="checkbox" value="WhatsApp">
         </div>
         <label>
             <textarea placeholder="Название МРТ/КТ, год выпуска, в каком городе находитесь?" class="ransom-form_textarea" name="text"></textarea>
@@ -31,7 +34,7 @@
     .ransom {
         background-image: url("/img/img-ransom.jpg");
         background-repeat: no-repeat;
-        margin: 0 auto 120px auto;
+        margin: 0 auto 117px auto;
         width: 100%;
         border-radius: 25px;
         max-width: 1456px;
@@ -43,6 +46,7 @@
     }
 
     .ransom-title h1 {
+        font-family: 'Inter-Bold';
         width: 100%;
         max-width: 442px;
         font-style: normal;
@@ -76,13 +80,22 @@
         font-size: 18px;
         line-height: 22px;
         letter-spacing: -0.01em;
-        font-feature-settings: 'pnum' on, 'lnum' on;
         color: #2D57A9;
-        margin-bottom: 24px;
+        margin-bottom: 21px;
     }
 
     .ransom_presence-messenger {
-        margin-bottom: 24px;
+        margin-bottom: 39px;
+    }
+
+    .ransom-networks__text p{
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -0.01em;
+        color: #1F1F1F;
+        margin-bottom: 26px;
     }
 
     .ransom_presence-messenger h4 {
@@ -131,6 +144,24 @@
     .ransom-form .messenger-button {
         width: 100% !important;
     }
+
+    .ransom_presence-messenger .modal-button_checkbox[type="checkbox"] {
+        display: none;
+    }
+
+    .ransom_presence-messenger label {
+        cursor: pointer;
+        background: transparent;
+        padding: 17px;
+        border: 1px solid #E6E6E6;
+        border-radius: 20px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        margin-right: 8px;
+    }
+
 
     /*-------media--------*/
 
