@@ -13,15 +13,24 @@
 
 <body>
 <div class="container inputs">
-	@@include("home/header/header.html")
+	<!--	@@include("home/header/header.html")-->
+	<!--	@@include("home/product-overview/product-overview.html")-->
+	<!--	<div class="container-block">-->
+	<!--&lt;!&ndash;		@@include("grocery-list/grocery-list.html")&ndash;&gt;-->
+	<!--&lt;!&ndash;		@@include("description-card/description-card.html")&ndash;&gt;-->
+	<!--		@@include("home/feedback/feedback.html")-->
+	<!--		@@include("home/ransom/ransom.html")-->
+	<!--	</div>-->
+	<!--	@@include("home/footer/footer.html")-->
+	@@include("../html-media/header-modal/header-modal.html")
 	@@include("home/product-overview/product-overview.html")
 	<div class="container-block">
-<!--		@@include("grocery-list/grocery-list.html")-->
-<!--		@@include("description-card/description-card.html")-->
+		@@include("../html-media/description-card-media/description-card-media.html")
+		@@include("../html-media/grocery-list-media/grocery-list-media.html")
 		@@include("home/feedback/feedback.html")
 		@@include("home/ransom/ransom.html")
 	</div>
-	@@include("home/footer/footer.html")
+	@@include("../html-media/footer-media/footer-media.html")
 </div>
 
 </body>
