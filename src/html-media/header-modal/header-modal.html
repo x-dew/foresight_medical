@@ -42,13 +42,11 @@
     const menu = document.getElementById('menu');
     const menu__link = document.getElementById('menu-block')
     const menu__close = document.getElementById('menu-close_media')
-    const header = document.getElementById('header')
 
     const close = () => {
         menu__close.classList.remove('menu_active-close')
         menu.classList.remove('menu-button_close')
         menu__link.classList.remove('menu_active')
-        header.classList.remove('menu-fixed')
         document.body.style.overflow = 'scroll'
     }
 
@@ -57,7 +55,6 @@
             menu.classList.add('menu-button_close')
             menu__close.classList.add('menu_active-close')
             menu__link.classList.add('menu_active')
-            header.classList.add('menu-fixed')
             document.body.style.overflow = 'hidden'
         }
     })
@@ -73,7 +70,7 @@
 
 </script>
 <style>
-    @media (max-width: 641px){
+
         .header-media {
             width: 100%;
             padding: 0 16px;
@@ -96,12 +93,12 @@
             width: 100%;
             max-width: 640px;
             background: #07131B;
+            z-index: 111;
             height: 100vh;
             min-height: 611px;
             max-height: 611px;
             transition: all 0.3s ease-in-out;
             transform: translateX(375px);
-            border-radius: 0 0 10px 10px;
         }
 
         .menu-list_text {
@@ -163,11 +160,6 @@
             transform: translateX(-60px)
         }
 
-        .menu-fixed {
-            position: fixed;
-            z-index: 111;
-        }
-
         .line-button_open {
             width: 14px;
             height: 2px;
@@ -182,6 +174,7 @@
         .menu_phone li {
             display: flex;
             justify-content: center;
+            align-items: center;
         }
 
         .media-menu_block .menu-line {
@@ -208,6 +201,5 @@
             padding: 8px 16px 8px 12px;
             margin: 0;
         }
-    }
 
 </style>

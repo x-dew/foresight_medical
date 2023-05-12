@@ -42,7 +42,7 @@
                         </ul>
                         <ul class=" menu_phone menu-list">
                             <li class="flex">
-                                <img src="/img/phone.png" alt="phone">
+                                <img src="/img/phone-image.svg" alt="phone">
                                 <a href="tel:+8 800 550 68 12">8 800 550 68 12</a>
                             </li>
                         </ul>
@@ -57,13 +57,12 @@
     const menu = document.getElementById('menu');
     const menu__link = document.getElementById('menu-block')
     const menu__close = document.getElementById('menu-close')
-    const header = document.getElementById('header')
+
 
     const close = () => {
         menu__close.classList.remove('menu_active-close')
         menu.classList.remove('menu-button_close')
         menu__link.classList.remove('menu_active')
-        header.classList.remove('menu-fixed')
         document.body.style.overflowY = 'scroll'
     }
 
@@ -73,7 +72,6 @@
                 menu.classList.add('menu-button_close')
                 menu__close.classList.add('menu_active-close')
                 menu__link.classList.add('menu_active')
-                header.classList.add('menu-fixed')
                 document.body.style.overflowY = 'hidden'
             }
 
@@ -214,15 +212,10 @@
 
     .fontText{
         font-family: 'Helvetica Neue', sans-serif;
-        font-size: 15px;
+        font-weight: 600!important;
     }
 
     /*---------media__menu--------*/
-    .menu-fixed {
-        position: fixed;
-        z-index: 111;
-        top: 0;
-    }
 
     .menu-button_close {
         display: none;
