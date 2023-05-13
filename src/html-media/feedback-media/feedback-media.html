@@ -4,16 +4,25 @@
         <p>Оставьте вашу заявку и мы свяжемся с вами</p>
     </div>
     <div class="feedback-form_media">
-        <form class="feedback-form_inputs">
-            <label>
-                <input type="text" placeholder="Имя" value="Иван" name="name">
-            </label>
-            <label>
-                <input type="tel" placeholder="Телефон" name="phone">
-            </label>
-            <label>
-                <input type="email" placeholder="Электронная почта" name="email">
-            </label>
+        <form class="feedback-form_inputs-date">
+            <div class="feedback-form_inputs-media">
+                <label>
+                    <input type="text" placeholder="Имя" value="Иван" name="name">
+                    <span class="error">error</span>
+                </label>
+            </div>
+            <div class="feedback-form_inputs-media">
+                <label>
+                    <input type="tel" placeholder="Телефон" name="phone">
+                    <span class="error">error</span>
+                </label>
+            </div>
+            <div class="feedback-form_inputs-media">
+                <label>
+                    <input type="email" placeholder="Электронная почта" name="email">
+                    <span class="error">error</span>
+                </label>
+            </div>
         </form>
         <label>
             <textarea placeholder="Текст обращения" class="feedback-form_media-textarea" name="text"></textarea>
@@ -21,14 +30,20 @@
     </div>
     <div class="feedback-messenger_media">
         <div class="presence-messenger__checkbox-media">
-            <div class="feedback-networks__text">
+            <div class="choice-networks__text">
                 <p>Наличие месседжера:</p>
+                <input type="hidden" name="messenger[]" value=""/>
             </div>
-            <label class="selected-messenger_action" for="checkbox-1">WhatsApp</label>
-            <input class="modal-button_checkbox " id="checkbox-1" type="checkbox"
-                   value="WhatsApp">
-            <label for="checkbox-2">Viber</label>
-            <input class="modal-button_checkbox" id="checkbox-2" type="checkbox" value="WhatsApp">
+            <div class="presence-messenger__checkbox-date">
+                <label class="check-container">WhatsApp
+                    <input type="checkbox" name="messenger[]" value="WhatsApp">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="check-container">Viber
+                    <input type="checkbox" name="messenger[]" value="Viber">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
         </div>
         <div class="messenger-button">
             <button type="submit">Отправить</button>
@@ -36,6 +51,67 @@
     </div>
 </div>
 <style>
+    .check-container {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        cursor: pointer;
+        font-size: 22px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .check-container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: transparent;
+        border-radius: 10px;
+    }
+
+    .check-container:hover input ~ .checkmark {
+        border: 1px solid #E6E6E6;
+    }
+
+    .check-container input:checked ~ .checkmark {
+        background: rgba(45, 87, 169, 0.1);
+        border: 1px solid #2D57A9;
+    }
+
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+    .feedback-form_inputs-media {
+        position: relative;
+    }
+
+    .feedback-form_inputs-media span {
+        position: absolute;
+        top: 54px;
+        left: 0;
+        color: #b30000;
+    }
+
+    .presence-messenger__checkbox-date {
+        display: flex;
+        margin-top: 13px;
+    }
+
     .feedback-media {
         padding: 25px;
         width: 100%;
@@ -46,7 +122,8 @@
         margin-bottom: 78px;
     }
 
-    .feedback-media_text h3{
+    .feedback-media_text h3 {
+        font-family: 'Inter-Bold', sans-serif;
         font-style: normal;
         font-weight: 600;
         font-size: 28px;
@@ -55,7 +132,9 @@
         color: #1F1F1F;
         margin-bottom: 12px;
     }
-    .feedback-media_text p{
+
+    .feedback-media_text p {
+        font-family: "Inter-Bold", sans-serif;
         font-style: normal;
         font-weight: 500;
         font-size: 16px;
@@ -67,11 +146,13 @@
         max-width: 270px;
         margin-bottom: 30px;
     }
+
     .feedback-form_media input {
+        font-family: 'Inter-Reqular',sans-serif;
         cursor: pointer;
         border: 1px solid #E6E6E6;
-        border-radius: 20px;
-        padding: 18px;
+        border-radius: 10px;
+        padding: 19px 19px 19px 20px;
         width: 100%;
         font-style: normal;
         font-weight: 400;
@@ -80,23 +161,23 @@
         letter-spacing: -0.01em;
         font-feature-settings: 'pnum' on, 'lnum' on;
         color: #1F1F1F;
-        margin-bottom: 17px;
+        margin-bottom: 15px;
     }
 
     .feedback-form_media-textarea {
         cursor: pointer;
         background: #FFFFFF;
         border: 1px solid #E6E6E6;
-        border-radius: 20px;
+        border-radius: 10px;
         display: flex;
         flex-direction: row;
         align-items: flex-start;
-        padding: 14px;
+        padding: 15px 20px;
         gap: 10px;
         width: 100%;
         resize: none;
         height: 100%;
-        min-height: 132px;
+        min-height: 132px!important;
         font-style: normal;
         font-weight: 400;
         font-size: 18px;
@@ -104,30 +185,22 @@
         letter-spacing: -0.01em;
         font-feature-settings: 'pnum' on, 'lnum' on;
         color: #A3A4A7;
-        margin-bottom: 13px;
-    }
-
-    .presence-messenger__checkbox-media .modal-button_checkbox[type="checkbox"] {
-        display: none;
+        margin-bottom: 19px;
     }
 
     .presence-messenger__checkbox-media label {
         cursor: pointer;
         background: transparent;
-        padding: 17px;
+        padding: 15px 20px;
         border: 1px solid #E6E6E6;
-        border-radius: 20px;
+        border-radius: 10px;
         font-style: normal;
         font-weight: 400;
         font-size: 16px;
         line-height: 24px;
-        margin-right: 8px;
+        margin-right: 7px;
     }
 
-    .selected-messenger_action {
-        background: rgba(45, 87, 169, 0.1) !important;
-        border: 1px solid #2D57A9 !important;
-    }
 
     .feedback-networks__text p {
         font-style: normal;
@@ -137,12 +210,14 @@
         letter-spacing: -0.01em;
         color: #1F1F1F;
         margin-bottom: 26px;
+
     }
 
     .feedback-form_media-textarea::placeholder {
+        font-family: 'Inter-Reqular', sans-serif;
         font-style: normal;
         font-weight: 400;
-        font-size: 18px;
+        font-size: 16px;
         line-height: 22px;
         letter-spacing: -0.01em;
         font-feature-settings: 'pnum' on, 'lnum' on;
@@ -150,28 +225,11 @@
     }
 
     .presence-messenger__checkbox-media {
-        margin-bottom: 45px;
+        margin-bottom: 28px;
     }
 
     .choice-messenger :first-child {
         margin-right: 10px;
-    }
-
-    .choice-messenger .messenger {
-        cursor: pointer;
-        background: #F2F2F2;
-        padding: 15px 20px;
-        border: 1px solid #E6E6E6;
-        border-radius: 20px;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 24px;
-    }
-
-    .selected-messenger {
-        background: rgba(45, 87, 169, 0.1) !important;
-        border: 1px solid #2D57A9 !important;
     }
 
     .messenger-button {
@@ -183,12 +241,18 @@
         cursor: pointer;
         padding: 25px 40px;
         background: #2D57A9;
-        border-radius: 20px;
+        border-radius: 10px;
         font-size: 16px;
+        font-family: 'Inter-Bold', sans-serif;
         line-height: 24px;
         color: #FFFFFF;
         border: none;
         width: 100%;
         text-transform: uppercase;
+    }
+    @media (max-width: 376px) {
+        .messenger-button button{
+            max-width: none;
+        }
     }
 </style>
