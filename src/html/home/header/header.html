@@ -6,15 +6,17 @@
             </div>
             <div class="header_menu">
                 <nav class="main-menu flex-align">
-                    <ul class="menu-list">
-                        <li><a class="menu-list_text" href="">МРТ</a></li>
-                        <li><a class="menu-list_text" href="">КТ</a></li>
-                        <li class="menu-line"></li>
-                        <li class="fontText"><a class="menu-list_text" href="">Лизинг</a></li>
-                        <li class="fontText"><a class="menu-list_text" href="">Спецпредложения</a></li>
-                        <li class="fontText"><a class="menu-list_text" href="">Контакты</a></li>
-                    </ul>
-                    <ul class="menu-list menu_phone">
+                    <div class="menu-list">
+                        <a class="menu-list_text" href="">МРТ</a>
+                        <a class="menu-list_text" href="">КТ</a>
+                        <div class="menu-line"></div>
+                        <div>
+                            <a class="menu-list_text fontText" href="">Лизинг</a>
+                            <a class="menu-list_text fontText" href="">Спецпредложения</a>
+                            <a class="menu-list_text fontText" href="">Контакты</a>
+                        </div>
+                    </div>
+                    <ul class=" menu_phone">
                         <li class="flex">
                             <img src="/img/phone-header.svg" alt="phone">
                             <a href="tel:+8 800 550 68 12">8 800 550 68 12</a>
@@ -40,7 +42,7 @@
                             <li><a class="menu-list_text" href="">Спецпредложения</a></li>
                             <li><a class="menu-list_text" href="">Контакты</a></li>
                         </ul>
-                        <ul class=" menu_phone menu-list">
+                        <ul class=" menu_phone">
                             <li class="flex">
                                 <img src="/img/phone-image.svg" alt="phone">
                                 <a href="tel:+8 800 550 68 12">8 800 550 68 12</a>
@@ -112,8 +114,7 @@
 
     .header-logo img {
         width: 100%;
-        max-width: 250px;
-        margin-left: 2px;
+        max-width: 260px;
     }
 
     .media-menu {
@@ -130,7 +131,7 @@
         width: 100%;
         max-width: 190px;
         margin-left: 16px;
-        padding-left: 24px !important;
+        padding: 9px 0 9px 24px;
     }
 
     .header_menu {
@@ -139,6 +140,7 @@
 
     .main-menu {
         justify-content: flex-end;
+        margin-top: -3px;
     }
 
     .menu_phone a {
@@ -146,15 +148,18 @@
         font-weight: 500;
         font-size: 14px !important;
         line-height: 150%;
-        margin-left: 10px;
-    }
-
-    .menu_phone a {
-        margin-left: 0 !important;
+        margin-left: 3px !important;
+        margin-top: 3px;
+        text-decoration: none;
+        color: white;
+        align-items: center;
+        list-style-type: none;
     }
 
     .menu_phone img {
         margin-right: 15px;
+        margin-top: 5px;
+        margin-left: -8px;
     }
 
     .menu-list {
@@ -162,28 +167,38 @@
         align-items: center;
         border: 1px solid rgba(255, 255, 255, 0.5);
         border-radius: 48px;
-        padding: 10px 0 10px 29px;
+        padding: 9px 0px 9px 17px;
+    }
+
+    .menu_phone {
+        display: flex;
+        align-items: center;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-radius: 48px;
+        padding: 6px 0 6px 29px;
     }
 
     .menu-list a {
         text-decoration: none;
         color: white;
         font-style: normal;
+        margin-right: 22px;
         font-weight: 500;
         font-size: 16px;
         line-height: 24px;
         align-items: center;
+        list-style-type: none;
     }
 
-    .header_menu li {
-        margin-right: 20px;
-        list-style-type: none;
+    .menu-list a:last-child {
+        margin-right: 0;
     }
 
     .menu-line {
         width: 1px;
         height: 12px;
         background: #EA3C3D;
+        margin-right: 10px;
     }
 
     .menu-button_open {
@@ -211,9 +226,10 @@
         align-items: center;
     }
 
-    .fontText{
-        font-family: 'Inter-Bold', sans-serif;
-        font-weight: 600!important;
+    .fontText {
+        font-family: 'Inter-Reqular', sans-serif;
+        font-weight: 400 !important;
+        margin-right: 14px !important;
     }
 
     /*---------media__menu--------*/
@@ -223,7 +239,7 @@
         position: absolute;
         z-index: 3;
         top: 30px;
-        right: -19px;
+        right: -45px;
         transition: all 0.3s ease-in-out;
         transform: translateX(100px)
 
@@ -292,27 +308,25 @@
         .menu_phone {
             width: 190px;
         }
-        .menu_phone a{
-            font-size: 11px;
+
+        .header_menu a {
+            font-size: 11px !important;
         }
     }
 
     @media (max-width: 1167px) {
         .menu-list a {
-            font-size: 12px !important;
+            font-size: 10px !important;
+        }
+
+        .header_menu a {
+            font-size: 11px !important;
         }
 
         .header-img {
             width: 100%;
 
         }
-
-        .main-menu {
-            margin-left: 15px;
-        }
-    }
-
-    @media (max-width: 1045px) {
 
         .header-img {
             width: 80%;
@@ -323,6 +337,15 @@
             width: 100%;
             max-width: 200px;
         }
+
+        .main-menu {
+            margin-left: 15px;
+        }
+    }
+
+    @media (max-width: 1071px) {
+
+
     }
 
     @media (max-width: 850px) {

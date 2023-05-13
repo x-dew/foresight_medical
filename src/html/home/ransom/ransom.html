@@ -1,36 +1,125 @@
+[[!FormIt?
+&hooks=`spam,email,redirect`
+&emailTpl=`RansomMailTpl`
+&emailSubject=`Выкуп МРТ`
+&emailTo=`web.aliev@yandex.ru`
+&emailFrom=`info@itconsul-msk.store`
+&redirectTo=`1`
+&submitVar=`condition`
+&validate=`phone:required`]]
 <div class="ransom">
     <div class="ransom-title">
         <h1>Выкупим Ваш МРТ/КТ</h1>
     </div>
     <div class="ransom-form">
-        <form class="ransom-form_inputs">
+        <form action="[[~[[*id]]]]#ransom" method="post" class="ransom-form_inputs">
+
+            <div id="ransom">
+                <input type="hidden" name="nospam:blank" value=""/>
+            </div>
             <label>
-                <input type="text" placeholder="Имя" value="Владимир" name="name">
+                <input type="text" placeholder="Имя" name="name" id="name" value="[[!+fi.name]]">
+                <span class="error">[[!+fi.error.name]]</span>
             </label><br>
             <label>
-                <input type="tel" placeholder="Телефон" name="phone">
+                <input type="tel" placeholder="Телефон" name="phone" id="phone" value="[[!+fi.phone]]">
+                <span class="error">[[!+fi.error.phone]]</span>
             </label>
-        </form>
-        <div class="ransom_presence-messenger">
-            <div class="ransom-networks__text">
-                <p>Наличие месседжера:</p>
+
+            <div class="ransom_presence-messenger">
+                <div class="ransom-networks__text">
+                    <p>Наличие месседжера:</p>
+                    <input type="hidden" name="messenger[]" value=""/>
+                </div>
+                <div class="ransom_presence-messenger-date">
+                    <label class="check-container">WhatsApp
+                        <input type="checkbox" name="messenger[]" value="WhatsApp">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="check-container">Viber
+                        <input type="checkbox" name="messenger[]" value="Viber">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
             </div>
-            <label  for="checkbox-1">WhatsApp</label>
-            <input class="modal-button_checkbox " id="checkbox-1" type="checkbox"
-                   value="WhatsApp">
-            <label for="checkbox-2">Viber</label>
-            <input class="modal-button_checkbox" id="checkbox-2" type="checkbox" value="WhatsApp">
-        </div>
-        <label>
-            <textarea placeholder="Название МРТ/КТ, год выпуска, в каком городе находитесь?" class="ransom-form_textarea" name="text"></textarea>
-        </label>
-        <div class="messenger-button">
-            <button type="submit">Отправить</button>
-        </div>
+            <label>
+            <textarea placeholder="Название МРТ/КТ, год выпуска, в каком городе находитесь?"
+                      class="ransom-form_textarea"
+                      id="condition" name="condition" value="[[!+fi.condition]]">[[!+fi.condition]]</textarea>
+            </label>
+            <div class="messenger-button">
+                <button type="submit">Отправить</button>
+            </div>
+        </form>
     </div>
 </div>
 
 <style>
+
+    .ransom_presence-messenger-date {
+        display: flex;
+    }
+
+    .check-container {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        cursor: pointer;
+        font-size: 22px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .check-container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: transparent;
+        border-radius: 20px;
+    }
+
+    .check-container:hover input ~ .checkmark {
+        border: 1px solid #E6E6E6;
+    }
+
+    .check-container input:checked ~ .checkmark {
+        background: rgba(45, 87, 169, 0.1);
+        border: 1px solid #2D57A9;
+    }
+
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+    .check-container input:checked ~ .checkmark:after {
+        display: block;
+    }
+
+    .ransom-form_inputs label {
+        position: relative;
+    }
+
+    .ransom-form_inputs label .error{
+        position: absolute;
+        top: 47px;
+        left: 0px;
+        color: #b30101;
+    }
+
     .ransom {
         background-image: url("/img/img-ransom.jpg");
         background-repeat: no-repeat;
@@ -73,7 +162,7 @@
         cursor: pointer;
         border: 1px solid #E6E6E6;
         border-radius: 20px;
-        padding: 24px;
+        padding: 23px;
         width: 100%;
         font-style: normal;
         font-weight: 400;
@@ -81,21 +170,25 @@
         line-height: 22px;
         letter-spacing: -0.01em;
         color: #2D57A9;
-        margin-bottom: 21px;
+        margin-bottom: 24px;
     }
 
     .ransom_presence-messenger {
-        margin-bottom: 39px;
+        margin-bottom: 23px;
     }
 
-    .ransom-networks__text p{
+    .ransom-networks__text p {
         font-style: normal;
         font-weight: 400;
         font-size: 16px;
         line-height: 24px;
         letter-spacing: -0.01em;
         color: #1F1F1F;
-        margin-bottom: 26px;
+        margin-bottom: 11px;
+    }
+
+    .ransom_presence-messenger label:last-child {
+        margin-left: 4px;
     }
 
     .ransom_presence-messenger h4 {
@@ -138,21 +231,17 @@
         letter-spacing: -0.01em;
         font-feature-settings: 'pnum' on, 'lnum' on;
         color: #A3A4A7;
-        margin-bottom: 36px;
+        margin-bottom: 35px;
     }
 
     .ransom-form .messenger-button {
         width: 100% !important;
     }
 
-    .ransom_presence-messenger .modal-button_checkbox[type="checkbox"] {
-        display: none;
-    }
-
     .ransom_presence-messenger label {
         cursor: pointer;
         background: transparent;
-        padding: 17px;
+        padding: 14px 18px !important;
         border: 1px solid #E6E6E6;
         border-radius: 20px;
         font-style: normal;
