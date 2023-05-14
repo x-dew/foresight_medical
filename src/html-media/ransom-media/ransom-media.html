@@ -1,46 +1,3 @@
-<div class="ransom-media">
-    <div class="ransom-media_title">
-        <h3>Обратная связь</h3>
-    </div>
-    <div class="ransom-form_media">
-        <form class="ransom-form_inputs">
-            <label>
-                <input type="text" placeholder="Имя" value="Иван" name="name">
-                <span class="error">error</span>
-            </label>
-            <label>
-                <input type="tel" placeholder="Телефон" name="phone">
-                <span class="error">error</span>
-            </label>
-        </form>
-
-    </div>
-    <div class="ransom-messenger_media">
-        <div class="ransom-messenger__checkbox-media">
-            <div class="choice-networks__text">
-                <p>Наличие месседжера:</p>
-                <input type="hidden" name="messenger[]" value=""/>
-            </div>
-            <div class="ransom-messenger__checkbox-date">
-                <label class="check-container">WhatsApp
-                    <input type="checkbox" name="messenger[]" value="WhatsApp">
-                    <span class="checkmark"></span>
-                </label>
-                <label class="check-container">Viber
-                    <input type="checkbox" name="messenger[]" value="Viber">
-                    <span class="checkmark"></span>
-                </label>
-            </div>
-        </div>
-        <div class="ransom-form_media-textarea-block">
-					<textarea placeholder="Название МРТ, год выпуска, в каком городе находитесь?"
-                              class="ransom-form_media-textarea" name="text"></textarea>
-        </div>
-        <div class="messenger-button">
-            <button type="submit">Отправить</button>
-        </div>
-    </div>
-</div>
 <style>
     .check-container {
         display: block;
@@ -245,3 +202,46 @@
         }
     }
 </style>
+<div class="ransom-media">
+    <div class="ransom-media_title">
+        <h3>Обратная связь</h3>
+    </div>
+    <div class="ransom-form_media">
+        <form class="ransom-form_inputs">
+            <label>
+                <input type="text" placeholder="Имя" value="Иван" name="name">
+                <span class="error">error</span>
+            </label>
+            <label>
+                <input type="tel" placeholder="Телефон" name="phone">
+                <span class="error">error</span>
+            </label>
+        </form>
+
+    </div>
+    <div class="ransom-messenger_media">
+        <div class="ransom-messenger__checkbox-media">
+            <div class="choice-networks__text">
+                <p>Наличие месседжера:</p>
+                <input type="hidden" name="messenger[]" value=""/>
+            </div>
+            <div class="ransom-messenger__checkbox-date">
+                <label class="check-container">WhatsApp
+                    <input type="checkbox" name="messenger[]" value="WhatsApp">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="check-container">Viber
+                    <input type="checkbox" name="messenger[]" value="Viber">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+        </div>
+        <div class="ransom-form_media-textarea-block">
+					<textarea placeholder="Название МРТ, год выпуска, в каком городе находитесь?"
+                              class="ransom-form_media-textarea" name="text"></textarea>
+        </div>
+        <div class="messenger-button">
+            <button type="submit">Отправить</button>
+        </div>
+    </div>
+</div>
