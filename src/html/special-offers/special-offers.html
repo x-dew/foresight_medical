@@ -1,0 +1,329 @@
+<style>
+    .specialOffers {
+        margin-top: 80px;
+    }
+
+    .specialOffers__title h1 {
+        font-weight: 600;
+        font-size: 56px;
+        line-height: 120%;
+        color: #1F1F1F;
+        font-family: 'Inter-Bold',sans-serif;
+    }
+
+    .specialOffers__title p {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 150%;
+        color: #83898D;
+        margin-top: 15px;
+    }
+
+    .specialOffers__aside {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 25px 30px 25px 25px;
+        gap: 20px;
+        max-width: 1282px;
+        width: 100%;
+        min-height: 80px;
+        background: #2D57A9;
+        border-radius: 25px;
+        margin-top: 35px;
+    }
+
+    .specialOffers__aside p {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 150%;
+        color: #FFFFFF;
+        letter-spacing: -0.01px;
+    }
+
+    .specialOffers__data {
+        margin-top: 80px;
+    }
+
+    .specialOffers__data > div:not(:first-child) {
+        margin-top: 26px;
+    }
+
+    .specialOffers__dataBlock {
+        max-width: 1456px;
+        min-height: 300px;
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+    }
+
+    .specialOffers__dataBlock_info {
+        display: flex;
+        align-items: center;
+    }
+
+    .specialOffers__dataBlock:hover {
+        background: #F2F2F2;
+        border-radius: 25px;
+    }
+
+    .specialOffers__dataBlock:hover .specialOffers__dataBlock_buttonBig {
+        display: flex!important;
+    }
+
+    .specialOffers__dataBlock_buttonBig {
+        display: none;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+        align-items: center;
+        text-align: center;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        flex-direction: row;
+        justify-content: center;
+        padding: 25px 40px;
+        gap: 4px;
+        width: 248px;
+        height: 74px;
+        background: #EA3C3D;
+        border-radius: 20px;
+        margin:0 45px 49px 0;
+        cursor: pointer;
+    }
+
+    .specialOffers__dataBlock__button img {
+        border-radius: 25px;
+    }
+
+    .specialOffers__dataBlock__button a {
+        padding: 5px 14px;
+        position: absolute;
+        width: 69px;
+        height: 30px;
+        margin-top: 15px;
+        margin-left: 15px;
+        background: #EA3C3D;
+        border-radius: 10px;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 20px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #FFFFFF;
+    }
+
+    .specialOffers__dataBlock_desc {
+        margin-left: 55px;
+    }
+
+    .specialOffers__dataBlock_desc_name_title {
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 39px;
+        color: #020406;
+        margin-top: -6px;
+        font-family: 'Inter-Bold',sans-serif;
+    }
+
+    .specialOffers__dataBlock_desc_name_subtitle {
+        margin-top: 10px;
+        display: flex;
+    }
+
+    .specialOffers__dataBlock_desc_name_subtitle p:first-child {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 130%;
+        display: flex;
+        align-items: center;
+        color: #EA3C3D;
+        font-family: 'Inter-Bold',sans-serif;
+    }
+
+    .specialOffers__dataBlock_desc_name_subtitle p:last-child {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 30px;
+        display: flex;
+        align-items: center;
+        color: #999999;
+        margin-left: 5px;
+    }
+
+    .specialOffers__dataBlock_desc_list {
+        margin-top: 31px;
+    }
+
+    .specialOffers__dataBlock_desc_list_text {
+        display: flex;
+        margin-top: 5px;
+    }
+
+    .specialOffers__dataBlock_desc_list_text p:first-child {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 30px;
+        display: flex;
+        align-items: center;
+        color: #999999;
+    }
+
+    .specialOffers__dataBlock_desc_list_text p:last-child {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 30px;
+        display: flex;
+        align-items: center;
+        color: #020406;
+        margin-left: 10px;
+    }
+
+    .specialOffers__meta {
+        margin: 76px 0 80px 0;
+    }
+
+    .specialOffers__meta p {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 150%;
+        color: #83898D;
+    }
+
+    /*-------media---------*/
+
+    @media (max-width: 1050px) {
+
+        .specialOffers__dataBlock_info {
+            flex-direction: column;
+            align-items: start;
+        }
+
+        .specialOffers__dataBlock {
+            flex-direction: column;
+            align-items: start;
+        }
+
+        .specialOffers__dataBlock_desc {
+            margin: 20px 0 0 0;
+        }
+
+        .specialOffers__dataBlock_buttonBig {
+            margin: 30px 0 0 0;
+        }
+
+        .specialOffers__dataBlock:hover {
+            background: #FFFFFF;
+        }
+
+        .specialOffers {
+            margin-top: 40px;
+        }
+
+        .specialOffers__data {
+            margin-top: 60px;
+        }
+
+        .specialOffers__data > div:not(:first-child) {
+            margin-top: 60px;
+        }
+
+        .specialOffers__dataBlock_buttonBig {
+            display: flex!important;
+        }
+    }
+</style>
+<div class="specialOffers">
+    <div class="specialOffers__title">
+        <h1>Спецпредложения</h1>
+        <p>
+            Уникальная акция на компьютерные томографы <br>
+            Aquilion 64 и Aquilion CX128 со скидкой в Москве*
+        </p>
+    </div>
+    <div class="specialOffers__aside">
+        <img src="/img/subtract-image.svg" alt="subtract">
+        <p>
+            К каждому данному компьютерному томограу идет в
+            подарок комплект новой рентгеновской трубки и теплообменник
+        </p>
+    </div>
+    <div class="specialOffers__data">
+        <div class="specialOffers__dataBlock">
+            <div class="specialOffers__dataBlock_info">
+                <div class="specialOffers__dataBlock__button">
+                    <a href="#">акция</a>
+                    <img src="/img/rectangle-1-image.jpg" alt="rectangle">
+                </div>
+                <div class="specialOffers__dataBlock_desc">
+                    <div class="specialOffers__dataBlock_desc_name">
+                        <p class="specialOffers__dataBlock_desc_name_title">КТ Aquilion 64 апгрейд до CX128</p>
+                        <div class="specialOffers__dataBlock_desc_name_subtitle">
+                            <p>10 000 000 ₽</p>
+                            <p>(Под ключ)</p>
+                        </div>
+                    </div>
+                    <div class="specialOffers__dataBlock_desc_list">
+                        <div class="specialOffers__dataBlock_desc_list_text">
+                            <p>Год выпуска:</p>
+                            <p>2010</p>
+                        </div>
+                        <div class="specialOffers__dataBlock_desc_list_text">
+                            <p>Состояние:</p>
+                            <p>Восстановленный</p>
+                        </div>
+                        <div class="specialOffers__dataBlock_desc_list_text">
+                            <p>Гарантия:</p>
+                            <p>1 год</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="specialOffers__dataBlock_buttonBig">
+                <p>Купить томограф</p>
+            </div>
+        </div>
+        <div class="specialOffers__dataBlock">
+            <div class="specialOffers__dataBlock_info">
+                <div class="specialOffers__dataBlock__button">
+                    <a href="#">акция</a>
+                    <img src="/img/rectangle-2-image.jpg" alt="rectangle">
+                </div>
+                <div class="specialOffers__dataBlock_desc">
+                    <div class="specialOffers__dataBlock_desc_name">
+                        <p class="specialOffers__dataBlock_desc_name_title">КТ Aquilion 64</p>
+                        <div class="specialOffers__dataBlock_desc_name_subtitle">
+                            <p>11 000 000 ₽</p>
+                            <p>(Под ключ)</p>
+                        </div>
+                    </div>
+                    <div class="specialOffers__dataBlock_desc_list">
+                        <div class="specialOffers__dataBlock_desc_list_text">
+                            <p>Год выпуска:</p>
+                            <p>2010</p>
+                        </div>
+                        <div class="specialOffers__dataBlock_desc_list_text">
+                            <p>Состояние:</p>
+                            <p>Восстановленный</p>
+                        </div>
+                        <div class="specialOffers__dataBlock_desc_list_text">
+                            <p>Гарантия:</p>
+                            <p>1 год</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="specialOffers__dataBlock_buttonBig">
+                <p>Купить томограф</p>
+            </div>
+        </div>
+    </div>
+    <div class="specialOffers__meta">
+        <p>*Акция действует до 31 июля 2023 года</p>
+    </div>
+</div>
