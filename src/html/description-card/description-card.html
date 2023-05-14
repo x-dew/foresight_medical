@@ -44,14 +44,14 @@
                     <span>Цена «Под ключ»</span>
                 </div>
                 <ul class="description-card__list">
-                    <li><img src="/img/product-small-image.jpg" alt="photo"></li>
-                    <li><img src="/img/product-small-1-image.jpg" alt="photo"></li>
+                    <li><img src="/img/product-small-3-image.jpg" alt="photo"></li>
                     <li><img src="/img/product-small-2-image.jpg" alt="photo"></li>
+                    <li><img src="/img/product-small-1-image.jpg" alt="photo"></li>
                     <li>
                         <div class="description-card__list-text">
                             <p>+2</p>
                         </div>
-                        <img src="/img/product-small-3-image.jpg" alt="photo">
+                        <img src="/img/product-small-image.jpg" alt="photo">
                     </li>
                 </ul>
             </div>
@@ -444,6 +444,7 @@
     }
 
     .description-card__link-back p {
+        font-family: 'Inter-Bold', sans-serif;
         font-style: normal;
         font-weight: 600;
         font-size: 14px;
@@ -461,7 +462,7 @@
     }
 
     .description-card__title {
-        margin: 30px 0;
+        margin: 31px 0 30px 0;
 
     }
 
@@ -491,8 +492,8 @@
 
     .description-card {
         position: relative;
-        padding-top: 42px;
-        margin: 0 auto 110px auto;
+        padding-top: 38px;
+        margin: 0 auto 120px auto;
     }
 
     .description-card::after {
@@ -509,6 +510,7 @@
     }
 
     .description-card__text-button {
+        font-family: 'Inter-Bold',sans-serif;
         cursor: pointer;
         border: none;
         width: 100%;
@@ -518,7 +520,7 @@
         display: flex;
         justify-content: center;
         text-align: center;
-        margin-bottom: 34px;
+        margin-bottom: 32px;
         font-style: normal;
         font-weight: 600;
         font-size: 16px;
@@ -533,7 +535,7 @@
         border-radius: 25px;
         width: 100%;
         max-width: 667px;
-        padding: 37px 40px 0 44px;
+        padding: 41px 40px 0 44px;
         text-align: center;
     }
 
@@ -555,7 +557,10 @@
         align-items: flex-end;
         color: #EA3C3D;
     }
-
+    .description-characteristics ul li:last-child{
+        margin-bottom: 19px;
+        margin-top: 3px;
+    }
     .description-characteristics ul {
         display: flex;
         flex-wrap: wrap;
@@ -565,7 +570,7 @@
 
     .description-card__text h4 {
         font-style: normal;
-        font-family: 'Inter-Bold';
+        font-family: 'Inter-Bold',sans-serif;
         font-weight: 600;
         font-size: 32px;
         line-height: 120%;
@@ -579,11 +584,11 @@
 
     .description-characteristics__text {
         border-bottom: 1px solid #CCCCCC;
-        padding-bottom: 25px;
-        margin-bottom: 25px;
+        padding-bottom: 24px;
+        margin-bottom: 24px;
         display: flex;
         align-items: flex-start;
-
+        width: 100%;
     }
 
     .description-characteristics__text:last-child {
@@ -604,6 +609,7 @@
     }
 
     .description-characteristics__text p {
+        font-family: 'Inter-Bold',sans-serif;
         font-style: normal;
         font-weight: 600;
         font-size: 20px;
@@ -619,13 +625,6 @@
         border-radius: 25px;
     }
 
-    .description-img__big img {
-        border-radius: 25px;
-    }
-
-    .description-card__list img {
-        border-radius: 25px
-    }
 
     .description-card__img {
         width: calc(50% - 15px);
@@ -638,30 +637,32 @@
         flex-direction: column;
     }
 
-    .description-card__price{
+    .description-card__price {
         display: flex;
         flex-direction: column;
         background: #FFFFFF;
         border-radius: 25px;
         width: max-content;
-        padding: 20px 38px;
-        margin-bottom: 33px;
+        padding: 18px 35px;
+        margin-bottom: 30px;
     }
 
-    .description-card__price p{
+    .description-card__price p {
+        font-family: 'Inter-Bold', sans-serif;
         font-style: normal;
         font-weight: 600;
         font-size: 32px;
-        line-height: 150%;
+        line-height: 109%;
         text-align: right;
         color: #EA3C3D;
+        margin-top: 10px;
     }
 
-    .description-card__price span{
+    .description-card__price span {
         font-style: normal;
         font-weight: 400;
         font-size: 20px;
-        line-height: 150%;
+        line-height: 175%;
         text-align: right;
         color: rgba(31, 31, 31, 0.5);
     }
@@ -672,15 +673,20 @@
         border-radius: 10px;
         width: 100px;
         height: 30px;
-        left: 12px;
-        top: 16px;
+        left: 13px;
+        top: 15px;
         display: flex;
         justify-content: center;
     }
 
+    .description-img__big img {
+    border-radius: 25px;
+    }
+
     .description-img__big-text p {
         font-style: normal;
-        font-weight: 600;
+        font-family: 'Inter-Reqular',sans-serif;
+        font-weight: 500;
         font-size: 12px;
         line-height: 20px;
         display: flex;
@@ -701,6 +707,11 @@
         align-items: center;
         flex-wrap: wrap;
         justify-content: space-between;
+        margin-bottom: 4px;
+    }
+
+    .description-card__list li img {
+        border-radius: 25px;
     }
 
     .description-card__list li {
@@ -758,8 +769,8 @@
     .description-card__information-chapter {
         border: 1px solid #E6E6E6;
         border-radius: 25px;
-        padding: 10px;
-        margin-bottom: 37px;
+        margin-bottom: 39px;
+        padding: 10px 9px 10px 7px;
     }
 
     .description-card__information-text {
@@ -776,6 +787,7 @@
     }
 
     .description-card__information-list li {
+        font-family: 'Inter-Bold',sans-serif;
         font-style: normal;
         font-weight: 500;
         font-size: 14px;
@@ -789,6 +801,8 @@
     .chapter-description__active {
         background: #1F1F1F;
         color: white;
+        font-family: 'Inter',sans-serif!important;
+        font-weight: 400!important;
     }
 
     /*-----------media------------*/
@@ -888,6 +902,7 @@
             align-items: center;
             width: 100%;
             margin-top: 60px;
+            padding: 15px 40px;
         }
 
         .description-card::after {
