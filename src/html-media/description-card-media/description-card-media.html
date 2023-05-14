@@ -1,164 +1,20 @@
-<div class="descriptionCard">
-    <div class="descriptionCard__slider descriptionCard__container">
-        <div class="descriptionCard__slider_button">
-            <img src="/img/Group.svg" alt="Group">
-            <a href="#">Назад</a>
-        </div>
-        <h3 class="descriptionCard__slider_title">
-            Компьютерный томограф Aquilion 64
-        </h3>
-        <p class="descriptionCard__slider_subtitle">
-            64-срезовый КТ-сканер Toshiba Aquilion 64 (Апгрейд до 128 срезов)
-        </p>
-        <div class="descriptionCard__slider_img">
-            <div class="groceryList__contentBlock_data_img">
-                <a href="#" class="groceryList__button">в наличии</a>
-                <img src="/img/Home-mobile-1-image.jpg" alt="Frame">
-            </div>
-            <div class="descriptionCard__slider_block">
-                <div class="descriptionCard__slider_img_list">
-                    <img src="/img/Home-mobile-2-image.jpg" alt="Frame">
-                    <img src="/img/Home-mobile-3-image.jpg" alt="Frame">
-                    <img src="/img/Home-mobile-4-image.jpg" alt="Frame">
-                    <img src="/img/Home-mobile-4-image.jpg" alt="Frame">
-                    <img src="/img/Home-mobile-4-image.jpg" alt="Frame">
-                    <img src="/img/Home-mobile-4-image.jpg" alt="Frame">
-                    <img src="/img/Home-mobile-4-image.jpg" alt="Frame">
-                    <img src="/img/Home-mobile-4-image.jpg" alt="Frame">
-                </div>
-            </div>
-        </div>
-        <div class="descriptionCard__slider_price">
-            <p>Цена «Под ключ»:</p>
-            <p>11 000 000 ₽</p>
-        </div>
-        <div class="descriptionCard__slider_buy">
-            <p>Купить томограф</p>
-        </div>
-    </div>
-    <div class="descriptionCard__container">
-        <div class="descriptionCard__advantages">
-            <h3 class="descriptionCard__advantages_title">
-                Преимущества
-            </h3>
-            <div class="descriptionCard__advantages_desc">
-                <p>Год производства:</p>
-                <p>
-                    2010, прошел восстановительный ремонт с полным окрашиванием в августе 2022
-                </p>
-            </div>
-            <div class="descriptionCard__advantages_desc">
-                <p>Физических срезов:</p>
-                <p>
-                    64 (апгрейдом до СХ 128, лицензия "duаl slice")
-                </p>
-            </div>
-            <div class="descriptionCard__advantages_desc">
-                <p>Рентгеновская трубка:</p>
-                <p>
-                    пробег 78.000 скан/сек. Год пр-ва: 2019
-                </p>
-            </div>
-            <div class="descriptionCard__advantages_desc">
-                <p>Наличие:</p>
-                <p>
-                    На складе в Москве
-                </p>
-            </div>
-            <div class="descriptionCard__advantages_desc">
-                <p>Дополнительно</p>
-                <p>
-                    Реализиция проекта под ключ / Быстрое оформление в лизинг
-                </p>
-            </div>
-        </div>
-    </div>
-    <div class="description-card__text-block descriptionCard__container">
-        <div class="description-card__information">
-            <div class="description-card__information-chapter">
-                <ul class="description-card__information-list flex" onclick="pagination(event)">
-                    <li data-page="0" id="page1">Описание</li>
-                    <li data-page="1" id="page2">Особенности</li>
-                    <li data-page="2" id="page3">Характеристики</li>
-                    <li data-page="3" id="page4">Клинические применения</li>
-                </ul>
-            </div>
-            <div class="description-card__information-text">
-                <p data-num="1" class="num">
-                    По итогам первого полугодия 2020 года ООО «Форсайт Медикал» стал безусловным лидером на рынке
-                    восстановленного тяжелого радиологического оборудования Российской Федерации,
-                    введя в эксплуатацию 18 кабинетов КТ. Следуя выбранной для развития компании бизнес-модели,
-                    руководство ООО «Форсайт Медикал» разработало целый ряд Уникальных торговых предложений
-                    (УТП) для своих покупателей.
-                </p>
-                <p data-num="2" class="num"> По итогам первого полугодия 2020 года ООО «Форсайт Медикал» стал
-                    безусловным
-                    лидером на рынке
-                    восстановленного тяжелого радиологического оборудования Российской Федерации, введя в
-                    эксплуатацию
-                </p>
-                <p data-num="3" class="num">
-                    По итогам первого полугодия 2020 года ООО «Форсайт Медикал» стал безусловным лидером на рынке
-                    восстановленного тяжелого радиологического оборудования Российской Федерации, введя в
-                    эксплуатацию
-                    18 кабинетов КТ. Следуя выбранной для развития компании бизнес-модели, руководство ООО «Форсайт
-                    Медикал» разработало целый ряд Уникальных торговых предложений (УТП) для своих покупателей.
-                </p>
-                <p data-num="4" class="num">
-                    По итогам первого полугодия 2020 года ООО «Форсайт Медикал» стал безусловным лидером на рынке
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
-<script>
-
-    let cnt = 1;
-
-    let div_num = document.querySelectorAll(".num");
-    for (let i = 0; i < div_num.length; i++) {
-        if (i < cnt) {
-            div_num[i].style.display = "block";
-        }
-    }
-
-    let main_page = document.getElementById("page1");
-    main_page.classList.add("chapter-description__active");
-
-    function pagination(event) {
-
-        let e = event || window.event;
-        let target = e.target;
-        let id = target.id;
-        if (target.tagName.toLowerCase() != "li") return;
-        let num_ = id.slice(4);
-        let data_page = +target.dataset.page;
-        main_page.classList.remove("chapter-description__active");
-        main_page = document.getElementById(id);
-        main_page.classList.add("chapter-description__active");
-        let j = 0;
-        for (let i = 0; i < div_num.length; i++) {
-            let data_num = div_num[i].dataset.num;
-            if (data_num <= data_page || data_num >= data_page)
-                div_num[i].style.display = "none";
-        }
-        for (let i = data_page; i < div_num.length; i++) {
-            if (j >= cnt) break;
-            div_num[i].style.display = "block";
-            j++;
-        }
-    }
-</script>
 <style>
+    .flex-none {
+        display: none;
+    }
 
-    .descriptionCard a{
+    .descriptionCard__slider {
+        padding-top: 9px;
+    }
+
+    .descriptionCard a {
         text-decoration: none;
     }
 
     .description-card__text-block {
         display: flex;
         justify-content: space-between;
-        margin-top: 34px;
+        margin-top: 43px;
     }
 
     .description-card__link-back a {
@@ -291,7 +147,7 @@
 
     .description-card__information {
         width: 100%;
-        /* max-width: 700px; */
+        margin-bottom: -25px;
         padding-bottom: 27px;
     }
 
@@ -333,7 +189,7 @@
 
     .description-card__information-chapter {
         width: 100%;
-        height: 60px;
+        height: 53px;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -346,7 +202,7 @@
 
     .description-card__information-text {
         height: 100%;
-        min-height: 81px;
+        min-height: 351px;
         margin-top: 19px;
     }
 
@@ -360,11 +216,12 @@
     }
 
     .description-card__information-list li {
+        font-family: 'Inter', sans-serif;
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        padding: 10px 22px;
+        padding: 10px 20px;
         gap: 10px;
         border-radius: 15px;
         font-weight: 500;
@@ -391,6 +248,7 @@
         background: #07131B;
         border-radius: 0 0 25px 25px;
         padding-bottom: 20px;
+        padding-top: 9px;
     }
 
     .descriptionCard__slider_button {
@@ -407,6 +265,8 @@
     }
 
     .descriptionCard__slider_button a {
+        font-family: "Inter-Bold", sans-serif;
+        margin-top: -1px;
         font-weight: 600;
         font-size: 12px;
         line-height: 25px;
@@ -417,14 +277,16 @@
     }
 
     .descriptionCard__slider_title {
+        font-family: 'Inter-Bold', sans-serif;
         font-weight: 600;
         font-size: 28px;
         line-height: 120%;
         color: #FFFFFF;
-        margin-top: 20px;
+        margin-top: 21px;
     }
 
     .descriptionCard__slider_subtitle {
+        font-family: 'Inter', sans-serif;
         font-weight: 500;
         font-size: 14px;
         line-height: 140%;
@@ -432,7 +294,7 @@
         display: flex;
         align-items: center;
         color: #83898D;
-        margin-top: 10px;
+        margin-top: 11px;
     }
 
     .descriptionCard__slider_img {
@@ -446,7 +308,7 @@
         align-items: center;
         justify-content: center;
         position: absolute;
-        margin-top: 11px;
+        margin-top: 10px;
         margin-left: 10px;
         font-weight: 600;
         font-size: 10px;
@@ -470,7 +332,7 @@
 
     .groceryList__contentBlock_data_img img {
         width: 100%;
-        border-radius: 25px;
+        border-radius: 15px;
     }
 
 
@@ -493,7 +355,7 @@
 
     .descriptionCard__slider_img_list img {
         cursor: pointer;
-        border-radius: 25px;
+        border-radius: 15px;
     }
 
     .descriptionCard__slider_price {
@@ -512,11 +374,13 @@
 
     .descriptionCard__slider_price p:first-child {
         font-weight: 400;
-        font-size: 14px;
+        font-family: 'Inter', sans-serif;
+        font-size: 15px;
         line-height: 130%;
         display: flex;
         align-items: center;
         color: #666666;
+        margin-right: -14px;
     }
 
     .descriptionCard__slider_price p:last-child {
@@ -563,31 +427,31 @@
         flex-direction: column;
         align-items: flex-start;
         padding: 20px 25px 11px;
-        background: #FFFFFF;
-        box-shadow: 0 5px 35px rgba(0, 0, 0, 0.1);
-        border-radius: 15px;
+        background: #F2F2F2;
+        border-radius: 20px;
         margin-top: 40px;
     }
 
     .descriptionCard__advantages_title {
+        font-family: 'Inter-Bold', sans-serif;
         font-weight: 600;
         font-size: 24px;
         line-height: 120%;
         color: #1F1F1F;
     }
 
-    .descriptionCard__advantages div:not(:last-child) {
-        border-bottom: 1px solid #CCCCCC;
-    }
 
     .descriptionCard__advantages_desc {
         width: 100%;
         height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
         gap: 11px;
         padding: 17px 0 13px 0;
+        border-bottom: 1px solid #CCCCCC;
+    }
+
+    .descriptionCard__advantages_desc:last-child {
+        border: none;
+        margin-top: -3px;
     }
 
     .descriptionCard__advantages_desc p {
@@ -595,16 +459,18 @@
     }
 
     .descriptionCard__advantages_desc p:first-child {
+        font-family: 'Inter', sans-serif;
         font-weight: 400;
         font-size: 14px;
         line-height: 20px;
         display: flex;
         align-items: center;
         color: #999999;
+        margin-bottom: 11px;
     }
 
     .descriptionCard__advantages_desc p:last-child {
-        font-family: 'Inter-Bold';
+        font-family: 'Inter-Bold', sans-serif;
         font-weight: 500;
         font-size: 13px;
         line-height: 140%;
@@ -613,6 +479,159 @@
         display: flex;
         align-items: center;
         color: #1F1F1F;
+        margin-bottom: 2px;
     }
 
 </style>
+<div class="descriptionCard">
+    <div class="descriptionCard__slider descriptionCard__container">
+        <div class="descriptionCard__slider_button">
+            <img src="/img/Group.svg" alt="Group">
+            <a href="#">Назад</a>
+        </div>
+        <h3 class="descriptionCard__slider_title">
+            Компьютерный томограф Aquilion 64
+        </h3>
+        <p class="descriptionCard__slider_subtitle">
+            64-срезовый КТ-сканер Toshiba Aquilion 64 (Апгрейд до 128 срезов)
+        </p>
+        <div class="descriptionCard__slider_img">
+            <div class="groceryList__contentBlock_data_img">
+                <a href="#" class="groceryList__button">в наличии</a>
+                <img src="/img/Home-mobile-1-image.jpg" alt="Frame">
+            </div>
+            <div class="descriptionCard__slider_block">
+                <div class="descriptionCard__slider_img_list">
+                    <img src="/img/Home-mobile-2-image.jpg" alt="Frame">
+                    <img src="/img/Home-mobile-3-image.jpg" alt="Frame">
+                    <img src="/img/Home-mobile-4-image.jpg" alt="Frame">
+                    <img src="/img/Home-mobile-4-image.jpg" alt="Frame">
+                    <img src="/img/Home-mobile-4-image.jpg" alt="Frame">
+                    <img src="/img/Home-mobile-4-image.jpg" alt="Frame">
+                    <img src="/img/Home-mobile-4-image.jpg" alt="Frame">
+                    <img src="/img/Home-mobile-4-image.jpg" alt="Frame">
+                </div>
+            </div>
+        </div>
+        <div class="descriptionCard__slider_price">
+            <p>Цена «Под ключ»:</p>
+            <p>11 000 000 ₽</p>
+        </div>
+        <div class="descriptionCard__slider_buy">
+            <p>Купить томограф</p>
+        </div>
+    </div>
+    <div class="descriptionCard__container">
+        <div class="descriptionCard__advantages">
+            <h3 class="descriptionCard__advantages_title">
+                Преимущества
+            </h3>
+            <div class="descriptionCard__advantages_desc">
+                <p>Год производства:</p>
+                <p>
+                    2010, прошел восстановительный ремонт с полным окрашиванием в
+                </p>
+            </div>
+            <div class="descriptionCard__advantages_desc">
+                <p>Физических срезов:</p>
+                <p>
+                    64 (апгрейдом до СХ 128, лицензия "duаl slice")
+                </p>
+            </div>
+            <div class="descriptionCard__advantages_desc">
+                <p>Рентгеновская трубка:</p>
+                <p>
+                    пробег 78.000 скан/сек. Год пр-ва: 2019
+                </p>
+            </div>
+            <div class="descriptionCard__advantages_desc">
+                <p>Наличие:</p>
+                <p>
+                    На складе в Москве
+                </p>
+            </div>
+            <div class="descriptionCard__advantages_desc">
+                <p>Дополнительно</p>
+                <p>
+                    Реализиция проекта под ключ / Быстрое оформление в лизинг
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="description-card__text-block descriptionCard__container">
+        <div class="description-card__information">
+            <div class="description-card__information-chapter">
+                <ul class="description-card__information-list flex" onclick="pagination(event)">
+                    <li data-page="0" id="page1">Описание</li>
+                    <li data-page="1" id="page2">Особенности</li>
+                    <li data-page="2" id="page3">Характеристики</li>
+                    <li data-page="3" id="page4">Клинические применения</li>
+                </ul>
+            </div>
+            <div class="description-card__information-text">
+                <p data-num="1" class="num">
+                    По итогам первого полугодия 2020 года ООО «Форсайт Медикал» стал безусловным лидером на рынке
+                    восстановленного тяжелого радиологического оборудования Российской Федерации, введя в
+                    эксплуатацию 18 кабинетов КТ. Следуя выбранной для развития компании бизнес-модели, руководство
+                    ООО «Форсайт Медикал» разработало целый ряд Уникальных торговых предложений (УТП) для своих
+                    покупателей.
+                </p>
+                <p data-num="2" class="num flex-none"> По итогам первого полугодия 2020 года ООО «Форсайт Медикал»
+                    стал
+                    безусловным
+                    лидером на рынке
+                    восстановленного тяжелого радиологического оборудования Российской Федерации, введя в
+                    эксплуатацию
+                </p>
+                <p data-num="3" class="num flex-none">
+                    По итогам первого полугодия 2020 года ООО «Форсайт Медикал» стал безусловным лидером на рынке
+                    восстановленного тяжелого радиологического оборудования Российской Федерации, введя в
+                    эксплуатацию
+                    18 кабинетов КТ. Следуя выбранной для развития компании бизнес-модели, руководство ООО «Форсайт
+                    Медикал» разработало целый ряд Уникальных торговых предложений (УТП) для своих покупателей.
+                </p>
+                <p data-num="4" class="num flex-none">
+                    По итогам первого полугодия 2020 года ООО «Форсайт Медикал» стал безусловным лидером на рынке
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+    let cnt = 1;
+
+    let div_num = document.querySelectorAll(".num");
+    for (let i = 0; i < div_num.length; i++) {
+        if (i < cnt) {
+            div_num[i].style.display = "block";
+        }
+    }
+
+    let main_page = document.getElementById("page1");
+    main_page.classList.add("chapter-description__active");
+
+    function pagination(event) {
+
+        let e = event || window.event;
+        let target = e.target;
+        let id = target.id;
+        if (target.tagName.toLowerCase() != "li") return;
+        let num_ = id.slice(4);
+        let data_page = +target.dataset.page;
+        main_page.classList.remove("chapter-description__active");
+        main_page = document.getElementById(id);
+        main_page.classList.add("chapter-description__active");
+        let j = 0;
+        for (let i = 0; i < div_num.length; i++) {
+            let data_num = div_num[i].dataset.num;
+            if (data_num <= data_page || data_num >= data_page)
+                div_num[i].style.display = "none";
+        }
+        for (let i = data_page; i < div_num.length; i++) {
+            if (j >= cnt) break;
+            div_num[i].style.display = "block";
+            j++;
+        }
+    }
+</script>
