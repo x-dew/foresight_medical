@@ -8,61 +8,6 @@
 &submitVar=`email`
 &validate=`email:email:required,phone:required`]]
 
-<div class="feedback">
-    <div class="feedback-text">
-        <h2>Обратная связь</h2>
-        <p>Оставьте вашу заявку и мы свяжемся с вами</p>
-    </div>
-
-    <form action="[[~[[*id]]]]#message" method="post">
-        <div id="message">
-            <input type="hidden" name="nospam:blank" value=""/>
-        </div>
-        <div class="feedback-form">
-            <div class="feedback-form_inputs">
-                <div class="feedback-form_input-date">
-                    <input type="text" placeholder="Имя" name="name" id="name" value="[[!+fi.name]]"/>
-                    <span class="error">[[!+fi.error.name]]</span>
-                </div>
-                <div class="feedback-form_input-date">
-                    <input type="tel" placeholder="Телефон" name="phone" id="phone" value="[[!+fi.phone]]"/>
-                    <span class="error">[[!+fi.error.phone]]</span>
-                </div>
-                <div class="feedback-form_input-date">
-                    <input type="email" placeholder="Электронная почта" name="email" id="email" value="[[!+fi.email]]"/>
-                    <span class="error">[[!+fi.error.email]]</span>
-                </div>
-            </div>
-            <textarea placeholder="Текст обращения" name="text" id="text" cols="55" rows="7" value="[[!+fi.text]]"
-                      class="feedback-form_textarea">[[!+fi.text]]</textarea>
-        </div>
-        <div class="feedback-messenger flex">
-            <div>
-                <div class="presence-messenger__checkbox">
-                    <div class="choice-networks__text">
-                        <p>Наличие месседжера:</p>
-                        <input type="hidden" name="messenger[]" value=""/>
-                    </div>
-                    <div class="presence-messenger__checkbox-date">
-                        <label class="check-container">WhatsApp
-                            <input type="checkbox" name="messenger[]" value="WhatsApp">
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="check-container">Viber
-                            <input type="checkbox" name="messenger[]" value="Viber">
-                            <span class="checkmark"></span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <br class="clear"/>
-            <div class="messenger-button">
-                <button type="submit">Отправить</button>
-            </div>
-        </div>
-    </form>
-</div>
-
 <style>
     .check-container {
         display: block;
@@ -315,6 +260,60 @@
     }
 
 </style>
+<div class="feedback">
+    <div class="feedback-text">
+        <h2>Обратная связь</h2>
+        <p>Оставьте вашу заявку и мы свяжемся с вами</p>
+    </div>
+
+    <form action="[[~[[*id]]]]#message" method="post">
+        <div id="message">
+            <input type="hidden" name="nospam:blank" value=""/>
+        </div>
+        <div class="feedback-form">
+            <div class="feedback-form_inputs">
+                <div class="feedback-form_input-date">
+                    <input type="text" placeholder="Имя" name="name" id="name" value="[[!+fi.name]]"/>
+                    <span class="error">[[!+fi.error.name]]</span>
+                </div>
+                <div class="feedback-form_input-date">
+                    <input type="tel" placeholder="Телефон" name="phone" id="phone" value="[[!+fi.phone]]"/>
+                    <span class="error">[[!+fi.error.phone]]</span>
+                </div>
+                <div class="feedback-form_input-date">
+                    <input type="email" placeholder="Электронная почта" name="email" id="email" value="[[!+fi.email]]"/>
+                    <span class="error">[[!+fi.error.email]]</span>
+                </div>
+            </div>
+            <textarea placeholder="Текст обращения" name="text" id="text" cols="55" rows="7" value="[[!+fi.text]]"
+                      class="feedback-form_textarea">[[!+fi.text]]</textarea>
+        </div>
+        <div class="feedback-messenger flex">
+            <div>
+                <div class="presence-messenger__checkbox">
+                    <div class="choice-networks__text">
+                        <p>Наличие месседжера:</p>
+                        <input type="hidden" name="messenger[]" value=""/>
+                    </div>
+                    <div class="presence-messenger__checkbox-date">
+                        <label class="check-container">WhatsApp
+                            <input type="checkbox" name="messenger[]" value="WhatsApp">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="check-container">Viber
+                            <input type="checkbox" name="messenger[]" value="Viber">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <br class="clear"/>
+            <div class="messenger-button">
+                <button type="submit">Отправить</button>
+            </div>
+        </div>
+    </form>
+</div>
 <script>
     const isAnchor = window.location.toString().split('#');
 

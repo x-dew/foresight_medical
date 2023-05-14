@@ -7,53 +7,6 @@
 &redirectTo=`1`
 &submitVar=`condition`
 &validate=`phone:required`]]
-<div class="ransom">
-    <div class="ransom-title">
-        <h1>Выкупим Ваш МРТ/КТ</h1>
-    </div>
-    <div class="ransom-form">
-        <form action="[[~[[*id]]]]#ransom" method="post" class="ransom-form_inputs">
-
-            <div id="ransom">
-                <input type="hidden" name="nospam:blank" value=""/>
-            </div>
-            <label>
-                <input type="text" placeholder="Имя" name="name" id="name" value="[[!+fi.name]]">
-                <span class="error">[[!+fi.error.name]]</span>
-            </label><br>
-            <label>
-                <input type="tel" placeholder="Телефон" name="phone" id="phone" value="[[!+fi.phone]]">
-                <span class="error">[[!+fi.error.phone]]</span>
-            </label>
-
-            <div class="ransom_presence-messenger">
-                <div class="ransom-networks__text">
-                    <p>Наличие месседжера:</p>
-                    <input type="hidden" name="messenger[]" value=""/>
-                </div>
-                <div class="ransom_presence-messenger-date">
-                    <label class="check-container">WhatsApp
-                        <input type="checkbox" name="messenger[]" value="WhatsApp">
-                        <span class="checkmark"></span>
-                    </label>
-                    <label class="check-container">Viber
-                        <input type="checkbox" name="messenger[]" value="Viber">
-                        <span class="checkmark"></span>
-                    </label>
-                </div>
-            </div>
-            <label>
-            <textarea placeholder="Название МРТ/КТ, год выпуска, в каком городе находитесь?"
-                      class="ransom-form_textarea"
-                      id="condition" name="condition" value="[[!+fi.condition]]">[[!+fi.condition]]</textarea>
-            </label>
-            <div class="messenger-button">
-                <button type="submit">Отправить</button>
-            </div>
-        </form>
-    </div>
-</div>
-
 <style>
 
     .ransom_presence-messenger-date {
@@ -201,18 +154,6 @@
         margin-right: 10px;
     }
 
-    .ransom_choice-messenger .messenger {
-        cursor: pointer;
-        background: transparent;
-        padding: 12px 20px;
-        border: 1px solid #E6E6E6;
-        border-radius: 20px;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 24px;
-    }
-
     .ransom-form_textarea{
         cursor: pointer;
         background: #FFFFFF;
@@ -288,3 +229,50 @@
     }
 
 </style>
+<div class="ransom">
+    <div class="ransom-title">
+        <h1>Выкупим Ваш МРТ/КТ</h1>
+    </div>
+    <div class="ransom-form">
+        <form action="[[~[[*id]]]]#ransom" method="post" class="ransom-form_inputs">
+
+            <div id="ransom">
+                <input type="hidden" name="nospam:blank" value=""/>
+            </div>
+            <label>
+                <input type="text" placeholder="Имя" name="name" id="name" value="[[!+fi.name]]">
+                <span class="error">[[!+fi.error.name]]</span>
+            </label><br>
+            <label>
+                <input type="tel" placeholder="Телефон" name="phone" id="phone" value="[[!+fi.phone]]">
+                <span class="error">[[!+fi.error.phone]]</span>
+            </label>
+
+            <div class="ransom_presence-messenger">
+                <div class="ransom-networks__text">
+                    <p>Наличие месседжера:</p>
+                    <input type="hidden" name="messenger[]" value=""/>
+                </div>
+                <div class="ransom_presence-messenger-date">
+                    <label class="check-container">WhatsApp
+                        <input type="checkbox" name="messenger[]" value="WhatsApp">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="check-container">Viber
+                        <input type="checkbox" name="messenger[]" value="Viber">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+            </div>
+            <label>
+            <textarea placeholder="Название МРТ/КТ, год выпуска, в каком городе находитесь?"
+                      class="ransom-form_textarea"
+                      id="condition" name="condition" value="[[!+fi.condition]]">[[!+fi.condition]]</textarea>
+            </label>
+            <div class="messenger-button">
+                <button type="submit">Отправить</button>
+            </div>
+        </form>
+    </div>
+
+</div>

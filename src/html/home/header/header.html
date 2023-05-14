@@ -1,94 +1,3 @@
-<header class="header" id="header">
-    <div class="container-block">
-        <div class="header_date">
-            <div class="header-logo">
-                <img class="header-img" src="/img/logo.svg" alt="MPC">
-            </div>
-            <div class="header_menu">
-                <nav class="main-menu flex-align">
-                    <div class="menu-list">
-                        <a class="menu-list_text" href="">МРТ</a>
-                        <a class="menu-list_text" href="">КТ</a>
-                        <div class="menu-line"></div>
-                        <div>
-                            <a class="menu-list_text fontText" href="">Лизинг</a>
-                            <a class="menu-list_text fontText" href="">Спецпредложения</a>
-                            <a class="menu-list_text fontText" href="">Контакты</a>
-                        </div>
-                    </div>
-                    <ul class=" menu_phone">
-                        <li class="flex">
-                            <img src="/img/phone-header.svg" alt="phone">
-                            <a href="tel:+8 800 550 68 12">8 800 550 68 12</a>
-                        </li>
-
-                    </ul>
-                </nav>
-                <div class="media-menu">
-                    <div class="menu-button_open" id="menu">
-                        <div class="line-button_open"></div>
-                        <div class="line-button_open"></div>
-                        <div class="line-button_open"></div>
-                    </div>
-                    <div class="menu-button_close" id="menu-close">
-                        <img src="/img/menuClose.png" alt="X">
-                    </div>
-                    <div class="media-menu_block" id="menu-block">
-                        <ul class="menu-list_media">
-                            <li><a class="menu-list_text" href="">МРТ</a></li>
-                            <li><a class="menu-list_text" href="">КТ</a></li>
-                            <li class="menu-line"></li>
-                            <li><a class="menu-list_text" href="">Лизинг</a></li>
-                            <li><a class="menu-list_text" href="">Спецпредложения</a></li>
-                            <li><a class="menu-list_text" href="">Контакты</a></li>
-                        </ul>
-                        <ul class=" menu_phone">
-                            <li class="flex">
-                                <img src="/img/phone-image.svg" alt="phone">
-                                <a href="tel:+8 800 550 68 12">8 800 550 68 12</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-
-<script>
-    const menu = document.getElementById('menu');
-    const menu__link = document.getElementById('menu-block')
-    const menu__close = document.getElementById('menu-close')
-
-
-    const close = () => {
-        menu__close.classList.remove('menu_active-close')
-        menu.classList.remove('menu-button_close')
-        menu__link.classList.remove('menu_active')
-        document.body.style.overflowY = 'scroll'
-    }
-
-    if (menu)
-        menu.addEventListener('click', function () {
-            if (!menu__link.classList.contains('menu_active')) {
-                menu.classList.add('menu-button_close')
-                menu__close.classList.add('menu_active-close')
-                menu__link.classList.add('menu_active')
-                document.body.style.overflowY = 'hidden'
-            }
-
-        })
-
-    menu__close.addEventListener('click', function () {
-        if (menu__close.classList.contains('menu_active-close')) close()
-    })
-
-    window.addEventListener('click', e => {
-        const target = e.target
-        if (!target.closest('.media-menu_block') && !target.closest('.menu-button_close')) close()
-    })
-</script>
-
 <style>
     .header {
         width: 100%;
@@ -370,4 +279,94 @@
         }
     }
 </style>
+<header class="header" id="header">
+    <div class="container-block">
+        <div class="header_date">
+            <div class="header-logo">
+                <img class="header-img" src="/img/logo.svg" alt="MPC">
+            </div>
+            <div class="header_menu">
+                <nav class="main-menu flex-align">
+                    <div class="menu-list">
+                        <a class="menu-list_text" href="">МРТ</a>
+                        <a class="menu-list_text" href="">КТ</a>
+                        <div class="menu-line"></div>
+                        <div>
+                            <a class="menu-list_text fontText" href="">Лизинг</a>
+                            <a class="menu-list_text fontText" href="">Спецпредложения</a>
+                            <a class="menu-list_text fontText" href="">Контакты</a>
+                        </div>
+                    </div>
+                    <ul class=" menu_phone">
+                        <li class="flex">
+                            <img src="/img/phone-header.svg" alt="phone">
+                            <a href="tel:+8 800 550 68 12">8 800 550 68 12</a>
+                        </li>
+
+                    </ul>
+                </nav>
+                <div class="media-menu">
+                    <div class="menu-button_open" id="menu">
+                        <div class="line-button_open"></div>
+                        <div class="line-button_open"></div>
+                        <div class="line-button_open"></div>
+                    </div>
+                    <div class="menu-button_close" id="menu-close">
+                        <img src="/img/menuClose.png" alt="X">
+                    </div>
+                    <div class="media-menu_block" id="menu-block">
+                        <ul class="menu-list_media">
+                            <li><a class="menu-list_text" href="">МРТ</a></li>
+                            <li><a class="menu-list_text" href="">КТ</a></li>
+                            <li class="menu-line"></li>
+                            <li><a class="menu-list_text" href="">Лизинг</a></li>
+                            <li><a class="menu-list_text" href="">Спецпредложения</a></li>
+                            <li><a class="menu-list_text" href="">Контакты</a></li>
+                        </ul>
+                        <ul class=" menu_phone">
+                            <li class="flex">
+                                <img src="/img/phone-image.svg" alt="phone">
+                                <a href="tel:+8 800 550 68 12">8 800 550 68 12</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<script>
+    const menu = document.getElementById('menu');
+    const menu__link = document.getElementById('menu-block')
+    const menu__close = document.getElementById('menu-close')
+
+
+    const close = () => {
+        menu__close.classList.remove('menu_active-close')
+        menu.classList.remove('menu-button_close')
+        menu__link.classList.remove('menu_active')
+        document.body.style.overflowY = 'scroll'
+    }
+
+    if (menu)
+        menu.addEventListener('click', function () {
+            if (!menu__link.classList.contains('menu_active')) {
+                menu.classList.add('menu-button_close')
+                menu__close.classList.add('menu_active-close')
+                menu__link.classList.add('menu_active')
+                document.body.style.overflowY = 'hidden'
+            }
+
+        })
+
+    menu__close.addEventListener('click', function () {
+        if (menu__close.classList.contains('menu_active-close')) close()
+    })
+
+    window.addEventListener('click', e => {
+        const target = e.target
+        if (!target.closest('.media-menu_block') && !target.closest('.menu-button_close')) close()
+    })
+</script>
+
 
