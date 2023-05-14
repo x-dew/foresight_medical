@@ -36,14 +36,13 @@
 }
 
 body {
-	font-family: 'Inter-Reqular';
-	background-color: #FFFFFF;
+	font-family: 'Inter-Reqular', sans-serif;
 	overflow-x: hidden;
+	background: linear-gradient( #07131B,  #000000)
 }
 body li{
 	list-style-type: none;
 }
-
 
 .flex {
 	display: flex;
@@ -64,6 +63,7 @@ body li{
 .container {
 	width: 100%;
 	margin: 0 auto;
+	background: #ffffff;
 }
 
 .container-block {
@@ -83,6 +83,7 @@ body li{
 	width: 100%;
 	max-width: 640px;
 	margin: 0 auto;
+	background: #ffffff;
 }
 
 .inputs input:focus {
