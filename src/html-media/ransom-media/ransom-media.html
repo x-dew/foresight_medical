@@ -201,7 +201,7 @@
     .ransom-form_inputs label .error {
         position: absolute;
         top: 36px;
-        left: 0;
+        left: 20px;
         color: #b30101;
     }
 
@@ -230,7 +230,7 @@
         width: 100%;
         max-width: 293px;
     }
-    @media (max-width: 376px) {
+    @media (min-width: 376px) {
         .messenger-button button{
             max-width: none;
         }
@@ -238,6 +238,9 @@
             max-width: none;
         }
         .ransom-messenger__checkbox-media {
+            max-width: none;
+        }
+        .ransom-form_media input{
             max-width: none;
         }
     }
