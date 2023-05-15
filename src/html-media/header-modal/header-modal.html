@@ -185,6 +185,17 @@
         menu.classList.remove('menu-button_close')
         menu__link.classList.remove('menu_active')
         document.body.style.overflow = 'scroll'
+        menu__close.removeEventListener('click', open)
+
+        document.removeEventListener('click', closeMenu)
+    }
+
+    const open = function () {
+        if (menu__close.classList.contains('menu_active-close')) close()
+    }
+    const closeMenu = e => {
+        const target = e.target
+        if (!target.closest('.media-menu_block') && !target.closest('.menu-button_close')) close()
     }
 
     menu.addEventListener('click', function () {
@@ -193,17 +204,14 @@
             menu__close.classList.add('menu_active-close')
             menu__link.classList.add('menu_active')
             document.body.style.overflow = 'hidden'
+
+            menu__close.addEventListener('click', open)
+
+            document.addEventListener('click', closeMenu)
         }
     })
 
-    menu__close.addEventListener('click', function () {
-        if (menu__close.classList.contains('menu_active-close')) close()
-    })
 
-    window.addEventListener('click', e => {
-        const target = e.target
-        if (!target.closest('.media-menu_block') && !target.closest('.menu-button_close')) close()
-    })
 
 </script>
 
