@@ -5,7 +5,7 @@
         padding-top: 51px;
         background-image: url("/img/contacts-image.svg");
         background-repeat: no-repeat;
-        background-position: 10px 31px;
+        background-position: 247px 31px;
         margin-bottom: 96px;
     }
 
@@ -17,12 +17,14 @@
 
     .contacts h4 {
         font-family: 'Inter-Bold', sans-serif;
+        text-transform: uppercase;
         font-style: normal;
-        font-weight: 600;
+        font-weight: 700;
         font-size: 56px;
         line-height: 120%;
         color: #1F1F1F;
         margin-bottom: 79px;
+        text-align: center;
     }
 
     .contacts-office {
@@ -36,10 +38,16 @@
         border-radius: 25px;
         padding: 41px 45px 45px 45px;
         z-index: 1;
+        height: 100%;
+        max-height: 1000px;
+        display: flex;
+        min-height: 1000px;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
     .contacts-date h2 {
-        font-family: 'Inter-Bold';
+        font-family: 'Inter-Bold', sans-serif;
         font-style: normal;
         font-weight: 600;
         font-size: 32px;
@@ -48,6 +56,15 @@
         align-items: center;
         color: #1F1F1F;
         margin-bottom: 39px;
+        margin-left: 19px;
+    }
+
+    .contacts-office-logo img {
+        margin-top: -2px;
+    }
+
+    .contacts-stock-logo img {
+        margin-top: -2px;
     }
 
     .contacts-office-text {
@@ -139,6 +156,41 @@
         padding: 41px 45px 45px 45px;
         position: relative;
         z-index: 1;
+        height: 100%;
+        max-height: 1000px;
+        min-height: 1000px;
+    }
+
+    .contacts-stock-information-text {
+        background: #2D57A9;
+        border-radius: 10px;
+        padding: 13px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 40px;
+    }
+
+    .contacts-stock-information-text p {
+        font-family: 'Inter', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 140%;
+        color: #FFFFFF;
+        max-width: none;
+        margin-left: 18px;
+    }
+
+    .contacts-stock-logo {
+        display: flex;
+    }
+
+    .contacts-stock-logo h2 {
+        margin-bottom: 18px !important;
+    }
+
+    .contacts-office-logo {
+        display: flex;
     }
 
     .contacts-stock-date-text p {
@@ -155,6 +207,20 @@
         margin-top: -34px;
     }
 
+    .contacts-stock-image-slider {
+        margin-top: 11px;
+    }
+
+    .contacts-stock-image-slider img {
+        border-radius: 25px;
+    }
+
+    .contacts-stock-image-slider-date {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
     @media (max-width: 1470px) {
         .contacts-office {
             max-width: 680px;
@@ -168,6 +234,7 @@
             min-height: 450px;
             height: 100%;
         }
+
 
         .contacts-stock-date-image img {
             width: 100%;
@@ -244,23 +311,28 @@
     <div class="contacts-date">
         <div class="contacts-office">
             <div class="contacts-office-date">
-                <h2>Офис</h2>
-                <div class="contacts-office-date-text">
-                    <div class="contacts-office-text">
-                        <span>Юридический адрес</span>
-                        <p>121471, г. Москва, ул. Рябиновая, д.26, стр.1, БЦ West Plaza, 8 этаж, пом. 38.</p>
+                <div>
+                    <div class="contacts-office-logo">
+                        <img src="/img/contacts-office-image.svg" alt="office">
+                        <h2>Офис</h2>
                     </div>
-                    <div class="contacts-office-text">
-                        <span>Фактический адрес</span>
-                        <p>121471, г. Москва, ул. Рябиновая, д.26, стр.1, БЦ West Plaza, 8 этаж, пом. 38.</p>
-                    </div>
-                    <div class="contacts-office-text">
-                        <span>Секретариат</span>
-                        <p>8 495-248-06-30 (доп. 002) office@foresightmedical.ru</p>
-                    </div>
-                    <div class="contacts-office-text">
-                        <span>Время работы</span>
-                        <p>Пн.-Пт.: с 9:00 – 18:00</p>
+                    <div class="contacts-office-date-text">
+                        <div class="contacts-office-text">
+                            <span>Юридический адрес</span>
+                            <p>121471, г. Москва, ул. Рябиновая, д.26, стр.1, БЦ West Plaza, 8 этаж, пом. 38.</p>
+                        </div>
+                        <div class="contacts-office-text">
+                            <span>Фактический адрес</span>
+                            <p>121471, г. Москва, ул. Рябиновая, д.26, стр.1, БЦ West Plaza, 8 этаж, пом. 38.</p>
+                        </div>
+                        <div class="contacts-office-text">
+                            <span>Секретариат</span>
+                            <p>8 495-248-06-30 (доп. 002) office@foresightmedical.ru</p>
+                        </div>
+                        <div class="contacts-office-text">
+                            <span>Время работы</span>
+                            <p>Пн.-Пт.: с 9:00 – 18:00</p>
+                        </div>
                     </div>
                 </div>
                 <div class="contacts-requisites-office flex">
@@ -294,7 +366,14 @@
         </div>
         <div class="contacts-stock">
             <div class="contacts-stock-date">
-                <h2>Склад</h2>
+                <div class="contacts-stock-logo">
+                    <img src="/img/contacts-stock-image.svg" alt="stock">
+                    <h2>Склад</h2>
+                </div>
+                <div class="contacts-stock-information-text">
+                    <img src="/img/stock-information-image.svg" alt="">
+                    <p>Единственный в Москве склад радиологического оборудования</p>
+                </div>
                 <div class="contacts-stock-date-text">
                     <span>Адрес склада</span>
                     <p>119530, г. Москва, Очаковское ш.,
@@ -302,6 +381,13 @@
                 </div>
                 <div class="contacts-stock-date-image">
                     <img src="/img/contacts-stock-image.jpg" alt="image">
+                </div>
+                <div class="contacts-stock-image-slider">
+                    <ul class="contacts-stock-image-slider-date">
+                        <li><img src="/img/stock-image.jpg" alt="slider"></li>
+                        <li><img src="/img/stock-mage-2.jpg" alt="slider"></li>
+                        <li><img src="/img/stock-mage-3.jpg" alt="slider"></li>
+                    </ul>
                 </div>
             </div>
             <div class="contacts-stock-date-map">
