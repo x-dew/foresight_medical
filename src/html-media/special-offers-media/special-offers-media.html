@@ -1,191 +1,4 @@
 <style>
-    .specialOffers__aside {
-        padding: 20px;
-        width: 100%;
-        min-height: 598px;
-        background: #2D57A9;
-        border-radius: 15px;
-        margin-top: 40px;
-    }
-
-    .specialOffers__aside_desc {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-
-    .specialOffers__aside_desc_text h1 {
-        font-weight: 600;
-        font-size: 24px;
-        line-height: 120%;
-        color: #FFFFFF;
-        font-family: 'Inter-Bold', sans-serif;
-    }
-
-    .specialOffers__aside_desc_text p {
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 150%;
-        color: #AEC2EA;
-        margin-top: 15px;
-    }
-
-    .specialOffers__aside_desc_form {
-        margin-top: 38px;
-        width: 100%;
-    }
-
-    .specialOffers__aside_desc_form .specialOffers__aside_desc_form_inputs {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .specialOffers__aside_desc_form_inputs input:last-child {
-        margin-top: 10px;
-    }
-
-    .specialOffers__aside_desc_form_inputs input {
-        padding: 19px;
-        gap: 10px;
-        width: 100%;
-        min-height: 59px;
-        background: #FFFFFF;
-        border: 1px solid #E6E6E6;
-        border-radius: 15px;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 19px;
-        letter-spacing: -0.01em;
-        font-feature-settings: 'pnum' on, 'lnum' on;
-    }
-
-    .specialOffers__aside_desc_form_button {
-        padding: 16px 24px;
-        width: 100%;
-        min-height: 56px;
-        background: #EA3C3D;
-        border-radius: 15px;
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 24px;
-        text-align: center;
-        letter-spacing: 0.02em;
-        text-transform: uppercase;
-        color: #FFFFFF;
-        margin-top: 10px;
-    }
-
-    .specialOffers__aside_desc_form_meta {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        margin-top: 10px;
-    }
-
-    .specialOffers__aside_desc_form_meta p:first-child {
-        font-weight: 400;
-        font-size: 13px;
-        line-height: 145%;
-        color: #AEC2EA;
-    }
-
-    .specialOffers__aside_desc_form_meta p:last-child {
-        font-weight: 600;
-        font-size: 15px;
-        line-height: 145%;
-        color: #AEC2EA;
-        margin-left: 3px;
-    }
-
-    .specialOffers__dataBlock__button_img a {
-        font-weight: 600;
-        font-size: 14px;
-        line-height: 20px;
-        display: flex;
-        align-items: center;
-        text-align: center;
-        letter-spacing: 0.02em;
-        text-transform: uppercase;
-        color: #FFFFFF;
-        text-decoration: none;
-        font-family: 'Inter-Bold', sans-serif;
-    }
-
-    .specialOffers__aside_desc_time {
-        max-width: 781px;
-        width: 100%;
-    }
-
-    .specialOffers__aside_desc_time > p {
-        font-weight: 600;
-        font-size: 18px;
-        line-height: 120%;
-        color: #FFFFFF;
-        margin-top: 25px;
-    }
-
-    .timer__items {
-        display: flex;
-        margin-top: 16px;
-        margin-bottom: 7px;
-    }
-
-    .timer__item {
-        position: relative;
-        min-width: 60px;
-        margin-right: 20px;
-        padding-bottom: 15px;
-        text-align: center;
-        display: flex;
-    }
-
-    .timer__item span {
-        padding: 15px 10px;
-        width: 30px;
-        height: 50px;
-        background: #FFFFFF;
-        border-radius: 10px;
-        font-weight: 500;
-        font-size: 18px;
-        line-height: 40px;
-        display: flex;
-        align-items: center;
-        text-align: center;
-        letter-spacing: 0.02em;
-        font-family: 'Inter-Bold', sans-serif;
-        color: #020406;
-    }
-
-    .timer__item span:not(:first-child) {
-        margin-left: 5px;
-    }
-
-    .timer__item::before {
-        content: attr(data-title);
-        position: absolute;
-        left: 50%;
-        bottom: -8px;
-        transform: translateX(-50%);
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 145%;
-        letter-spacing: 0.02em;
-        text-transform: uppercase;
-        color: #AEC2EA;
-        margin-top: 5px;
-    }
-
-    .timer__item:not(:last-child)::after {
-        content: ':';
-        position: absolute;
-        right: -18px;
-        font-weight: 500;
-        font-size: 31px;
-        line-height: 40px;
-        letter-spacing: 0.02em;
-        color: #FFFFFF;
-    }
-
     .specialMedia {
         margin: 40px 0 -41px 0;
     }
@@ -195,43 +8,45 @@
         font-size: 28px;
         line-height: 120%;
         color: #1F1F1F;
-        font-family: 'Inter-Bold',sans-serif;
+        font-family: 'Inter-Bold', sans-serif;
+        text-transform: uppercase;
+        text-align: center;
     }
 
-    .specialMedia__title p {
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 150%;
-        color: #83898D;
-        margin-top: 15px;
+    .specialMedia__data_block_img .specialOffers__info-image img {
+        width: auto;
+        margin-right: 5px;
+        margin-top: 7px;
     }
 
-    /* .specialMedia__data_block_img a {
-         display: flex;
-         flex-direction: row;
-         align-items: flex-start;
-         padding: 5px 13px;
-         gap: 10px;
-         position: absolute;
-         width: 61px;
-         height: 30px;
-         margin-left: 11px;
-         margin-top: 10px;
-         background: #EA3C3D;
-         border-radius: 10px;
-         font-weight: 600;
-         font-size: 10px;
-         line-height: 20px;
-         text-align: center;
-         letter-spacing: 0.02em;
-         text-transform: uppercase;
-         text-decoration: none;
-         color: #FFFFFF;
-         cursor: pointer;
-     }*/
-
+    .specialMedia__data_block_img {
+        position: relative;
+    }
+    .specialOffers__info-image a{
+        font-family: 'Inter', sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 20px;
+        text-align: center;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        color: #FFFFFF;
+    }
+    .specialOffers__info-image{
+        position: absolute;
+        top: 11px;
+        left: 13px;
+        width: 93px;
+        height: 40px;
+        background: #EA3C3D;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
     .specialMedia__data_block {
-        margin-top: 40px;
+        margin-top: 38px;
     }
 
     .specialMedia__data_block_img img {
@@ -239,7 +54,7 @@
     }
 
     .specialMedia__data_block_desc {
-        margin-top: 14px;
+        margin-top: 15px;
     }
 
     .specialMedia__data_block_desc_title > p {
@@ -325,8 +140,8 @@
         letter-spacing: 0.02em;
         text-transform: uppercase;
         color: #FFFFFF;
-        margin-top: 20px;
-        font-family: 'Inter-Bold',sans-serif;
+        margin-top: 22px;
+        font-family: 'Inter-Bold', sans-serif;
         cursor: pointer;
     }
 
@@ -338,11 +153,7 @@
         margin-top: 40px;
     }
 
-    @media (min-width: 550px) {
-        .specialOffers__aside_desc_form_meta {
-            flex-direction: row;
-        }
-    }
+
 
     @media (min-width: 380px) {
         .specialMedia__meta br {
@@ -355,61 +166,15 @@
 <div class="specialMedia">
     <div class="specialMedia__title">
         <h1>Спецпредложения</h1>
-        <p>
-            Уникальная акция на компьютерные томографы Aquilion
-            64 и Aquilion CX128 со скидкой в Москве*
-        </p>
     </div>
-    <div class="specialOffers__aside">
-        <div class="specialOffers__aside_desc">
-            <div class="specialOffers__aside_desc_text">
-                <h1>Акция</h1>
-                <p>
-                    Купив компьютерный томограф сейчас вы получите
-                    моментальную скидку 10% и бесплатную
-                    доставку в Москве!
-                </p>
-            </div>
-            <div class="specialOffers__aside_desc_time">
-                <p>До конца акции осталось:</p>
-                <div class="timer__items">
-                    <div class="timer__item timer__days">
-                        <span>0</span>
-                        <span>0</span>
-                    </div>
-                    <div class="timer__item timer__hours">
-                        <span>0</span>
-                        <span>0</span>
-                    </div>
-                    <div class="timer__item timer__minutes">
-                        <span>0</span>
-                        <span>0</span>
-                    </div>
-                    <div class="timer__item timer__seconds">
-                        <span>0</span>
-                        <span>0</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="specialOffers__aside_desc_form">
-            <form class="specialOffers__aside_desc_form_inputs">
-                <input type="name" placeholder="Имя"  name="name">
-                <input type="tel" placeholder="Телефон" name="phone">
-            </form>
-            <div class="specialOffers__aside_desc_form_button">
-                <p>Отправить</p>
-            </div>
-            <div class="specialOffers__aside_desc_form_meta">
-                <p>Или позвоните нам по номеру</p>
-                <p>8 800 550 68 12</p>
-            </div>
-        </div>
-    </div>
+<!--    @@include("../../html/promotion/promotion.html")-->
     <div class="specialMedia__data">
         <div class="specialMedia__data_block">
             <div class="specialMedia__data_block_img">
-                <!--<a href="#">акция</a>-->
+                <div class="specialOffers__info-image">
+                    <img src="/img/group-image.svg" alt="group">
+                    <a href="#">акция</a>
+                </div>
                 <img src="/img/rectangle-mobile-1-image.jpg" alt="rectangle-mobile">
             </div>
             <div class="specialMedia__data_block_desc">
@@ -439,7 +204,10 @@
         </div>
         <div class="specialMedia__data_block">
             <div class="specialMedia__data_block_img">
-                <!--<a href="#">акция</a>-->
+                <div class="specialOffers__info-image">
+                    <img src="/img/group-image.svg" alt="group">
+                    <a href="#">акция</a>
+                </div>
                 <img src="/img/rectangle-mobile-2-image.jpg" alt="rectangle-mobile">
             </div>
             <div class="specialMedia__data_block_desc">
@@ -473,67 +241,5 @@
     </div>
 </div>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        // конечная дата, например 1 июля 2021
-        const deadline = new Date(2023, 7, 16, 2, 58);
-        // id таймера
-        let timerId = null;
-
-        let daysBefore = 0
-
-        // склонение числительных
-        function declensionNum(num, words) {
-            return words[(num % 100 > 4 && num % 100 < 20) ? 2 : [2, 0, 1, 1, 1, 2][(num % 10 < 5) ? num % 10 : 5]];
-        }
-
-        // вычисляем разницу дат и устанавливаем оставшееся времени в качестве содержимого элементов
-        function countdownTimer() {
-            const diff = deadline - new Date();
-            if (diff <= 0) {
-                clearInterval(timerId);
-            }
-            const days = diff > 0 ? Math.floor(diff / 1000 / 60 / 60 / 24) : 0;
-            const hours = diff > 0 ? Math.floor(diff / 1000 / 60 / 60) % 24 : 0;
-            const minutes = diff > 0 ? Math.floor(diff / 1000 / 60) % 60 : 0;
-            const seconds = diff > 0 ? Math.floor(diff / 1000) % 60 : 0;
-            //$days.textContent = days < 10 ? '0' + days : days;
-            (()=>{
-                if (daysBefore !== days){
-                    const daysStr = (days).toString()
-                    let spans = ""
-                    for (let i = 0; i < daysStr.length; i++){
-                        spans += `<span>${daysStr[i]}</span>`
-                    }
-                    $days.innerHTML = spans
-                    daysBefore = days
-                }
-            })()
-            //$hours.textContent = hours < 10 ? '0' + hours : hours;
-            $hours.querySelector('span:first-child').textContent = hours < 10 ? '0' : (hours - hours % 10)/10
-            $hours.querySelector('span:last-child').textContent = '' + hours % 10
-            //$minutes.textContent = minutes < 10 ? '0' + minutes : minutes;
-            $minutes.querySelector('span:first-child').textContent = minutes < 10 ? '0' : (minutes - minutes % 10)/10
-            $minutes.querySelector('span:last-child').textContent = '' + minutes % 10
-            //$seconds.textContent = seconds < 10 ? '0' + seconds : seconds;
-            $seconds.querySelector('span:first-child').textContent = seconds < 10 ? '0' : (seconds - seconds % 10)/10
-            $seconds.querySelector('span:last-child').textContent = '' + seconds % 10
-            $days.dataset.title = declensionNum(days, ['день', 'дня', 'дней']);
-            $hours.dataset.title = declensionNum(hours, ['час', 'часа', 'часов']);
-            $minutes.dataset.title = declensionNum(minutes, ['минута', 'минуты', 'минут']);
-            $seconds.dataset.title = declensionNum(seconds, ['секунда', 'секунды', 'секунд']);
-        }
-
-        // получаем элементы, содержащие компоненты даты
-        const $days = document.querySelector('.timer__days');
-        const $hours = document.querySelector('.timer__hours');
-        const $minutes = document.querySelector('.timer__minutes');
-        const $seconds = document.querySelector('.timer__seconds');
-        // вызываем функцию countdownTimer
-        countdownTimer();
-        // вызываем функцию countdownTimer каждую секунду
-        timerId = setInterval(countdownTimer, 1000);
-    });
-</script>
 
 

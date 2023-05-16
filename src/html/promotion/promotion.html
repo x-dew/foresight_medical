@@ -1,0 +1,562 @@
+<style>
+    .specialOffers__aside {
+        padding: 40px 45px;
+        gap: 35px;
+        max-width: 1456px;
+        width: 100%;
+        min-height: 435px;
+        background: #020406;
+        border-radius: 25px;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 78px;
+    }
+
+    .specialOffers__aside_desc {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .specialOffers__aside_desc_text h1 {
+        font-weight: 600;
+        font-size: 40px;
+        line-height: 48px;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        color: #EA3C3D;
+        font-family: 'Inter-Bold', sans-serif;
+    }
+
+    .specialOffers__aside_desc_text p {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 145%;
+        display: flex;
+        align-items: center;
+        color: #FFFFFF;
+        margin-top: 15px;
+    }
+
+    .specialOffers__aside_desc_time {
+        max-width: 781px;
+        width: 100%;
+    }
+
+    .specialOffers__aside_desc_time > p {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 29px;
+        color: #EA3C3D;
+        font-family: 'Inter-Bold', sans-serif;
+    }
+
+    .timer__items {
+        display: flex;
+        margin-top: 14px;
+        margin-bottom: 7px;
+    }
+
+    .timer__item {
+        position: relative;
+        min-width: 60px;
+        margin-right: 29px;
+        padding-bottom: 15px;
+        text-align: center;
+        display: flex;
+    }
+
+    .timer__item::before {
+        content: attr(data-title);
+        position: absolute;
+        left: 50%;
+        bottom: -8px;
+        transform: translateX(-50%);
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 145%;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        margin-top: 5px;
+    }
+
+    .timer__item span {
+        width: 50px;
+        color: #EA3C3D !important;
+        padding: 15px 16px;
+        background: #FFFFFF;
+        border-radius: 15px;
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 40px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        letter-spacing: 0.02em;
+        font-family: 'Inter-Bold', sans-serif;
+    }
+
+    .timer__item span:not(:first-child) {
+        margin-left: 5px;
+    }
+
+    .timer__item:not(:last-child)::after {
+        content: ':';
+        position: absolute;
+        right: -20px;
+        top: 14px;
+        font-weight: 500;
+        font-size: 37px;
+        line-height: 40px;
+        letter-spacing: 0.02em;
+        color: #FFFFFF;
+    }
+
+    .timer__item::before {
+        content: attr(data-title);
+        position: absolute;
+        left: 50%;
+        bottom: -8px;
+        transform: translateX(-50%);
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 145%;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        margin-top: 5px;
+    }
+
+    /*------form-------*/
+    .specialOffers__aside_desc_form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        margin-top: 54px !important;
+        width: 100%;
+    }
+
+    .specialOffers__aside_desc_form .specialOffers__aside_desc_form_inputs {
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+        width: 100%;
+        max-width: 548px;
+    }
+
+    .specialOffers__aside_desc_form_inputs input {
+        padding: 24px;
+        max-width: 548px;
+        width: 100%;
+        min-height: 70px;
+        background: #FFFFFF;
+        border: 1px solid #E6E6E6;
+        border-radius: 20px;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        letter-spacing: -0.01em;
+        font-feature-settings: 'pnum' on, 'lnum' on;
+    }
+
+    .specialOffers__aside_desc_form_button {
+        align-items: center;
+        padding: 25px 40px;
+        gap: 4px;
+        max-width: 548px;
+        width: 100%;
+        min-height: 74px;
+        background: #EA3C3D;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+        text-align: center;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        margin-top: 20px;
+    }
+
+    .specialOffers__aside_desc_form_meta {
+        width: 100%;
+        max-width: 548px;
+        margin-top: 8px;
+    }
+
+    .specialOffers__aside_desc_form_meta p:first-child {
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 145%;
+        color: #ffffff;
+        letter-spacing: 1px;
+    }
+
+    .specialOffers__aside_desc_form_meta p:last-child {
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 145%;
+        color: #ffffff;
+        letter-spacing: 1px;
+    }
+
+    @media (max-width: 1265px) {
+        .specialOffers__aside_desc_form .specialOffers__aside_desc_form_inputs {
+            width: 100%;
+            max-width: 448px;
+        }
+
+        .specialOffers__aside_desc_form_button {
+            max-width: 448px !important;
+        }
+        .specialOffers__aside_desc_form_meta{
+            max-width: 448px;
+        }
+    }
+
+    @media (max-width: 1165px) {
+        .specialOffers__aside_desc {
+            width: 100%;
+            max-width: 520px;
+        }
+    }
+    @media (max-width: 1000px) {
+        .specialOffers__aside {
+            flex-direction: column;
+            margin-top: 40px;
+            align-items: center;
+        }
+
+        .specialOffers__aside_desc_form {
+            margin-top: 20px !important;
+            align-items: center;
+        }
+    }
+
+    @media (max-width: 1050px) {
+
+        .specialOffers__data > div:not(:first-child) {
+            margin-top: 60px;
+        }
+    }
+    @media (max-width: 990px) {
+
+
+    }
+    @media (max-width: 640px) {
+
+        .specialOffers__aside_desc_form_inputs input:last-child {
+            margin-top: -3px;
+        }
+
+        .specialOffers__aside_desc_form_inputs input {
+            padding: 19px;
+            gap: 10px;
+            width: 100%;
+            max-width: none;
+            min-height: 59px;
+            background: #FFFFFF;
+            border: 1px solid #E6E6E6;
+            border-radius: 15px;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+            letter-spacing: -0.01em;
+            font-feature-settings: 'pnum' on, 'lnum' on;
+        }
+
+        .specialOffers__aside_desc_form_meta p:first-child {
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 145%;
+            color: #ffffff;
+        }
+
+        .specialOffers__aside_desc_form_meta p:last-child {
+            font-weight: 600;
+            font-size: 15px;
+            line-height: 145%;
+            color: #ffffff;
+            margin-left: 3px;
+        }
+
+        .specialOffers__dataBlock__button_img a {
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 20px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            text-decoration: none;
+            font-family: 'Inter-Bold', sans-serif;
+        }
+
+        .timer__item span {
+            padding: 15px 10px;
+            width: 30px;
+            height: 50px;
+            background: #FFFFFF;
+            border-radius: 10px;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 40px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            letter-spacing: 0.02em;
+            font-family: 'Inter-Bold', sans-serif;
+            color: #020406;
+        }
+
+        .timer__item span:not(:first-child) {
+            margin-left: 5px;
+        }
+
+        .specialOffers__aside_desc_text p {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 150%;
+            color: #ffffff;
+            margin-top: 16px;
+        }
+
+        .specialOffers__aside_desc_text h1 {
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 120%;
+            color: #EA3C3D;
+            font-family: 'Inter-Bold', sans-serif;
+            text-transform: none !important;
+        }
+
+        .specialOffers__aside_desc_time > p {
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 120%;
+            color: #EA3C3D;
+            margin-top: 26px;
+        }
+        .specialOffers__aside_desc_form .specialOffers__aside_desc_form_inputs {
+            max-width: none;
+        }
+
+        .specialOffers__aside_desc_form_button {
+            max-width: none !important;
+        }
+
+        .specialOffers__aside_desc_form {
+            margin-top: 38px !important;
+        }
+
+        .specialOffers__aside {
+            display: block;
+            padding: 20px;
+            width: 100%;
+            border-radius: 15px;
+            margin-top: 40px;
+        }
+
+        .specialOffers__aside_desc {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .specialOffers__aside_desc_form {
+            margin-top: 38px;
+            width: 100%;
+        }
+
+        .specialOffers__aside_desc_form .specialOffers__aside_desc_form_inputs {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .specialOffers__aside_desc_form_button {
+            padding: 16px 24px;
+            width: 100%;
+            min-height: 56px;
+            background: #EA3C3D;
+            border-radius: 15px;
+            font-weight: 600;
+            font-size: 16px !important;
+            line-height: 24px;
+            text-align: center;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            margin-top: 10px;
+        }
+
+        .specialOffers__aside_desc_form_meta {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-top: 10px;
+        }
+
+        .specialOffers__aside_desc_time {
+            max-width: 781px;
+            width: 100%;
+        }
+
+        .timer__items {
+            display: flex;
+            margin-top: 16px;
+            margin-bottom: 7px;
+        }
+
+        .timer__item {
+            position: relative;
+            min-width: 60px;
+            margin-right: 20px;
+            padding-bottom: 15px;
+            text-align: center;
+            display: flex;
+        }
+
+        .timer__item::before {
+            content: attr(data-title);
+            position: absolute;
+            left: 50%;
+            bottom: -2px;
+            transform: translateX(-50%);
+            font-weight: 400;
+            font-size: 10px;
+            line-height: 145%;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            color: #ffffff;
+            margin-top: 5px;
+        }
+
+        .timer__item:not(:last-child)::after {
+            content: ':';
+            position: absolute;
+            right: -18px;
+            font-weight: 500;
+            font-size: 31px;
+            line-height: 40px;
+            letter-spacing: 0.02em;
+            color: #FFFFFF;
+        }
+    }
+
+
+</style>
+<div class="specialOffers__aside">
+    <div class="specialOffers__aside_desc">
+        <div class="specialOffers__aside_desc_text">
+            <h1>Акция!</h1>
+            <p>
+                Купив компьютерный томограф сейчас вы получите
+                моментальную скидку 10% и бесплатную
+                доставку в Москве!
+            </p>
+        </div>
+        <div class="specialOffers__aside_desc_time">
+            <p>До конца акции осталось:</p>
+            <div class="timer__items">
+                <div class="timer__item timer__days">
+                    <span>0</span>
+                    <span>0</span>
+                </div>
+                <div class="timer__item timer__hours">
+                    <span>0</span>
+                    <span>0</span>
+                </div>
+                <div class="timer__item timer__minutes">
+                    <span>0</span>
+                    <span>0</span>
+                </div>
+                <div class="timer__item timer__seconds">
+                    <span>0</span>
+                    <span>0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="specialOffers__aside_desc_form">
+        <form class="specialOffers__aside_desc_form_inputs">
+            <input type="name" placeholder="Имя" name="name">
+            <input type="tel" placeholder="Телефон" name="phone">
+        </form>
+        <div class="specialOffers__aside_desc_form_button">
+            <p>Отправить</p>
+        </div>
+        <div class="specialOffers__aside_desc_form_meta">
+            <p>Или позвоните нам по номеру</p>
+            <p>8 800 550 68 12</p>
+        </div>
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // конечная дата, например 1 июля 2021
+        const deadline = new Date(2023, 5, 17, 11, 39, 20);
+        // id таймера
+        let timerId = null;
+
+        let daysBefore = 0
+
+        // склонение числительных
+        function declensionNum(num, words) {
+            return words[(num % 100 > 4 && num % 100 < 20) ? 2 : [2, 0, 1, 1, 1, 2][(num % 10 < 5) ? num % 10 : 5]];
+        }
+
+        // вычисляем разницу дат и устанавливаем оставшееся времени в качестве содержимого элементов
+        function countdownTimer() {
+            const diff = deadline - new Date();
+            if (diff <= 0) {
+                clearInterval(timerId);
+            }
+            const days = diff > 0 ? Math.floor(diff / 1000 / 60 / 60 / 24) : 0;
+            const hours = diff > 0 ? Math.floor(diff / 1000 / 60 / 60) % 24 : 0;
+            const minutes = diff > 0 ? Math.floor(diff / 1000 / 60) % 60 : 0;
+            const seconds = diff > 0 ? Math.floor(diff / 1000) % 60 : 0;
+            //$days.textContent = days < 10 ? '0' + days : days;
+            (() => {
+                if (daysBefore !== days) {
+                    let daysStr = (days).toString()
+                    if (days < 10) {
+                        daysStr = '0' + daysStr
+                    }
+                    let spans = ""
+                    for (let i = 0; i < daysStr.length; i++) {
+                        spans += `<span>${daysStr[i]}</span>`
+                    }
+                    $days.innerHTML = spans
+                    daysBefore = days
+                }
+            })()
+            //$hours.textContent = hours < 10 ? '0' + hours : hours;
+            $hours.querySelector('span:first-child').textContent = hours < 10 ? '0' : (hours - hours % 10) / 10
+            $hours.querySelector('span:last-child').textContent = '' + hours % 10
+            //$minutes.textContent = minutes < 10 ? '0' + minutes : minutes;
+            $minutes.querySelector('span:first-child').textContent = minutes < 10 ? '0' : (minutes - minutes % 10) / 10
+            $minutes.querySelector('span:last-child').textContent = '' + minutes % 10
+            //$seconds.textContent = seconds < 10 ? '0' + seconds : seconds;
+            $seconds.querySelector('span:first-child').textContent = seconds < 10 ? '0' : (seconds - seconds % 10) / 10
+            $seconds.querySelector('span:last-child').textContent = '' + seconds % 10
+            $days.dataset.title = declensionNum(days, ['день', 'дня', 'дней']);
+            $hours.dataset.title = declensionNum(hours, ['час', 'часа', 'часов']);
+            $minutes.dataset.title = declensionNum(minutes, ['минута', 'минуты', 'минут']);
+            $seconds.dataset.title = declensionNum(seconds, ['секунда', 'секунды', 'секунд']);
+        }
+
+        // получаем элементы, содержащие компоненты даты
+        const $days = document.querySelector('.timer__days');
+        const $hours = document.querySelector('.timer__hours');
+        const $minutes = document.querySelector('.timer__minutes');
+        const $seconds = document.querySelector('.timer__seconds');
+        // вызываем функцию countdownTimer
+        countdownTimer();
+        // вызываем функцию countdownTimer каждую секунду
+        timerId = setInterval(countdownTimer, 1000);
+    });
+</script>

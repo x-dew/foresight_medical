@@ -1,12 +1,13 @@
 <style>
     .specialOffers {
-        margin-top: 71px;
+        position: relative;
+        margin-top: 82px;
+        background-image: url("/img/special-offers-image.svg");
+        background-repeat: no-repeat;
+        background-position: 135px 4px;
     }
 
     .specialOffers__title {
-        background-image: url("/img/special-offers-image.svg");
-        background-repeat: no-repeat;
-        background-position: 132px 9px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -18,33 +19,7 @@
         line-height: 120%;
         color: #1F1F1F;
         font-family: 'Inter-Bold', sans-serif;
-    }
-
-    .specialOffers__title p {
-        font-weight: 400;
-        font-size: 18px;
-        line-height: 150%;
-        color: #83898D;
-        margin-top: 15px;
-    }
-
-    .specialOffers__aside {
-        padding: 40px 45px;
-        gap: 35px;
-        max-width: 1456px;
-        width: 100%;
-        min-height: 446px;
-        background: #2D57A9;
-        border-radius: 25px;
-        display: flex;
-        justify-content: space-between;
-        margin-top: 80px;
-    }
-
-    .specialOffers__aside_desc {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        text-transform: uppercase;
     }
 
     .specialOffers__aside_desc_text h1 {
@@ -53,7 +28,7 @@
         line-height: 48px;
         letter-spacing: 0.02em;
         text-transform: uppercase;
-        color: #FFFFFF;
+        color: #EA3C3D;
         font-family: 'Inter-Bold', sans-serif;
     }
 
@@ -63,20 +38,16 @@
         line-height: 145%;
         display: flex;
         align-items: center;
-        color: #AEC2EA;
+        color: #FFFFFF;
         margin-top: 15px;
     }
 
-    .specialOffers__aside_desc_time {
-        max-width: 781px;
-        width: 100%;
-    }
-
     .specialOffers__aside_desc_time > p {
+        font-style: normal;
         font-weight: 500;
-        font-size: 32px;
-        line-height: 39px;
-        color: #FFFFFF;
+        font-size: 24px;
+        line-height: 29px;
+        color: #EA3C3D;
         font-family: 'Inter-Bold', sans-serif;
     }
 
@@ -173,7 +144,7 @@
         display: flex;
         align-items: center;
         color: #999999;
-        margin-left: 22px;
+        margin-left: 7px;
     }
 
     .specialOffers__dataBlock_desc_list {
@@ -205,7 +176,7 @@
     }
 
     .specialOffers__meta {
-        margin: 74px 0 72px 0;
+        margin: 74px 0 143px 0;
     }
 
     .specialOffers__meta p {
@@ -215,55 +186,66 @@
         color: #83898D;
     }
 
-    .specialOffers__aside_desc_form {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        margin-top: 63px !important;
-    }
-
-    .specialOffers__aside_desc_form .specialOffers__aside_desc_form_inputs {
-        width: 100%;
+    .specialOffers__aside_desc_form_inputs input {
+        padding: 24px;
         max-width: 548px;
+        width: 100%;
+        min-height: 70px;
+        background: #FFFFFF;
+        border: 1px solid #E6E6E6;
+        border-radius: 20px;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        letter-spacing: -0.01em;
+        font-feature-settings: 'pnum' on, 'lnum' on;
     }
 
-    .timer__item span {
-        width: 50px;
+    .specialOffers__aside_desc_form_meta p:first-child {
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 145%;
+        color: #ffffff;
+        letter-spacing: 1px;
+    }
+
+    .specialOffers__aside_desc_form_meta p:last-child {
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 145%;
+        color: #ffffff;
+        letter-spacing: 1px;
+    }
+
+    .specialOffers__dataBlock__button_img {
+        padding: 10px 15px 10px 12px;
+        width: 111px;
+        position: relative;
+        height: 44px;
+        left: 16px;
+        top: 15px;
+        background: #EA3C3D;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .specialOffers__dataBlock__button_img a {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 20px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        text-decoration: none;
+        font-family: 'Inter-Bold', sans-serif;
     }
 
     /*-------media---------*/
-
-    @media (max-width: 1265px) {
-        .specialOffers__aside_desc_form .specialOffers__aside_desc_form_inputs {
-            width: 100%;
-            max-width: 448px;
-        }
-
-        .specialOffers__aside_desc_form_button {
-            max-width: 448px !important;
-        }
-    }
-
-    @media (max-width: 1165px) {
-        .specialOffers__aside_desc {
-            width: 100%;
-            max-width: 520px;
-        }
-    }
-
-    @media (max-width: 1000px) {
-        .specialOffers__aside {
-            flex-direction: column;
-        }
-
-        .specialOffers__aside_desc_form {
-            margin-top: 20px !important;
-        }
-
-        .specialOffers__aside {
-            margin-top: 40px;
-        }
-    }
 
     @media (max-width: 1050px) {
 
@@ -306,217 +288,13 @@
         }
     }
 
-    .timer__items {
-        display: flex;
-        margin-top: 14px;
-        margin-bottom: 7px;
-    }
-
-    .timer__item {
-        position: relative;
-        min-width: 60px;
-        margin-right: 29px;
-        padding-bottom: 15px;
-        text-align: center;
-        display: flex;
-    }
-
-    .timer__item span {
-        padding: 15px 16px;
-        background: #FFFFFF;
-        border-radius: 15px;
-        font-weight: 500;
-        font-size: 32px;
-        line-height: 40px;
-        display: flex;
-        align-items: center;
-        text-align: center;
-        letter-spacing: 0.02em;
-        font-family: 'Inter-Bold', sans-serif;
-        color: #020406;
-    }
-
-    .timer__item span:not(:first-child) {
-        margin-left: 5px;
-    }
-
-    .timer__item::before {
-        content: attr(data-title);
-        position: absolute;
-        left: 50%;
-        bottom: -8px;
-        transform: translateX(-50%);
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 145%;
-        letter-spacing: 0.02em;
-        text-transform: uppercase;
-        color: #AEC2EA;
-        margin-top: 5px;
-    }
-
-    .timer__item:not(:last-child)::after {
-        content: ':';
-        position: absolute;
-        right: -20px;
-        top: 14px;
-        font-weight: 500;
-        font-size: 37px;
-        line-height: 40px;
-        letter-spacing: 0.02em;
-        color: #FFFFFF;
-    }
-
-    .specialOffers__aside_desc_form {
-        margin-top: 84px;
-        width: 100%;
-    }
-
-    .specialOffers__aside_desc_form .specialOffers__aside_desc_form_inputs {
-        display: flex;
-        flex-direction: column;
-        gap: 13px;
-    }
-
-    .specialOffers__aside_desc_form_inputs input {
-        padding: 24px;
-        max-width: 548px;
-        width: 100%;
-        min-height: 70px;
-        background: #FFFFFF;
-        border: 1px solid #E6E6E6;
-        border-radius: 20px;
-        font-weight: 400;
-        font-size: 18px;
-        line-height: 22px;
-        letter-spacing: -0.01em;
-        font-feature-settings: 'pnum' on, 'lnum' on;
-    }
-
-    .specialOffers__aside_desc_form_button {
-        align-items: center;
-        padding: 25px 40px;
-        gap: 4px;
-        max-width: 548px;
-        width: 100%;
-        min-height: 74px;
-        background: #EA3C3D;
-        border-radius: 20px;
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 24px;
-        text-align: center;
-        letter-spacing: 0.02em;
-        text-transform: uppercase;
-        color: #FFFFFF;
-        margin-top: 20px;
-    }
-
-    .specialOffers__aside_desc_form_meta {
-        display: flex;
-        margin-top: 11px;
-    }
-
-    .specialOffers__aside_desc_form_meta p:first-child {
-        font-weight: 400;
-        font-size: 13px;
-        line-height: 145%;
-        color: #AEC2EA;
-        letter-spacing: 1px;
-    }
-
-    .specialOffers__aside_desc_form_meta p:last-child {
-        font-weight: 600;
-        font-size: 15px;
-        line-height: 145%;
-        color: #AEC2EA;
-        margin-left: 3px;
-        letter-spacing: 1px;
-    }
-
-    .specialOffers__dataBlock__button_img {
-        padding: 10px 15px 10px 12px;
-        width: 111px;
-        position: relative;
-        height: 44px;
-        left: 16px;
-        top: 15px;
-        background: #EA3C3D;
-        border-radius: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .specialOffers__dataBlock__button_img a {
-        font-weight: 600;
-        font-size: 14px;
-        line-height: 20px;
-        display: flex;
-        align-items: center;
-        text-align: center;
-        letter-spacing: 0.02em;
-        text-transform: uppercase;
-        color: #FFFFFF;
-        text-decoration: none;
-        font-family: 'Inter-Bold', sans-serif;
-    }
 
 </style>
 <div class="specialOffers">
     <div class="specialOffers__title">
         <h1>Спецпредложения</h1>
-        <p>
-            Уникальная акция на компьютерные томографы <br>
-            Aquilion 64 и Aquilion CX128 со скидкой в Москве*
-        </p>
     </div>
-    <div class="specialOffers__aside">
-        <div class="specialOffers__aside_desc">
-            <div class="specialOffers__aside_desc_text">
-                <h1>Акция</h1>
-                <p>
-                    Купив компьютерный томограф сейчас вы получите <br>
-                    моментальную скидку 10% и бесплатную <br>
-                    доставку в Москве!
-                </p>
-            </div>
-            <div class="specialOffers__aside_desc_time">
-                <p>До конца акции осталось:</p>
-                <div class="timer__items">
-                    <div class="timer__item timer__days">
-                        <span>0</span>
-                        <span>0</span>
-                    </div>
-                    <div class="timer__item timer__hours">
-                        <span>0</span>
-                        <span>0</span>
-                    </div>
-                    <div class="timer__item timer__minutes">
-                        <span>0</span>
-                        <span>0</span>
-                    </div>
-                    <div class="timer__item timer__seconds">
-                        <span>0</span>
-                        <span>0</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="specialOffers__aside_desc_form">
-            <form class="specialOffers__aside_desc_form_inputs">
-                <input type="name" placeholder="Имя" name="name">
-                <input type="tel" placeholder="Телефон" name="phone">
-            </form>
-            <div class="specialOffers__aside_desc_form_button">
-                <p>Отправить</p>
-            </div>
-            <div class="specialOffers__aside_desc_form_meta">
-                <p>Или позвоните нам по номеру</p>
-                <p>8 800 550 68 12</p>
-            </div>
-        </div>
-    </div>
+    @@include("../promotion/promotion.html")
     <div class="specialOffers__data">
         <div class="specialOffers__dataBlock">
             <div class="specialOffers__dataBlock_info">
@@ -598,65 +376,3 @@
     </div>
 </div>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        // конечная дата, например 1 июля 2021
-        const deadline = new Date(2023, 6, 1, 2, 58);
-        // id таймера
-        let timerId = null;
-
-        let daysBefore = 0
-
-        // склонение числительных
-        function declensionNum(num, words) {
-            return words[(num % 100 > 4 && num % 100 < 20) ? 2 : [2, 0, 1, 1, 1, 2][(num % 10 < 5) ? num % 10 : 5]];
-        }
-
-        // вычисляем разницу дат и устанавливаем оставшееся времени в качестве содержимого элементов
-        function countdownTimer() {
-            const diff = deadline - new Date();
-            if (diff <= 0) {
-                clearInterval(timerId);
-            }
-            const days = diff > 0 ? Math.floor(diff / 1000 / 60 / 60 / 24) : 0;
-            const hours = diff > 0 ? Math.floor(diff / 1000 / 60 / 60) % 24 : 0;
-            const minutes = diff > 0 ? Math.floor(diff / 1000 / 60) % 60 : 0;
-            const seconds = diff > 0 ? Math.floor(diff / 1000) % 60 : 0;
-            //$days.textContent = days < 10 ? '0' + days : days;
-            (() => {
-                if (daysBefore !== days) {
-                    const daysStr = (days).toString()
-                    let spans = ""
-                    for (let i = 0; i < daysStr.length; i++) {
-                        spans += `<span>${daysStr[i]}</span>`
-                    }
-                    $days.innerHTML = spans
-                    daysBefore = days
-                }
-            })()
-            //$hours.textContent = hours < 10 ? '0' + hours : hours;
-            $hours.querySelector('span:first-child').textContent = hours < 10 ? '0' : (hours - hours % 10) / 10
-            $hours.querySelector('span:last-child').textContent = '' + hours % 10
-            //$minutes.textContent = minutes < 10 ? '0' + minutes : minutes;
-            $minutes.querySelector('span:first-child').textContent = minutes < 10 ? '0' : (minutes - minutes % 10) / 10
-            $minutes.querySelector('span:last-child').textContent = '' + minutes % 10
-            //$seconds.textContent = seconds < 10 ? '0' + seconds : seconds;
-            $seconds.querySelector('span:first-child').textContent = seconds < 10 ? '0' : (seconds - seconds % 10) / 10
-            $seconds.querySelector('span:last-child').textContent = '' + seconds % 10
-            $days.dataset.title = declensionNum(days, ['день', 'дня', 'дней']);
-            $hours.dataset.title = declensionNum(hours, ['час', 'часа', 'часов']);
-            $minutes.dataset.title = declensionNum(minutes, ['минута', 'минуты', 'минут']);
-            $seconds.dataset.title = declensionNum(seconds, ['секунда', 'секунды', 'секунд']);
-        }
-
-        // получаем элементы, содержащие компоненты даты
-        const $days = document.querySelector('.timer__days');
-        const $hours = document.querySelector('.timer__hours');
-        const $minutes = document.querySelector('.timer__minutes');
-        const $seconds = document.querySelector('.timer__seconds');
-        // вызываем функцию countdownTimer
-        countdownTimer();
-        // вызываем функцию countdownTimer каждую секунду
-        timerId = setInterval(countdownTimer, 1000);
-    });
-</script>
