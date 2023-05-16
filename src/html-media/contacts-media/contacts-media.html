@@ -4,6 +4,7 @@
         margin: 40px 0 -2px 0;
     }
 
+
     .contacts-title-media h2 {
         font-family: 'Inter-Bold', sans-serif;
         font-style: normal;
@@ -21,6 +22,14 @@
         background: #F2F2F2;
         border-radius: 20px;
         padding: 25px;
+    }
+
+    .contacts-office-logo-image {
+        display: flex;
+    }
+
+    .contacts-office-logo-image h2 {
+        margin-left: 21px;
     }
 
     .contacts-office-date-media h2 {
@@ -100,12 +109,51 @@
         margin: 0 34px 0 17px;
     }
 
-
     .contacts-stock-date-media {
         background: #F2F2F2;
         border-radius: 20px;
         padding: 25px 25px 21px 25px;
         margin-bottom: 10px;
+    }
+
+    .contacts-stock-logo-image {
+        display: flex;
+        margin-top: 2px
+    }
+
+    .contacts-information-media {
+        background: #2D57A9;
+        border-radius: 10px;
+        padding: 14px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 21px;
+    }
+
+    .contacts-information-media img {
+        margin-top: 3px;
+    }
+
+    .contacts-information-media p {
+        font-family: 'Inter', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 140%;
+        color: #FFFFFF;
+        margin-left: 12px;
+        margin-top: 1px;
+    }
+
+    .contacts-stock-logo-image h2 {
+        margin-left: 21px;
+    }
+
+    .contacts-stock-slider-media {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 6px;
     }
 
     .contacts-stock-date-media h2 {
@@ -151,6 +199,16 @@
     .contacts-stock-map-media iframe {
         width: 100%;
     }
+
+    @media (min-width: 376px ) {
+        .contacts-stock-slider-media {
+            justify-content: flex-start;
+        }
+
+        .contacts-stock-slider-media li:nth-child(2n+2) {
+            margin: 0 10px;
+        }
+    }
 </style>
 <div class="contacts-media">
     <div class="contacts-block-media">
@@ -160,8 +218,8 @@
         <div class="contacts-office-media">
             <div class="contacts-office-date-media">
                 <div class="contacts-office-logo-image">
+                    <img src="/img/contacts-office-media.svg" alt="">
                     <h2>Офис</h2>
-                    <img src="/img/contacts-office-media.svg" alt="office">
                 </div>
                 <div class="contacts-office-text-media">
                     <span>Юридический адрес</span>
@@ -205,14 +263,20 @@
                 </div>
             </div>
             <div class="contacts-office-map-media">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1544.816920678516!2d37.42155320049376!3d55.693896458755916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sus!4v1683956224388!5m2!1sru!2sus"
-                        width="400" height="400" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A9692774dc5ee1fad2b2e9e0b56d9d07c422a685ed395b82d044edfa74ffca9a5&amp;source=constructor"
+                        width="343" height="400" frameborder="0"></iframe>
             </div>
         </div>
         <div class="contacts-stock-media">
             <div class="contacts-stock-date-media">
-                <h2>Склад</h2>
+                <div class="contacts-stock-logo-image">
+                    <img src="/img/stock-information.svg" alt="">
+                    <h2>Склад</h2>
+                </div>
+                <div class="contacts-information-media">
+                    <img src="/img/stock-information-image.svg" alt="information">
+                    <p>Единственный в Москве склад радиологического оборудования</p>
+                </div>
                 <div class="contacts-stock-date-text-media">
                     <span>Адрес склада</span>
                     <p>
@@ -222,12 +286,18 @@
                 </div>
                 <div class="contacts-stock-date-image">
                     <img src="/img/contact-stock-media-image.jpg" alt="stock">
+                    <div class="contacts-stock-date-image-slider">
+                        <ul class="contacts-stock-slider-media">
+                            <li><img src="/img/contacts-stock-media-image.jpg" alt="slider"></li>
+                            <li><img src="/img/contacts-stock-media-image-2.jpg" alt="slider"></li>
+                            <li><img src="/img/contacts-stock-media-image-3.jpg" alt="slider"></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="contacts-stock-map-media">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2249.264159968475!2d37.43503517719556!3d55.68439499725771!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54ddb6b41f021%3A0xb9143372ebee0ac7!2z0J7Rh9Cw0LrQvtCy0YHQutC-0LUg0YguLCAzNiDRgdGC0YDQvtC10L3QuNC1IDIsINCc0L7RgdC60LLQsCwg0KDQvtGB0YHQuNGPLCAxMTk1MzA!5e0!3m2!1sru!2sus!4v1683957519082!5m2!1sru!2sus"
-                        width="400" height="400" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A9692774dc5ee1fad2b2e9e0b56d9d07c422a685ed395b82d044edfa74ffca9a5&amp;source=constructor"
+                        width="343" height="400" frameborder="0"></iframe>
             </div>
         </div>
     </div>
