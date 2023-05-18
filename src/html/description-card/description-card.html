@@ -1,4 +1,104 @@
 <style>
+    /*------slider-------*/
+
+    .fancybox__container {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .fancybox__backdrop {
+        background: #000000 !important;
+    }
+
+    .fancybox__toolbar {
+        display: none !important;
+    }
+
+    .f-button {
+        display: flex !important;
+    }
+
+    .fancybox__slide img {
+        border-radius: 70px;
+    }
+
+    .fancybox__carousel {
+        flex: none;
+    }
+
+    .f-thumbs__slide {
+        transform: none !important;
+        width: 100%;
+        max-width: 130px;
+        height: 92px;
+    }
+
+    .is-modern .f-thumbs__slide > * {
+        clip-path: none;
+    }
+
+    .f-thumbs {
+        width: 100%;
+        max-width: 880px !important;
+        margin: 0 auto;
+    }
+
+    .f-thumbs img {
+        border-radius: 15px;
+    }
+
+    .f-thumbs__slide__button {
+        width: 130px !important;
+        height: 92px !important;
+    }
+
+    .fancybox__slide {
+        margin-bottom: 56px;
+    }
+
+    .fancybox__nav {
+        max-width: 1105px;
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+        animation: none !important;
+    }
+
+    .f-button {
+        transform: translateY(70%) !important;
+    }
+
+    .fancybox__content {
+        width: 100%;
+        max-width: 880px;
+        height: 100%;
+        max-height: 615px;
+    }
+
+    .fancybox__content img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .fancybox__footer {
+        padding-bottom: 58px;
+    }
+
+    .fancybox__slide {
+        height: 100%;
+        max-height: 615px;
+        min-height: 615px;
+
+    }
+
+    .f-thumbs > .f-thumbs__track {
+        display: flex!important;
+        margin: 0 !important;
+        gap: 0 20px !important;
+    }
+
+    /*------slider-------*/
     .check-container {
         display: block;
         position: relative;
@@ -569,11 +669,11 @@
         margin-bottom: 30px;
     }
 
-    .description-card__list li:last-child {
+    .description-card__list li:last-child a {
         position: relative;
     }
 
-    .description-card__list li:last-child::after {
+    .description-card__list li:last-child a::after {
         position: absolute;
         content: '';
         color: #FFFFFF;
@@ -594,6 +694,8 @@
         font-size: 56px;
         line-height: 120%;
         color: #FFFFFF;
+        top: 35%;
+        left: 40%;
     }
 
     .description-card__list li:nth-child(2) {
@@ -792,7 +894,11 @@
                 </div>
                 <div class="description-card__img-slider ">
                     <div class="description-img__big">
-                        <img src="/img/product-big-image.jpg" alt="photo">
+                        <div>
+                            <a data-fancybox="gallery-2" href="/img/product-big-image.jpg">
+                                <img src="/img/product-big-image.jpg" alt="photo">
+                            </a>
+                        </div>
                         <div class="description-img__big-text">
                             <p>В НАЛИЧИИ</p>
                         </div>
@@ -805,14 +911,28 @@
                     <span>Цена «Под ключ»</span>
                 </div>
                 <ul class="description-card__list">
-                    <li><img src="/img/product-small-3-image.jpg" alt="photo"></li>
-                    <li><img src="/img/product-small-2-image.jpg" alt="photo"></li>
-                    <li><img src="/img/product-small-1-image.jpg" alt="photo"></li>
                     <li>
-                        <div class="description-card__list-text">
-                            <p>+2</p>
-                        </div>
-                        <img src="/img/product-small-image.jpg" alt="photo">
+                        <a data-fancybox="gallery-2" href="/img/product-small-1-image.jpg">
+                            <img src="/img/product-small-1-image.jpg" alt="photo">
+                        </a>
+                    </li>
+                    <li>
+                        <a data-fancybox="gallery-2" href="/img/product-small-2-image.jpg">
+                            <img src="/img/product-small-2-image.jpg" alt="photo">
+                        </a>
+                    </li>
+                    <li>
+                        <a data-fancybox="gallery-2" href="/img/product-small-1-image.jpg">
+                            <img src="/img/product-small-1-image.jpg" alt="photo">
+                        </a>
+                    </li>
+                    <li>
+                        <a data-fancybox="gallery-2" href="/img/product-small-image.jpg">
+                            <img src="/img/product-small-image.jpg" alt="photo">
+                            <div class="description-card__list-text">
+                                <p>+2</p>
+                            </div>
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -943,7 +1063,9 @@
     </div>
 </div>
 <script>
-
+    Fancybox.bind('[data-fancybox="gallery"]', {
+        //
+    });
     let modal = document.getElementById('modal')
     let closes = document.getElementById('closes')
     let linkModal = document.getElementById('link-modal')

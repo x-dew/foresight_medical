@@ -58,5 +58,8 @@
     "sass": "^1.43.4",
     "webpack": "^5.61.0",
     "webpack-stream": "^7.0.0"
+  },
+  "dependencies": {
+    "@fancyapps/ui": "^5.0.17"
   }
 }

@@ -7,17 +7,22 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>MPC</title>
 	<link rel="stylesheet" href="/css/main.css">
+	<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
+	/>
 </head>
 <body>
+
 <div class="container inputs">
 	@@include("home/header/header.html")
 <!--Главный экран-->
 <!--	@@include("home/product-overview/product-overview.html")-->
 <!--Блок товара-->
-<!--	@@include("description-card/description-card.html")-->
+	@@include("description-card/description-card.html")
 	<div class="container-block">
 <!--Контакты-->
-	@@include("contacts/contacts.html")
+<!--	@@include("contacts/contacts.html")-->
 <!--Блок спецпредложения-->
 <!--		@@include("special-offers/special-offers.html")-->
 <!--Каталог-->
@@ -30,9 +35,9 @@
 <!--<div class="container-media inputs">-->
 <!--	@@include("../html-media/header-modal/header-modal.html")-->
 <!--	&lt;!&ndash;		@@include("../html-media/product-media/product-media.html")&ndash;&gt;-->
-<!--	&lt;!&ndash;	@@include("../html-media/description-card-media/description-card-media.html")&ndash;&gt;-->
+<!--&lt;!&ndash;			@@include("../html-media/description-card-media/description-card-media.html")&ndash;&gt;-->
 <!--	<div class="container-block">-->
-<!--		@@include("../html-media/special-offers-media/special-offers-media.html")-->
+<!--		&lt;!&ndash;		@@include("../html-media/special-offers-media/special-offers-media.html")&ndash;&gt;-->
 <!--		&lt;!&ndash;		@@include("../html-media/contacts-media/contacts-media.html")&ndash;&gt;-->
 <!--		&lt;!&ndash;		@@include("../html-media/grocery-list-media/grocery-list-media.html")&ndash;&gt;-->
 <!--		&lt;!&ndash;		@@include("../html-media/feedback-media/feedback-media.html")&ndash;&gt;-->
@@ -40,5 +45,12 @@
 <!--	</div>-->
 <!--	@@include("../html-media/footer-media/footer-media.html")-->
 <!--</div>-->
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+<script>
+	Fancybox.bind('[data-fancybox="gallery-2"]', {
+		//
+	});
+</script>
 </body>
 </html>
+
