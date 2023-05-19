@@ -1,9 +1,29 @@
 <style>
+
+    /*------slider-------*/
+
+    .contacts-stock-slider-big-media img {
+        display: none;
+        max-height: 206px;
+    }
+
+    .contacts-stock-slider-big-media img[data-show="yes"] {
+        display: block;
+        width: 100%;
+        max-height: 206px;
+        border-radius: 15px;
+    }
+
+    .contacts-stock-slider-media img {
+        border: 1px solid transparent;
+        padding: 1px;
+    }
+
+    /*------slider-------*/
     .contacts-media {
         width: 100%;
         margin: 40px 0 -2px 0;
     }
-
 
     .contacts-title-media h2 {
         font-family: 'Inter-Bold', sans-serif;
@@ -94,6 +114,7 @@
     }
 
     .contacts-office-map-media iframe {
+        border-radius: 20px;
         width: 100%;
     }
 
@@ -154,6 +175,15 @@
         align-items: center;
         justify-content: space-between;
         margin-top: 6px;
+        overflow-x: auto;
+    }
+
+    .contacts-stock-slider-media li {
+        margin-right: 10px;
+    }
+
+    .contacts-stock-slider-media img {
+        border-radius: 15px;
     }
 
     .contacts-stock-date-media h2 {
@@ -198,6 +228,15 @@
 
     .contacts-stock-map-media iframe {
         width: 100%;
+        border-radius: 20px;
+    }
+
+    @media (min-width: 440px ) {
+        .contacts-stock-slider-big-media img[data-show="yes"] {
+            max-height: 246px;
+            max-width: 370px;
+            margin: 0 auto;
+        }
     }
 
     @media (min-width: 376px ) {
@@ -205,9 +244,6 @@
             justify-content: flex-start;
         }
 
-        .contacts-stock-slider-media li:nth-child(2n+2) {
-            margin: 0 10px;
-        }
     }
 </style>
 <div class="contacts-media">
@@ -284,14 +320,23 @@
                         д. 36, стр. 2
                     </p>
                 </div>
-                <div class="contacts-stock-date-image">
-                    <img src="/img/contact-stock-media-image.jpg" alt="stock">
+                <div class="contacts-stock-date-image-media">
+                    <div class="contacts-stock-slider-big-media">
+                        <img data-id="0" data-show="yes" src="/img/contact-stock-media-image.jpg" alt="stock">
+                        <img data-id="1" src="/img/contacts-stock-media-image-2.jpg" alt="slider">
+                        <img data-id="2" src="/img/contacts-stock-media-image-3.jpg" alt="slider">
+                        <img data-id="3" src="/img/contact-stock-media-image.jpg" alt="slider">
+                        <img data-id="4" src="/img/contacts-stock-media-image-3.jpg" alt="slider">
+                        <div class="prev-before-media"></div>
+                        <div class="next-after-media"></div>
+                    </div>
                     <div class="contacts-stock-date-image-slider">
                         <ul class="contacts-stock-slider-media">
-                            <li><img src="/img/contacts-stock-media-image.jpg" alt="slider"></li>
-                            <li><img src="/img/contacts-stock-media-image-2.jpg" alt="slider"></li>
-                            <li><img src="/img/contacts-stock-media-image-3.jpg" alt="slider"></li>
-                            <li><img src="/img/contacts-stock-media-image.jpg" alt="slider"></li>
+                            <li><img data-id="0" src="/img/contacts-stock-media-image.jpg" alt="slider"></li>
+                            <li><img data-id="1" src="/img/contacts-stock-media-image-2.jpg" alt="slider"></li>
+                            <li><img data-id="2" src="/img/contacts-stock-media-image-3.jpg" alt="slider"></li>
+                            <li><img data-id="3" src="/img/contacts-stock-media-image.jpg" alt="slider"></li>
+                            <li><img data-id="4" src="/img/contacts-stock-media-image-3.jpg" alt="slider"></li>
                         </ul>
                     </div>
                 </div>
@@ -304,5 +349,32 @@
     </div>
 </div>
 <script>
+    const show = (show, hidden) => {
+        show.dataset.show = "yes"
+        if (hidden !== null) {
+            hidden.dataset.show = "no"
+            const ImageToHidden = document.querySelector(`.contacts-stock-slider-media img[data-id="${hidden.dataset.id}"]`)
+            ImageToHidden.style.borderColor = "transparent"
+        }
+        const ImageToShow = document.querySelector(`.contacts-stock-slider-media img[data-id="${show.dataset.id}"]`)
+        ImageToShow.style.borderColor = "rgb(80 80 80)"
+    }
 
+    const clickImage = () => {
+        const images = document.querySelectorAll('.contacts-stock-slider-media img')
+        images.forEach(image => {
+            image.addEventListener("click", () => clickImg(image))
+        })
+
+        const clickImg = (image) => {
+            const id = image.dataset.id
+            const ImageToShow = document.querySelector(`.contacts-stock-slider-big-media img[data-id="${id}"]`)
+            const showedImage = document.querySelector(`.contacts-stock-slider-big-media img[data-show="yes"]:not([data-id="${id}"]`)
+
+            show(ImageToShow, showedImage)
+        }
+
+        clickImg(images[0])
+    }
+    clickImage()
 </script>
