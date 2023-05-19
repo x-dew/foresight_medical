@@ -17,6 +17,7 @@
     .contacts-stock-slider-media img {
         border: 1px solid transparent;
         padding: 1px;
+        max-width: 94px;
     }
 
     /*------slider-------*/
@@ -170,16 +171,23 @@
         margin-left: 21px;
     }
 
+    .contacts-stock-slider-media::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+        background-color: transparent;
+    }
+
     .contacts-stock-slider-media {
         display: flex;
         align-items: center;
         justify-content: space-between;
         margin-top: 6px;
         overflow-x: auto;
+        border-radius: 15px
     }
 
     .contacts-stock-slider-media li {
-        margin-right: 10px;
+        margin-right: 7px;
     }
 
     .contacts-stock-slider-media img {
@@ -229,6 +237,13 @@
     .contacts-stock-map-media iframe {
         width: 100%;
         border-radius: 20px;
+    }
+
+    @media (min-width: 450px) {
+        .contacts-stock-slider-media {
+            max-width: 370px;
+            margin: 6px auto 0 auto;
+        }
     }
 
     @media (min-width: 440px ) {
