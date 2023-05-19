@@ -1,39 +1,4 @@
 <style>
-    .slider {
-        width: 500px;
-        height: 300px;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .slider img {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        opacity: 0;
-        transition: opacity 0.5s ease;
-    }
-
-    .slider img.active {
-        opacity: 1;
-    }
-
-    .slider button {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 1;
-    }
-
-    .slider .prev {
-        left: 10px;
-    }
-
-    .slider .next {
-        right: 10px;
-    }
 
     .contacts {
         margin-top: 30px;
@@ -245,11 +210,18 @@
     .contacts-stock-image-slider {
         margin-top: 11px;
         overflow-x: auto;
+        cursor: pointer;
+    }
+
+    .contacts-stock-image-slider::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+        background-color: transparent;
     }
 
     .contacts-stock-image-slider img {
         border-radius: 25px;
-        margin-right: 13px;
+        margin-right: 9px;
     }
 
     .contacts-stock-image-slider-date {
@@ -257,6 +229,49 @@
         align-items: center;
         justify-content: space-between;
     }
+
+    /*-------slider-------*/
+
+    .contacts-stock-date-image img {
+        display: none;
+        max-height: 450px;
+    }
+
+    .contacts-stock-date-image img[data-show="yes"] {
+        display: block;
+        width: 100%;
+    }
+
+    .contacts-stock-date-image {
+        position: relative;
+    }
+
+    .contacts-stock-image-slider-date img {
+        border: 1px solid transparent;
+        padding: 1px;
+    }
+
+    .contacts-stock-date-image .prev-before {
+        background-image: url("/img/prev.svg");
+        position: absolute;
+        height: 30px;
+        width: 30px;
+        left: 18px;
+        top: 47%;
+        cursor: pointer;
+    }
+
+    .contacts-stock-date-image .next-after {
+        background-image: url("/img/next.svg");
+        position: absolute;
+        height: 30px;
+        width: 30px;
+        right: 17px;
+        top: 47%;
+        cursor: pointer;
+    }
+
+    /*-------slider-------*/
 
     @media (max-width: 1470px) {
         .contacts-office {
@@ -271,17 +286,11 @@
             height: 100%;
         }
 
-        .contacts-stock-image-slider-date img {
-            width: 100%;
-        }
-
-        .contacts-stock-image-slider-date li:nth-child(2n+2) {
-            margin: 0 10px;
-        }
-
         .contacts-stock-date-image img {
             width: 100%;
+            max-height: 368px;
         }
+
     }
 
     @media (max-width: 1410px) {
@@ -316,11 +325,27 @@
             font-size: 17px;
             line-height: 24px;
         }
+
+        .contacts-stock-date-image img {
+            max-height: 317px;
+        }
     }
 
     @media (max-width: 1115px) {
         .contacts-date {
             display: block;
+        }
+
+        .contacts-stock-date-image {
+            max-width: 650px;
+            margin: 0 auto;
+        }
+        .contacts-stock-image-slider{
+            max-width: 650px;
+            margin: 20px auto 0 auto;
+        }
+        .contacts-stock-date-image img {
+            max-height: 450px;
         }
 
         .contacts-office {
@@ -335,33 +360,40 @@
         .contacts-office-map {
             max-width: none;
         }
-        .contacts-stock-date-text{
+
+        .contacts-stock-date-text {
             border-bottom: 1px solid #E6E6E6;
             padding-bottom: 24px;
         }
-        .contacts-stock-date-text{
+
+        .contacts-stock-date-text {
             justify-content: space-between;
         }
-        .contacts-stock-image-slider-date{
-            justify-content: center;
-        }
+
         .contacts-stock-date-image img {
             width: auto;
         }
+
         .contacts-stock-date-image {
             text-align: center;
         }
     }
-    @media (max-width: 800px){
-        .contacts-office-date{
+
+    @media (max-width: 800px) {
+        .contacts-office-date {
             padding: 41px 25px 45px 25px;
         }
     }
-    @media (max-width: 745px){
+
+    @media (max-width: 745px) {
         .contacts-stock-date-image img {
-            width: 100%!important;
+            max-height: 400px;
+            min-height: 400px;
         }
     }
+
+
+
 </style>
 <div class="contacts">
     <h4>Контакты</h4>
@@ -436,17 +468,19 @@
                         д. 36, стр. 2</p>
                 </div>
                 <div class="contacts-stock-date-image">
-                    <img draggable="false" src="/img/contacts-stock-image.jpg" alt="image">
+                    <img data-id="0" data-show="yes" src="/img/contacts-stock-image.jpg" alt="slider">
+                    <img data-id="1" src="/img/stock-mage-2.jpg" alt="slider">
+                    <img data-id="2" src="/img/stock-mage-3.jpg" alt="slider">
+                    <img data-id="3" src="/img/contacts-stock-image.jpg" alt="slider">
+                    <div class="prev-before"></div>
+                    <div class="next-after"></div>
                 </div>
                 <div class="contacts-stock-image-slider">
                     <ul class="contacts-stock-image-slider-date">
-                        <li><img draggable="false" src="/img/stock-image.jpg" alt="slider"></li>
-                        <li><img draggable="false" src="/img/stock-mage-2.jpg" alt="slider"></li>
-                        <li><img draggable="false" src="/img/stock-mage-3.jpg" alt="slider"></li>
-                        <li><img draggable="false" src="/img/stock-mage-3.jpg" alt="slider"></li>
-                        <li><img draggable="false" src="/img/stock-mage-3.jpg" alt="slider"></li>
-                        <li><img draggable="false" src="/img/stock-mage-3.jpg" alt="slider"></li>
-                        <li><img draggable="false" src="/img/stock-mage-3.jpg" alt="slider"></li>
+                        <li><img data-id="0" src="/img/stock-image.jpg" alt="slider"></li>
+                        <li><img data-id="1" src="/img/stock-mage-2.jpg" alt="slider"></li>
+                        <li><img data-id="2" src="/img/stock-mage-3.jpg" alt="slider"></li>
+                        <li><img data-id="3" src="/img/stock-mage-3.jpg" alt="slider"></li>
                     </ul>
                 </div>
             </div>
@@ -458,19 +492,85 @@
     </div>
 </div>
 <script>
-    const scrollBlock = document.querySelector('.contacts-stock-image-slider')
-    let mouseMovedX = 0
+    const scrollImages = () => {
+        const scrollBlock = document.querySelector('.contacts-stock-image-slider')
+        let mouseMovedX = 0
 
-    const scroll = e =>{
+        const scroll = e => {
 
-        if (mouseMovedX!==0){
-            scrollBlock.scrollLeft = scrollBlock.scrollLeft - (e.clientX - mouseMovedX)
+            if (mouseMovedX !== 0) {
+                scrollBlock.scrollLeft = scrollBlock.scrollLeft - (e.clientX - mouseMovedX)
+            }
+            mouseMovedX = e.clientX
         }
-        mouseMovedX = e.clientX
+
+        scrollBlock.addEventListener('mousedown', () => {
+            mouseMovedX = 0
+            document.addEventListener('mousemove', scroll)
+        })
+        document.addEventListener('mouseup', () => document.removeEventListener('mousemove', scroll))
+    }
+    scrollImages()
+
+    const show = (show, hidden) => {
+        show.dataset.show = "yes"
+        if (hidden !== null) {
+            hidden.dataset.show = "no"
+            const ImageToHidden = document.querySelector(`.contacts-stock-image-slider-date img[data-id="${hidden.dataset.id}"]`)
+            ImageToHidden.style.borderColor = "transparent"
+        }
+        const ImageToShow = document.querySelector(`.contacts-stock-image-slider-date img[data-id="${show.dataset.id}"]`)
+        ImageToShow.style.borderColor = "rgb(80 80 80)"
     }
 
-    console.log(scrollBlock.scrollLeft)
-    scrollBlock.addEventListener('mousedown', () => document.addEventListener('mousemove', scroll))
-    document.addEventListener('mouseup', () => document.removeEventListener('mousemove', scroll))
+    const clickImage = () => {
+        const images = document.querySelectorAll('.contacts-stock-image-slider-date img')
+        images.forEach(image => {
+            image.addEventListener("click", () => clickImg(image))
+        })
 
+        const clickImg = (image) => {
+            const id = image.dataset.id
+            const ImageToShow = document.querySelector(`.contacts-stock-date-image img[data-id="${id}"]`)
+            const showedImage = document.querySelector(`.contacts-stock-date-image img[data-show="yes"]:not([data-id="${id}"]`)
+
+            show(ImageToShow, showedImage)
+        }
+
+        clickImg(images[0])
+    }
+    clickImage()
+
+    const clickArrows = () => {
+        const left = document.querySelector('.contacts-stock-date-image .prev-before')
+        const right = document.querySelector('.contacts-stock-date-image .next-after')
+
+        left.addEventListener("click", () => {
+            const showedImage = document.querySelector(`.contacts-stock-date-image img[data-show="yes"]`)
+
+            const id = parseInt(showedImage.dataset.id)
+            if (id <= 0) {
+                return
+            }
+
+            const ImageToShow = document.querySelector(`.contacts-stock-date-image img[data-id="${id - 1}"]`)
+
+            show(ImageToShow, showedImage)
+        })
+
+        right.addEventListener("click", () => {
+            const allImages = document.querySelectorAll(`.contacts-stock-date-image img`)
+            const showedImage = document.querySelector(`.contacts-stock-date-image img[data-show="yes"]`)
+
+            const id = parseInt(showedImage.dataset.id)
+            if (id >= allImages.length - 1) {
+                return
+            }
+
+            const ImageToShow = document.querySelector(`.contacts-stock-date-image img[data-id="${id + 1}"]`)
+
+            show(ImageToShow, showedImage)
+        })
+    }
+    clickArrows()
 </script>
