@@ -80,6 +80,7 @@
         border: 1px solid rgba(255, 255, 255, 0.5);
         border-radius: 48px;
         padding: 9px 0px 9px 17px;
+        flex: none;
     }
 
     .menu_phone {
@@ -88,6 +89,7 @@
         border: 1px solid rgba(255, 255, 255, 0.5);
         border-radius: 48px;
         padding: 6px 0 6px 29px;
+        flex: none;
     }
 
     .menu-list a {
@@ -221,19 +223,9 @@
             width: 190px;
         }
 
-        .header_menu a {
-            font-size: 11px !important;
-        }
     }
 
     @media (max-width: 1167px) {
-        .menu-list a {
-            font-size: 10px !important;
-        }
-
-        .header_menu a {
-            font-size: 11px !important;
-        }
 
         .header-img {
             width: 100%;
@@ -252,6 +244,15 @@
 
         .main-menu {
             margin-left: 15px;
+        }
+    }
+
+    @media (max-width: 950px) {
+        .menu-list a{
+            font-size: 13px;
+        }
+        .menu_phone a{
+            font-size: 13px!important;
         }
     }
 
