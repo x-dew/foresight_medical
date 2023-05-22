@@ -13,8 +13,11 @@
     }
     .container-media .specialOffers__aside {
         flex-direction: column;
+        margin-bottom: 40px;
     }
-
+    .container-media .specialOffers__aside_desc_form_inputs {
+     gap: 11px!important;
+    }
     .specialOffers__aside_desc {
         display: flex;
         flex-direction: column;
@@ -399,7 +402,7 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            margin-top: 10px;
+            margin-top: 0;
         }
 
         .specialOffers__aside_desc_time {
@@ -440,7 +443,8 @@
         .timer__item:not(:last-child)::after {
             content: ':';
             position: absolute;
-            right: -18px;
+            right: -16px;
+            top: 0;
             font-weight: 500;
             font-size: 31px;
             line-height: 40px;
