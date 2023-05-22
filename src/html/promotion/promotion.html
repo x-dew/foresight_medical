@@ -11,6 +11,9 @@
         justify-content: space-between;
         margin-top: 78px;
     }
+    .container-media .specialOffers__aside {
+        flex-direction: column;
+    }
 
     .specialOffers__aside_desc {
         display: flex;
@@ -134,7 +137,6 @@
         display: flex;
         flex-direction: column;
         align-items: flex-end;
-        margin-top: 54px !important;
         width: 100%;
     }
 
@@ -207,12 +209,9 @@
             width: 100%;
             max-width: 448px;
         }
-
-        .specialOffers__aside_desc_form_button {
-            max-width: 448px !important;
-        }
-        .specialOffers__aside_desc_form_meta{
-            max-width: 448px;
+        .container-media .specialOffers__aside_desc_form .specialOffers__aside_desc_form_inputs {
+            width: 100%;
+            max-width: 100%;
         }
     }
 
@@ -228,9 +227,12 @@
             margin-top: 40px;
             align-items: center;
         }
+        .specialOffers__aside_desc_form_inputs {
+            width: 100%;
+            max-width: 100%;
+        }
 
         .specialOffers__aside_desc_form {
-            margin-top: 20px !important;
             align-items: center;
         }
     }
@@ -241,12 +243,12 @@
             margin-top: 60px;
         }
     }
-    @media (max-width: 990px) {
 
-
-    }
     @media (max-width: 640px) {
 
+        .specialOffers__aside{
+            display: block;
+        }
         .specialOffers__aside_desc_form_inputs input:last-child {
             margin-top: -3px;
         }
@@ -390,7 +392,7 @@
             letter-spacing: 0.02em;
             text-transform: uppercase;
             color: #FFFFFF;
-            margin-top: 10px;
+            margin-top: -3px;
         }
 
         .specialOffers__aside_desc_form_meta {
@@ -485,14 +487,15 @@
         <form class="specialOffers__aside_desc_form_inputs">
             <input type="name" placeholder="Имя" name="name">
             <input type="tel" placeholder="Телефон" name="phone">
+            <div class="specialOffers__aside_desc_form_button">
+                <p>Отправить</p>
+            </div>
+            <div class="specialOffers__aside_desc_form_meta">
+                <p>Или позвоните нам по номеру</p>
+                <p>8 800 550 68 12</p>
+            </div>
         </form>
-        <div class="specialOffers__aside_desc_form_button">
-            <p>Отправить</p>
-        </div>
-        <div class="specialOffers__aside_desc_form_meta">
-            <p>Или позвоните нам по номеру</p>
-            <p>8 800 550 68 12</p>
-        </div>
+
     </div>
 </div>
 <script>
