@@ -1,29 +1,31 @@
 <style>
     .groceryList {
-        padding: 97px 0 70px 0;
-        background: url("/img/tomograph-image.svg");
-        background-repeat: no-repeat;
-        background-position: 180px 59px;
+        padding: 97px 0 74px 0;
+        background: url("/img/tomograph-image.svg") no-repeat 0 59px;
     }
 
-    .groceryList__contentBlock_data {
-        position: relative;
-        min-height: 255px;
+    .groceryList__content {
+        margin-top: 62px;
+        display: flex;
+        gap: 31px;
+        flex-wrap: wrap;
     }
+
+    .groceryList__contentBlock {
+        display: flex;
+        flex-direction: column;
+        border-radius: 25px;
+        margin-bottom: 58px;
+        width: 31.9%;
+        position: relative;
+    }
+
 
     .groceryList__contentBlock_data .groceryList__contentBlock_data_list {
-        position: absolute;
         width: 100%;
-        height: 100%;
         padding: 0 25px;
         border-bottom-left-radius: 25px;
         border-bottom-right-radius: 25px;
-    }
-
-
-    .groceryList__contentBlock:hover .groceryList__contentBlock_data_list {
-        min-height: 354px;
-        background: #F2F2F2;
     }
 
     .groceryList__contentBlock_data_img{
@@ -31,61 +33,55 @@
         border-top-right-radius: 25px;
     }
 
-    .groceryList__contentBlock:hover .groceryList__contentBlock_data_img {
-        background: #F2F2F2;
-    }
-
     .groceryList__contentBlock_data_img img {
         border-radius: 25px;
-        max-width: 465.33px;
+        max-width: 100%;
+        display: block;
         width: 100%;
-        height: 386px;
+        height: auto;
         object-fit: cover;
     }
 
     .groceryList__contentBlock_button {
-        background: #EA3C3D;
+        position: absolute;
+        background: #F2F2F2;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 25px 0 30px 0;
+        cursor: pointer;
+        width: 100%;
+        left: 0;
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+    }
+
+    .groceryList__contentBlock_button a {
         border-radius: 20px;
         max-width: 415.33px;
         width: 100%;
         min-height: 74px;
+        background: #EA3C3D;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: 25px 0 30px 0;
-        cursor: pointer;
-    }
-
-    .groceryList__contentBlock_button {
-        display: none;
-    }
-
-    .groceryList__contentBlock:hover .groceryList__contentBlock_button {
-        display: flex;
-    }
-
-    .groceryList__contentBlock_button a {
-        font-weight: 600;
         font-size: 16px;
         line-height: 24px;
         text-transform: uppercase;
         color: #FFFFFF;
         text-decoration: none;
-        font-family: 'Inter-Bold',sans-serif;
+        font-family: 'Inter-Bold', sans-serif;
     }
-
 
     .groceryList__button {
         display: none;
         max-width: 128px;
         width: 100%;
         min-height: 45px;
-        /*display: flex;*/
         align-items: center;
         justify-content: center;
         position: absolute;
-        margin-top: 10px;
-        margin-left: 10px;
+        margin: 10px 0 0 10px;
         font-weight: 700;
         font-size: 14px;
         line-height: 25px;
@@ -96,65 +92,28 @@
     }
 
     .groceryList__title {
-        font-family: 'Inter-Bold';
-        font-weight: 600;
+        font-family: 'Inter-Bold', sans-serif;
         font-size: 56px;
         line-height: 120%;
         color: #1F1F1F;
-        margin-top: -17px;
-        margin-bottom: 79px;
+        margin: -17px 0 79px 0;
     }
 
-    .groceryList__content {
-        max-width: 1456px;
-        width: 100%;
-        margin-top: 62px;
-        display: flex;
-        gap: 31px;
-        flex-wrap: wrap;
+    .groceryList__contentBlock_data_list p {
+        font-size: 20px;
     }
-
-    .groceryList__contentBlock {
-        display: flex;
-        flex-direction: column;
-        margin-left: -1px;
-        border-radius: 25px;
-        margin-bottom: 27px;
-        width: 465.33px;
-    }
-
 
     .groceryList__contentBlock_price {
         display: flex;
         margin-bottom: 26px;
     }
 
-    .groceryList__contentBlock_price p:first-child {
-        font-weight: 600;
-        font-size: 20px;
-        line-height: 130%;
-        align-items: center;
-        color: #EA3C3D;
-        font-family: 'Inter-Bold',sans-serif;
-    }
-
-    .groceryList__contentBlock_price p:last-child {
-        font-weight: 400;
-        font-size: 20px;
-        margin-left: 5px;
-        line-height: 130%;
-        align-items: center;
-        color: #999999;
-    }
-
-
     .groceryList__contentBlock_title {
-        font-weight: 600;
-        font-size: 32px;
+        font-size: 32px !important;
         line-height: 39px;
         color: #020406;
-        margin: 27px 0 5px 0;
-        font-family: 'Inter-Bold',sans-serif;
+        margin: 30px 0 5px 0;
+        font-family: 'Inter-Bold', sans-serif;
     }
 
     .groceryList__contentBlock_desc {
@@ -162,9 +121,21 @@
         margin-top: 5px;
     }
 
+    .groceryList__contentBlock_price p:first-child {
+        line-height: 130%;
+        align-items: center;
+        color: #EA3C3D;
+        font-family: 'Inter-Bold', sans-serif;
+    }
+
+    .groceryList__contentBlock_price p:last-child {
+        margin-left: 5px;
+        line-height: 130%;
+        align-items: center;
+        color: #999999;
+    }
+
     .groceryList__contentBlock_desc p {
-        font-weight: 400;
-        font-size: 20px;
         line-height: 30px;
         align-items: center;
     }
@@ -179,7 +150,6 @@
     }
 
     .groceryList__content_button_desc p:first-child {
-        font-weight: 400;
         font-size: 14px;
         line-height: 130%;
         display: flex;
@@ -188,33 +158,41 @@
     }
 
     .groceryList__content_button_desc p:last-child {
-        font-weight: 600;
         font-size: 27px;
         line-height: 26px;
         color: #EA3C3D;
         margin-top: 7px;
     }
 
+    /*------HOVER-------*/
+
+    .groceryList__contentBlock:hover .groceryList__contentBlock_data_img {
+        background: #F2F2F2;
+    }
+
+    .groceryList__contentBlock:hover .groceryList__contentBlock_data {
+        background: #F2F2F2;
+        z-index: 1;
+    }
+
+    .groceryList__contentBlock:hover .groceryList__contentBlock_button {
+        display: flex;
+    }
+
     /*----------media-----------*/
 
-    @media (max-width: 1490px) {
-        .groceryList__content {
-            gap: 30px;
+    @media (max-width: 1470px) {
+        .groceryList__contentBlock {
+            width: 31.6%;
         }
-        .groceryList__content {
-            max-width: 961px;
-            width: 100%;
-        }
+    }
 
-        .groceryList {
-            padding: 97px 0 100px 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+    @media (max-width: 1220px) {
+        .groceryList__contentBlock {
+            width: 48%;
         }
 
         .groceryList__title {
-            text-align: center;
             margin-left: 0;
             font-size: 40px;
             margin-bottom: 0;
@@ -228,12 +206,12 @@
         }
     }
 
-    @media (max-width: 990px) {
-        .groceryList__content {
-            justify-content: center;
+    @media (max-width: 807px) {
+        .groceryList__contentBlock {
+            width: 100%;
         }
-
     }
+
 </style>
 <div class="groceryList">
     <h2 class="groceryList__title">Компьютерные томографы со склада в Москве</h2>
@@ -400,4 +378,5 @@
         </div>
     </div>
 </div>
+
 
